@@ -3,6 +3,9 @@ date and name
 2.what will i do from now until next scrum?
 3.where do i need help from teacher, teammate, internet?
 
+Miho 2017/10/04
+1.I finished database diagram and project proposal
+2.I will work on making order page using tab control, search to make report with charts.
+3.I will see.
 
-Azam 2017/10/03
 
