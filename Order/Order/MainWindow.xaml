@@ -1,0 +1,52 @@
+﻿<Window x:Class="Order.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Order"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Margin="96,0,133,62">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="146*"/>
+            <RowDefinition Height="173*"/>
+        </Grid.RowDefinitions>
+        <TabControl TabStripPlacement="left" Margin="-89,0,94,48" Grid.RowSpan="2" SelectionChanged="TabControl_SelectionChanged_1">
+            <TabItem Header="Order" Margin="-2,-2,0,0" Height="20" VerticalAlignment="Top">
+                <ListView  Margin="30,11,62,21" SelectionChanged="ListView_SelectionChanged" >
+                    <ListBoxItem Content="Fish[1]"/>
+                    <ListBoxItem Content="Shirimp[2]"/>
+                    <ListBoxItem Content="Stick[1]"/>
+                    <ListBoxItem Content="Spageti[1]" Selected="ListBoxItem_Selected"/>
+                </ListView>
+
+            </TabItem>
+            <TabItem Header="Main Food" Margin="-2,-2,0,2">
+                <Label Content="Red Vine" />
+       
+            </TabItem>
+            <TabItem Header="Drink" Margin="-2,-2,0,0" Height="20" VerticalAlignment="Top">
+                <Label Content="Content goes here..." />
+
+            </TabItem>
+            <TabItem Header="Appetizer" Margin="-2,-2,0,2">
+                <Label Content="Content goes here..." />
+
+            </TabItem>
+            <TabItem Header="Dessert" Margin="-2,-2,0,2">
+                <Label Content="Content goes here..." />
+
+            </TabItem>
+
+
+
+
+        </TabControl>
+ 
+        <Button Content="Send" HorizontalAlignment="Left" Height="31" Margin="-44,134,0,-26" Grid.Row="1" VerticalAlignment="Top" Width="108"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="31" Margin="64,134,0,-26" Grid.Row="1" VerticalAlignment="Top" Width="108"/>
+        <Button Content="Cabcel" HorizontalAlignment="Left" Height="31" Margin="172,134,0,-26" Grid.Row="1" VerticalAlignment="Top" Width="108"/>
+
+
+    </Grid>
+</Window>
