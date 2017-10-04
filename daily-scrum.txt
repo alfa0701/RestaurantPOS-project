@@ -1,6 +1,7 @@
 date and name
 1.what i have done/not done.
 2.what will i do from now until next scrum?
+*create at least 6 user stories in Trello and beake them down in todo 
 3.where do i need help from teacher, teammate, internet?
 
 Miho 2017/10/04
