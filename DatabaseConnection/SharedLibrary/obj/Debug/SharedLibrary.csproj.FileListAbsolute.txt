@@ -1,0 +1,6 @@
+D:\Project\DatabaseConnection\SharedLibrary\bin\Debug\SharedLibrary.dll
+D:\Project\DatabaseConnection\SharedLibrary\bin\Debug\SharedLibrary.pdb
+D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
+D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
+D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.dll
+D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.pdb

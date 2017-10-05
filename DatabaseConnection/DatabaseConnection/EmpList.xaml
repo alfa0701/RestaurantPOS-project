@@ -1,0 +1,40 @@
+﻿<Window x:Class="DatabaseConnection.EmpList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DatabaseConnection"
+        mc:Ignorable="d"
+        Title="EmpList" Height="400" Width="600">
+    <Grid>
+        <ListView Margin="22,16,350,26">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox Name="txtFName" HorizontalAlignment="Left" Height="23" Margin="264,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtCity"  HorizontalAlignment="Left" Height="23" Margin="436,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="264,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <TextBox Name="txtLName" HorizontalAlignment="Left" Height="23" Margin="436,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.167,0.826"/>
+        <Label Content="FirstName" HorizontalAlignment="Left" Margin="264,16,0,0" VerticalAlignment="Top"/>
+        <Label Content="LastName" HorizontalAlignment="Left" Margin="436,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.476,3.538"/>
+        <Label Content="Street" HorizontalAlignment="Left" Margin="264,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,3.462"/>
+        <Label Content="City" HorizontalAlignment="Left" Margin="436,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.667,0.423"/>
+
+        <Label Content="SIN" HorizontalAlignment="Left" Margin="437,170,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtDoB" HorizontalAlignment="Left" Height="23" Margin="436,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtStreet" HorizontalAlignment="Left" Height="23" Margin="264,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtPostal" HorizontalAlignment="Left" Height="23" Margin="264,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtSIN" HorizontalAlignment="Left" Height="23" Margin="436,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="PostalCode" HorizontalAlignment="Left" Margin="274,172,0,0" VerticalAlignment="Top"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Margin="264,67,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date of birth" HorizontalAlignment="Left" Margin="436,67,0,0" VerticalAlignment="Top"/>
+        <Button Content="ADD" HorizontalAlignment="Left" Margin="285,262,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="391,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="481,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" />
+
+
+    </Grid>
+</Window>
