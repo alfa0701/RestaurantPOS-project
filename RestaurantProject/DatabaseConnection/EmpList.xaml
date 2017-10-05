@@ -7,10 +7,13 @@
         mc:Ignorable="d"
         Title="EmpList" Height="400" Width="600">
     <Grid>
-        <ListView Margin="22,16,350,26">
+        <ListView Name="lstEmployees" Margin="22,16,350,26">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
+                    <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding Path=FName}"/>
+                    <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding Path=LName}"/>
+                    
                 </GridView>
             </ListView.View>
         </ListView>
@@ -24,13 +27,13 @@
         <Label Content="City" HorizontalAlignment="Left" Margin="436,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.667,0.423"/>
 
         <Label Content="SIN" HorizontalAlignment="Left" Margin="437,170,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtDoB" HorizontalAlignment="Left" Height="23" Margin="436,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="436,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtStreet" HorizontalAlignment="Left" Height="23" Margin="264,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtPostal" HorizontalAlignment="Left" Height="23" Margin="264,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtSIN" HorizontalAlignment="Left" Height="23" Margin="436,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="PostalCode" HorizontalAlignment="Left" Margin="274,172,0,0" VerticalAlignment="Top"/>
         <Label Content="Phone" HorizontalAlignment="Left" Margin="264,67,0,0" VerticalAlignment="Top"/>
-        <Label Content="Date of birth" HorizontalAlignment="Left" Margin="436,67,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="436,67,0,0" VerticalAlignment="Top"/>
         <Button Content="ADD" HorizontalAlignment="Left" Margin="285,262,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click"/>
         <Button Content="Update" HorizontalAlignment="Left" Margin="391,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="481,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" />
