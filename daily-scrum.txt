@@ -16,4 +16,8 @@ Azam 2017/10/04
 3-I need to get some idea to order detail page from teacher,share the task with Miho.
 =======
 >>>>>>> 5a5415885b4979bc15288a7e702b0493567a3319
+Azam 2017/10/04
+1.I finished window design for proposal to submit, review description and database design.
+2.I was working for login page for Employee; I searched for keyboard by touching.
+3.I will see if the validation for log in works property and check connection to database. I’ll ask about touch screen key board of teacher!
 
