@@ -59,3 +59,5 @@ C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\ManagerPOS.csproj.CoreCompileInputs.cache
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.exe
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.pdb
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\Order.g.cs
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\Order.baml

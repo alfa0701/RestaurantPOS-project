@@ -23,12 +23,12 @@ namespace WaiterUI
     {
         public MainWindow()
         {
-        //bool IsValidPassword(string plainText)
-        //    {
-        //        Regex regex = new Regex(@"^(.{0,7}|[^0-9]*|[^A-Z])$");
-        //        Match match = regex.Match(plainText);
-        //        return match.Success;
-        //    }
+            //bool IsValidPassword(string plainText)
+            //    {
+            //        Regex regex = new Regex(@"^(.{0,7}|[^0-9]*|[^A-Z])$");
+            //        Match match = regex.Match(plainText);
+            //        return match.Success;
+            //    }
         }
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
@@ -44,8 +44,9 @@ namespace WaiterUI
             //    MessageBox.Show("Your password must be at least 7 characters.");
             //    return;
             //}
-           
-                
-        
+
+
+
+        }
     }
 }

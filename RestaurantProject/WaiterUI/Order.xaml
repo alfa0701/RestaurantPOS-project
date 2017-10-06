@@ -57,11 +57,19 @@
 
         </TabControl>
         <ListView HorizontalAlignment="Left" Height="208" Margin="10,12,0,0" VerticalAlignment="Top" Width="173">
-            <Label Content="Label"/>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
+                    <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding Path=FName}"/>
+                    <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding Path=LName}"/>
 
-        </ListView>
+                </GridView>
+            </ListView.View></ListView>
         <Label Content="Sit Number:" HorizontalAlignment="Left" Height="24" Margin="16,249,0,0" VerticalAlignment="Top" Width="75"/>
         <TextBox HorizontalAlignment="Left" Height="24" Margin="91,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+
+
+
 
 
 
