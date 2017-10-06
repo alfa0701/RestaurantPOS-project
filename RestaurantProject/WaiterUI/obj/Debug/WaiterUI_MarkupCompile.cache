@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Project\DatabaseConnection\WaiterUI\obj\Debug\
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\obj\Debug\
 WaiterUI
 none
 false
 DEBUG;TRACE
-D:\Project\DatabaseConnection\WaiterUI\App.xaml
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\App.xaml
 41370899107
 
-8948327363
+101097677333
 131569487696
 MainMenu.xaml;MainWindow.xaml;Order.xaml;TableChoice.xaml;
 
-False
+True
 
