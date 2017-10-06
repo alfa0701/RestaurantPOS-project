@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:WaiterUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Background>
+        <ImageBrush ImageSource="../../images/canal_nuit.jpg" />
+    </Window.Background>
     <Grid>
         <Label Content="ID :" HorizontalAlignment="Left" Height="28" Margin="93,24,0,0" VerticalAlignment="Top" Width="48"/>
         <Label Content="Pass :" HorizontalAlignment="Left" Height="28" Margin="90,78,0,0" VerticalAlignment="Top" Width="48"/>

@@ -27,6 +27,7 @@ namespace ManagerPOS
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -34,7 +35,7 @@ namespace ManagerPOS
            
             if (pswd.Password.ToString() == password)
             {
-                Order menuWin = new Order();
+                MainMenu menuWin = new MainMenu();
                 menuWin.Show();
                 this.Close();
             }
