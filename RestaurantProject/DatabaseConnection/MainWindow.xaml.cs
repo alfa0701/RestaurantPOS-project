@@ -34,7 +34,7 @@ namespace ManagerPOS
            
             if (pswd.Password.ToString() == password)
             {
-                MainMenu menuWin = new MainMenu();
+                Order menuWin = new Order();
                 menuWin.Show();
                 this.Close();
             }

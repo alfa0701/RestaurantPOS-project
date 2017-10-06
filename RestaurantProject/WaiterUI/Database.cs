@@ -20,6 +20,11 @@ namespace WaiterUI
             conn.Open();
         }
 
+        public string GetPasswordById(int id) {
+            string password = "";
+            return password;
+        }// to be called in WaiterUI log in window.
+
         public List<Employee> GetAllEmployees()
         {
             List<Employee> result = new List<Employee>();

@@ -1,23 +1,29 @@
-﻿<Window x:Class="WaiterUI.Order"
+﻿<Window x:Class="ManagerPOS.Order"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WaiterUI"
+        xmlns:local="clr-namespace:ManagerPOS"
         mc:Ignorable="d"
         Title="Order" Height="400" Width="600">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="208" Margin="208,10,0,0" VerticalAlignment="Top" Width="276">
+        <TabControl HorizontalAlignment="Left" Height="263" Margin="208,10,0,0" VerticalAlignment="Top" Width="242">
 
-            <TabItem Header="Apeizer" Margin="-2,0,-1,0">
-                <StackPanel >
-                    <Button Content="Soup" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button Content="Salad" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button Content="Cheese" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
+            <TabItem Header="Drink" Margin="-2,0,-1,0">
+                <Canvas>
+                    <Button Name="btBeer" Content="Beer" Height="50" Width="50" Canvas.Left="10" Canvas.Top="10"/>
+                    <Button Name="btRed" Content="Beer"  Height="50" Width="50" Canvas.Left="10" Canvas.Top="80" />
+                    <Button Name="btWhite" Content="Beer" Height="50" Width="50" Canvas.Left="10" Canvas.Top="150"/>
 
-                    <Button Content="Greek Salad" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
 
-                </StackPanel>
+                    <Button Name="btOrange"  Content="Orange Juice" Height="50" Width="50" Canvas.Left="80" Canvas.Top="10">
+                       
+                    </Button>
+                    
+                    <Button Name="btCoke" Content="Coke" Height="50" Width="50" Canvas.Left="80" Canvas.Top="80"/>
+                    <Button Name="btPerrier" Content="Perrier" Height="50" Width="50" Canvas.Left="80" Canvas.Top="150"/>
+                    <Button/>
+                </Canvas>
             </TabItem>
             <TabItem Header="Main" Margin="-2,-1,-1,1">
                 <StackPanel >
@@ -31,11 +37,10 @@
             </TabItem>
             <TabItem Header="Drink" Margin="-2,-2,2,0">
                 <StackPanel >
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
-
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button  Content="Beer" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button   Content="Red Wine" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button  Content="White wine" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button  Content="Orange Juice" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75"/>
 
                 </StackPanel>
             </TabItem>
@@ -64,14 +69,10 @@
                     <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding Path=LName}"/>
 
                 </GridView>
-            </ListView.View></ListView>
-        <Label Content="Sit Number:" HorizontalAlignment="Left" Height="24" Margin="16,249,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="91,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+            </ListView.View>
 
-
-
-
-
+        </ListView>
+        
 
     </Grid>
 </Window>
