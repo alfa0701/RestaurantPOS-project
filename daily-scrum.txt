@@ -40,3 +40,8 @@ Miho 2017/10/05
 
 >>>>>>> 2336797c2fb6e2b6a7c1184530d0e407ab992244
 
+Azam 2017/10/
+1.I modified Log in page for Waiter,I was working on keyboard on click for log in page,but it has still error.
+2.I'm going to work on tables oage also inish key board screen.
+3.I need help modify keyboard code.
+

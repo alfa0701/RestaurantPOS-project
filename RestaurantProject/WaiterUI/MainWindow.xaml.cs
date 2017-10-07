@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,9 +25,24 @@ namespace WaiterUI
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
-            
+
+            //this.txtId.MouseDoubleClick += new MouseEventHandler(txtId_MouseDoubleClick);
+
+
+
+        }
+        private Process process;
+        private string getKeyboardText()
+        {
+            Keyboard k = new Keyboard();
+            k.ShowDialog();
+            if (k.DialogResult.ToString().Equals("OK"))
+                return k.Text1;
+            else
+                return null;
         }
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
@@ -90,6 +106,39 @@ namespace WaiterUI
                 }
             }
         }
+
+        private void txtId_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            this.txtId.Text = getKeyboardText();
+        }
+
+        private void txtPass_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            this.txtPass.Text = getKeyboardText();
+        }
+        private void showKeypad()
+        {
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.FileName = "c:\\Windows\\system32\\osk.exe";
+            process.StartInfo.Arguments = "";
+            process.StartInfo.WorkingDirectory = "c:\\";
+            process.Start(); // Start Onscreen Keyboard
+            process.WaitForInputIdle();
+            //Win32.SetWindowPos((int)process.MainWindowHandle,
+            //Win32.HWND_BOTTOM,
+            //300, 300, 1200, 600,
+            //Win32.SWP_SHOWWINDOW | Win32.SWP_NOZORDER);
+
+
+        }
+
+
+
     }
 }
 
