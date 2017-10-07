@@ -74,9 +74,11 @@ namespace WaiterUI
 
                     else if (this.txtId.Text == dr["Id"].ToString() & this.txtPass.Text == dr["password"].ToString())
                     {
-                        MessageBox.Show("*** Login Successful ***");
-
-                        this.Hide();
+                       
+                  
+                        MainMenu mainMenu = new MainMenu();
+                        mainMenu.Show();
+                        this.Close();
                     }
 
                     else
