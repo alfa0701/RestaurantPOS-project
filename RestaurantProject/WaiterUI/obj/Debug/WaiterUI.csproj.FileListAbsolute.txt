@@ -49,3 +49,14 @@ C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\WaiterUI\obj\Debug
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\WaiterUI\obj\Debug\WaiterUI.Properties.Resources.resources
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\WaiterUI\obj\Debug\WaiterUI.csproj.GenerateResource.Cache
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\WaiterUI\obj\Debug\WaiterUI.csproj.CoreCompileInputs.cache
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\bin\Debug\WaiterUI.exe.config
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\bin\Debug\WaiterUI.exe
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\bin\Debug\WaiterUI.pdb
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\obj\Debug\MainMenu.baml
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\obj\Debug\MainWindow.baml
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\obj\Debug\Order.baml
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\obj\Debug\TableChoice.baml
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\obj\Debug\WaiterUI.g.resources
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\obj\Debug\WaiterUI.Properties.Resources.resources
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\obj\Debug\WaiterUI.csproj.GenerateResource.Cache
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\obj\Debug\WaiterUI.csproj.CoreCompileInputs.cache
