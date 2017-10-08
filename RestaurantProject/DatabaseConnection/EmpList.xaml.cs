@@ -21,7 +21,15 @@ namespace ManagerPOS
     /// </summary>
     public partial class EmpList : Window
     {
-
+        private void ReloadEmployeeList()
+        {
+            List<Employee> list = db.GetAllEmployees();
+            lstEmployees.Items.Clear();
+            foreach (Employee e in list)
+            {
+                lstEmployees.Items.Add(e);
+            }
+        }
         Database db = new Database();
         public EmpList()
         {
@@ -58,8 +66,10 @@ namespace ManagerPOS
             emp.City = ciry;
             emp.Password = pswd;
             emp.Postal = postal;
+            int newId = db.AddEmployee(emp);
 
-            db.AddEmployee(emp);
+       
+           
 
             List<Employee> empList = new List<Employee>();
             ReloadEmployeeList();
@@ -67,16 +77,61 @@ namespace ManagerPOS
 
 
         }
-        private void ReloadEmployeeList()
+       
+
+        private void lstEmployees_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            List<Employee> list = db.GetAllEmployees();
-            lstEmployees.Items.Clear();
-            foreach (Employee e in list)
-            {
-                lstEmployees.Items.Add(e);
+            if (lstEmployees.SelectedIndex < 0) {
+                clearContent();
+                return;
+            }
+            else { Employee selected = new Employee();
+                selected = (Employee)lstEmployees.SelectedItem;
+                txtFName.Text = (string)selected.FName;
+                txtLName.Text = (string)selected.LName;
+                txtSIN.Text = (string)selected.SIN;
+                txtPhone.Text = (string)selected.Phone;
+                txtStreet.Text = (string)selected.Street;
+                txtCity.Text = (string)selected.City;
+                txtPostal.Text = (string)selected.Postal;
+                txtPassword.Text = (string)selected.Password;
+                lblID.Content = String.Format("ID : {0}", selected.EmpId);
             }
         }
 
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Employee selected = new Employee();           
+            db.DeleteByID(selected.EmpId);
+            ReloadEmployeeList();
+        }
+
+        private void btUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Employee selected = new Employee();
+            selected = (Employee)lstEmployees.SelectedItem;
+            selected.FName = txtFName.Text;
+            selected.LName = txtLName.Text;
+            selected.SIN = txtSIN.Text;
+            selected.Phone = txtPhone.Text;
+            selected.Street = txtStreet.Text;
+            selected.City = txtCity.Text;
+            selected.Postal = txtPostal.Text;
+            selected.Password = txtPassword.Text;
+            db.UpdateEmployee(selected);
+            ReloadEmployeeList();
+        }
+       public void clearContent() {
+            txtFName.Text = "";
+        txtLName.Text =  "";
+        txtSIN.Text =  "";
+        txtPhone.Text =  "";
+        txtStreet.Text = "";
+        txtCity.Text =  "";
+        txtPostal.Text = "";
+        txtPassword.Text =  "";
+        lblID.Content ="ID : ";
+        }
     }
 
 }

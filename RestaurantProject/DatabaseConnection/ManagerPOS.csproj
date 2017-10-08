@@ -54,12 +54,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChooseTable.xaml.cs">
+      <DependentUpon>ChooseTable.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EmpList.xaml.cs">
       <DependentUpon>EmpList.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ChooseTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EmpList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,14 +87,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Order.xaml">
+    <Page Include="OrderWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Order.xaml.cs">
-      <DependentUpon>Order.xaml</DependentUpon>
+    <Compile Include="OrderWindow.xaml.cs">
+      <DependentUpon>OrderWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

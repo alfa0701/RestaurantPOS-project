@@ -77,8 +77,9 @@ namespace WaiterUI
                 {
                     SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["ConnectionString"])
                     {
-                        ConnectionString = "Data Source=pc101;Initial Catalog=SMS;User ID=sa;Password=mike"
-                    };
+                        ConnectionString = @"Server=tcp:mihoaka.database.windows.net,1433;Initial Catalog=Restaurant;Persist Security Info=False;User ID=sqladmin;Password=Mihoaka0215;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
+                
                     con.Open();
 
                     if (this.txtId.Text == dr["Id"].ToString() & this.txtPass.Text == dr["password"].ToString())
