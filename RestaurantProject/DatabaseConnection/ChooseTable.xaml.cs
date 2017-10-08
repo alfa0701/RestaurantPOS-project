@@ -11,17 +11,31 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SharedLibrary;
 
 namespace ManagerPOS
+
 {
     /// <summary>
-    /// Interaction logic for Order.xaml
+    /// Interaction logic for ChooseTable.xaml
     /// </summary>
-    public partial class Order : Window
+    public partial class ChooseTable : Window
     {
-        public Order()
+
+        Database db;
+        public ChooseTable()
         {
             InitializeComponent();
+           db = new Database();
+        }
+
+        private void bt1_Click(object sender, RoutedEventArgs e)
+        {
+         
+            OrderWindow orderWin = new OrderWindow();
+            orderWin.ShowDialog();
+            
+
         }
     }
 }

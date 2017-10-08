@@ -59,8 +59,6 @@ C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\ManagerPOS.csproj.CoreCompileInputs.cache
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.exe
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.pdb
-C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\Order.g.cs
-C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\Order.baml
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\bin\Debug\DatabaseConnection.exe.config
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\bin\Debug\DatabaseConnection.exe
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\bin\Debug\DatabaseConnection.pdb
@@ -84,3 +82,7 @@ C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnecti
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\ManagerPOS.csproj.CoreCompileInputs.cache
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.exe
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.pdb
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.g.cs
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.baml
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\OrderWindow.g.cs
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\OrderWindow.baml

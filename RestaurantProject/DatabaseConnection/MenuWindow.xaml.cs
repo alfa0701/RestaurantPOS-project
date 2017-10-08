@@ -29,5 +29,11 @@ namespace ManagerPOS
             EmpList empWin = new EmpList();
             empWin.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ChooseTable tableWin = new ChooseTable();
+            tableWin.Show();
+        }
     }
 }

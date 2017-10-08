@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="EmpList" Height="400" Width="600">
     <Grid>
-        <ListView Name="lstEmployees" Margin="22,16,350,26">
+        <ListView Name="lstEmployees" Margin="22,16,350,26" SelectionChanged="lstEmployees_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=EmpId}"/>
                     <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding Path=FName}"/>
                     <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding Path=LName}"/>
                     
@@ -35,8 +35,9 @@
         <Label Content="Phone" HorizontalAlignment="Left" Margin="264,67,0,0" VerticalAlignment="Top"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="436,67,0,0" VerticalAlignment="Top"/>
         <Button Content="ADD" HorizontalAlignment="Left" Margin="285,262,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="391,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="481,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" />
+        <Button Content="Update" HorizontalAlignment="Left" Margin="391,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1" Click="btUpdate_Click"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="481,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" Click="btDelete_Click" />
+        <Label Name="lblID" Content="ID :" HorizontalAlignment="Left" Margin="264,226,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.316,0.048" Width="120"/>
 
 
     </Grid>
