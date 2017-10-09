@@ -45,3 +45,10 @@ Azam 2017/10/
 2.I'm going to work on tables oage also inish key board screen.
 3.I need help modify keyboard code.
 
+Miho 2017/10/08
+1.EmployeeList window is done. I changed order window design to include table choice and guest number.
+ I implemented adding ordered items into list.  delete function is not implemented yet.
+2. I will start validation of property of each class and searching about printing.
+3.I need help to get value from previous window.
+
+
