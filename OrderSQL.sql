@@ -29,3 +29,16 @@ SELECT  m.MenuName as Item,Count(od.qty) as Qty
 SELECT MenuName, Price from Menu
 
 
+
+---------display sold item of the day
+select m.MenuName, count(od.Qty)as Qty
+from orderdetail as od
+inner join menu as m
+on od.MenuId = m.MenuId
+inner join [Order] as o
+on o.orderId= od.OrderId
+where CAST(o.OrderDate AS DATE) = '2017-10-08'
+group by m.MenuName
+order by Qty desc
+
+
