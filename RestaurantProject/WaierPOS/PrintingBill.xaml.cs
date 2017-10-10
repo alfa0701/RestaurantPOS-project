@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,11 +20,9 @@ namespace WaierPOS
     /// </summary>
     public partial class PrintingBill : Window
     {
-        public PrintingBill()
-        {
-            InitializeComponent();
-        }
+        int orderId;
 
-        
     }
+
+
 }
