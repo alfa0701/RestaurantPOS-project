@@ -24,6 +24,7 @@ namespace ManagerPOS
         int table;
         int guest;
         int orderId;
+        bool isModified = false;
         
         Database db;
         public OrderWindow()
@@ -54,6 +55,7 @@ namespace ManagerPOS
             OrderDetail od = new OrderDetail { OrderId = orderId, MenuId = menuId, Qty = 1 };
             db.AddNewOrderDetail(od);
             ReloadOrderList();
+            isModified = true;
         }
 
     
@@ -160,6 +162,7 @@ namespace ManagerPOS
         }
         private void btOrder_Click(object sender, RoutedEventArgs e)
         {
+            /////////////////////////PRINT ORDER TO KITCHEN///////////////////////////////////////
             lstOrderItem.Items.Clear();
         }
 
@@ -172,11 +175,32 @@ namespace ManagerPOS
             else
             {
                 MessageBox.Show("Order is cancelled.");
-               orderde
+                db.DeleteAllOrderDetailByOrderId(orderId);
+                db.DeleteOrderByOrderId(orderId);
+                lstOrderItem.Items.Clear();
+               
 
 
+            }
+        }
 
-                lstOrderItem.SelectedItems
+        private void btMain_Click(object sender, RoutedEventArgs e)
+        {
+            if (isModified)
+            {
+                if (MessageBox.Show("Cancel this order??", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Order is cancelled.");
+                    db.DeleteAllOrderDetailByOrderId(orderId);
+                    db.DeleteOrderByOrderId(orderId);
+                    MainMenu menuWin = new MainMenu();
+                    menuWin.ShowDialog();
+                    Close();
+                }
             }
         }
     }

@@ -101,8 +101,9 @@ namespace ManagerPOS
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
         {
-            Employee selected = new Employee();           
-            db.DeleteByID(selected.EmpId);
+            Employee selected = new Employee();
+            selected = (Employee)lstEmployees.SelectedItem;
+            db.DeleteEmployeeByID(selected.EmpId);
             ReloadEmployeeList();
         }
 
