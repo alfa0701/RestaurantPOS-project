@@ -8,7 +8,7 @@
         Title="MainMenu" Height="300" Width="300">
     <Grid>
         <Button Content="Button" HorizontalAlignment="Left" Height="62" Margin="46,36,0,0" VerticalAlignment="Top" Width="108"/>
-        <Button Content="Order" HorizontalAlignment="Left" Height="62" Margin="154,36,0,0" VerticalAlignment="Top" Width="108"/>
+        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Height="62" Margin="154,36,0,0" VerticalAlignment="Top" Width="108" Click="btOrder_Click"/>
         <Button Content="IN Time" HorizontalAlignment="Left" Height="61" Margin="46,98,0,0" VerticalAlignment="Top" Width="108"/>
         <Button Name="btntable" Content="Table" HorizontalAlignment="Left" Height="62" Margin="46,36,0,0" VerticalAlignment="Top" Width="108" Click="Button_Click"/>
         <Button Content="Out Time" HorizontalAlignment="Left" Height="61" Margin="154,98,0,0" VerticalAlignment="Top" Width="108"/>

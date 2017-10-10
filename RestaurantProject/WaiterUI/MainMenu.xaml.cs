@@ -33,5 +33,11 @@ namespace WaiterUI
             table.Show();
             this.Close();
         }
+
+        private void btOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Order orderWin = new Order();
+            orderWin.ShowDialog();
+        }
     }
 }
