@@ -21,6 +21,7 @@ namespace SharedLibrary
         public int OrderedItemId { get; set; }
         public string MenuName { get; set; }
         public int qty { get; set; }
+        public double amount { get; set; }
     }
 
 }

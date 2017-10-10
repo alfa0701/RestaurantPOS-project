@@ -32,8 +32,9 @@ namespace ManagerPOS
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            OrderWindow tableWin = new OrderWindow();
-            tableWin.Show();
+            OrderWindow orderWin = new OrderWindow();
+            orderWin.ShowDialog();
+            Close();
         }
     }
 }
