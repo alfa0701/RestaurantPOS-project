@@ -10,11 +10,17 @@ none
 false
 DEBUG;TRACE
 D:\Project\RestaurantProject\WaiterUI\App.xaml
+<<<<<<< HEAD
 6-1534283905
 
 17-1512606588
+=======
+3-1521532153
+
+14488279251
+>>>>>>> ba59813861da17f69fc0956da96c75eae9c3e2cc
 131569487696
-MainMenu.xaml;MainWindow.xaml;Order.xaml;Payment.xaml;PrintinBill.xaml;TableChoice.xaml;
+MainMenu.xaml;MainWindow.xaml;TableChoice.xaml;
 
 True
 

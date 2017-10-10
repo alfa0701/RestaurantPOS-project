@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WaiterUI
+namespace WaierPOS
 {
     /// <summary>
-    /// Interaction logic for Order.xaml
+    /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class Order : Window
+    public partial class MainMenu : Window
     {
-        public Order()
+        public MainMenu()
         {
             InitializeComponent();
         }

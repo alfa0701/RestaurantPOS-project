@@ -57,15 +57,6 @@
     <Compile Include="Database.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Keyboard.cs" />
-    <Compile Include="Order.xaml.cs">
-      <DependentUpon>Order.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Payment.xaml.cs">
-      <DependentUpon>Payment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PrintinBill.xaml.cs">
-      <DependentUpon>PrintinBill.xaml</DependentUpon>
-    </Compile>
     <Compile Include="TableChoice.xaml.cs">
       <DependentUpon>TableChoice.xaml</DependentUpon>
     </Compile>
@@ -88,18 +79,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Order.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Payment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PrintinBill.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="TableChoice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

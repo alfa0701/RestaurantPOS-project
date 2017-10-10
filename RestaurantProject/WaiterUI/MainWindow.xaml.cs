@@ -25,16 +25,15 @@ namespace WaiterUI
     /// </summary>
     public partial class MainWindow : Window
     {
-       
 
-         
+
+
 
         public MainWindow()
         {
 
-
-
         }
+
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
@@ -44,7 +43,7 @@ namespace WaiterUI
 
 
             Int32 verify;
-            string query1 = "Select * from Employee where id='" + txtId.Text + "' and Password='" + txtPass.Text + "' ";
+            string query1 = "Select * from Employee where EmpId='" + txtId.Text + "' and Password='" + txtPass.Text + "' ";
             SqlCommand cmd1 = new SqlCommand(query1, con);
             con.Open();
             verify = Convert.ToInt32(cmd1.ExecuteScalar());
@@ -59,18 +58,14 @@ namespace WaiterUI
             {
                 MessageBox.Show("Incorrect pasword or Id");
             }
-
         }
     }
-
-    }
-    
-        
-                
+}
 
 
 
 
-                
-       
-        
+
+
+
+

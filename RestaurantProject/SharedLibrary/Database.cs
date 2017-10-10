@@ -142,6 +142,14 @@ namespace SharedLibrary
             insertCommand.Parameters.Add(new SqlParameter("Qty",o.Qty));
             insertCommand.ExecuteNonQuery();
         }
+        ////////////////////////////////for logIn///////////////////////////////////////////
+        public string PasswordByID(int Id)
+        {
+            string pswd = "";
+            SqlCommand selectCommand = new SqlCommand ("SELECT  Password  FROM [Employee] where Empid =Id");
+            pswd = (string)selectCommand.ExecuteScalar();
+            return pswd;
+        }
 
         public void DeleteOrderDetailById(int OrderDetailId) {
             SqlCommand deleteCommand = new SqlCommand("DELETE  OrderDetail Where OrderDetailId =@id", conn);

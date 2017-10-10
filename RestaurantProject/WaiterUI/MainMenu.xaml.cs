@@ -29,15 +29,11 @@ namespace WaiterUI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            TableChoice table = TableChoice();
-            table.Show();
-            this.Close();
         }
 
         private void btOrder_Click(object sender, RoutedEventArgs e)
         {
-            Order orderWin = new Order();
-            orderWin.ShowDialog();
+        
         }
     }
 }

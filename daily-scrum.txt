@@ -51,11 +51,12 @@ Miho 2017/10/08
 2. I will start validation of property of each class and searching about printing.
 3.I need help to get value from previous window.
 
-.>>>>>>>>>>>>>>>>etail>>>>>>>>>>>>>>>
+.>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Azam  2017/10/09
 1.Tabechoze is done,I created Print window.I'm working on Printing for Print window.
 2.I'll search about defrences between FastReport and CrystalReport!
-3.I need help load value from Orderdetail to Printing Bill
+3.I need help to load value from Orderdetail to Printing Bill.
+
 
 Miho 2017/10/09
 1. I changed Datetime value to insert. delete function in order Windowis not implemented yet.I started working on report window but I cant connect to database.
