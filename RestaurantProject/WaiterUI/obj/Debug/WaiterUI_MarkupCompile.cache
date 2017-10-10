@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaiterUI\App.xaml
-41370899107
+6-1534283905
 
-11-1233633175
+13-38120538
 131569487696
-MainMenu.xaml;MainWindow.xaml;Order.xaml;TableChoice.xaml;
+MainMenu.xaml;MainWindow.xaml;Order.xaml;Payment.xaml;PrintinBill.xaml;TableChoice.xaml;
 
 True
 
