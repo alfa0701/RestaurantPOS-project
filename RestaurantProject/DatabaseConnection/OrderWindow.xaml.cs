@@ -86,6 +86,7 @@ namespace ManagerPOS
                 orderId = db.AddOrder(o);
                 tbctrlMenu.Visibility = Visibility.Visible;
                 ReloadOrderList();
+                isModified = true;
             }
         }
 
@@ -198,9 +199,14 @@ namespace ManagerPOS
                     db.DeleteAllOrderDetailByOrderId(orderId);
                     db.DeleteOrderByOrderId(orderId);
                     MainMenu menuWin = new MainMenu();
-                    menuWin.ShowDialog();
-                    Close();
+                    menuWin.Show();
+                    this.Close();
                 }
+            }
+            else {
+                MainMenu menuWin = new MainMenu();
+                menuWin.Show();
+                this.Close();
             }
         }
     }

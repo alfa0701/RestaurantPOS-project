@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
 
 namespace SharedLibrary
 {
     public class Employee
     {
        public int EmpId { get; set; }
-        public string _fName;
-        public string _lName;
-        public string Phone { get; set; }
-        public string SIN { get; set; }
+        private string _fName;
+        private string _lName;
+        private string _phone { get; set; }
+        private string _sin { get; set; }
 
         public string Street { get; set; }
         public string City { get; set; }
@@ -41,6 +43,40 @@ namespace SharedLibrary
                     throw new ArgumentOutOfRangeException("Name must be between 2 and 30 characters long");
                 }
                 _lName = value;
+            }
+        }
+
+        public string Phone {
+        get { return _phone; }
+            set {
+               
+                Regex regex = new Regex(@"[0-9]{10}");
+                if (regex.IsMatch(value))
+                {
+                    value = _phone;
+                }
+               
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Phone must be 10 degit");
+                }
+
+            }
+        }
+        public string SIN
+        {
+            get { return _sin; }
+            set
+            {
+                Regex regex = new Regex(@"[0-9]{9}");
+                Match match = regex.Match(value);
+                if (!match.Success)
+                {
+                    throw new ArgumentOutOfRangeException("Phone must be 9 degit");
+                }
+                else {
+                    value = _sin;
+                }
             }
         }
 

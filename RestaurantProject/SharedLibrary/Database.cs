@@ -174,7 +174,10 @@ namespace SharedLibrary
             return pswd;
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4154179d385f121b1badd912ce5f5e64630c0102
         public void DeleteOrderDetailById(int OrderDetailId) {
             SqlCommand deleteCommand = new SqlCommand("DELETE  OrderDetail Where OrderDetailId =@id", conn);
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
@@ -205,5 +208,10 @@ namespace SharedLibrary
             }
             return result;
         }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4154179d385f121b1badd912ce5f5e64630c0102
     }
 }

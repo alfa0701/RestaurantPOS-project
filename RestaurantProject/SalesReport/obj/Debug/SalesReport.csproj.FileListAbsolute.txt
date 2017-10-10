@@ -3,3 +3,13 @@ D:\Project\RestaurantProject\SalesReport\obj\Debug\MainWindow.g.cs
 D:\Project\RestaurantProject\SalesReport\obj\Debug\App.g.cs
 D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport_MarkupCompile.cache
 D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport_MarkupCompile.lref
+D:\Project\RestaurantProject\SalesReport\bin\Debug\SalesReport.exe.config
+D:\Project\RestaurantProject\SalesReport\bin\Debug\SalesReport.exe
+D:\Project\RestaurantProject\SalesReport\bin\Debug\SalesReport.pdb
+D:\Project\RestaurantProject\SalesReport\obj\Debug\MainWindow.baml
+D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport.g.resources
+D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport.Properties.Resources.resources
+D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport.csproj.GenerateResource.Cache
+D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport.csproj.CoreCompileInputs.cache
+D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport.exe
+D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport.pdb
