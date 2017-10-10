@@ -4,3 +4,7 @@ D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.csprojResolv
 D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
 D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.dll
 D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.pdb
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.dll
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.pdb

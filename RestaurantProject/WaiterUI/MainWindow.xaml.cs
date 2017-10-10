@@ -23,29 +23,32 @@ namespace WaiterUI
     {
         public MainWindow()
         {
-        bool IsValidPassword(string plainText)
-            {
-                Regex regex = new Regex(@"^(.{0,7}|[^0-9]*|[^A-Z])$");
-                Match match = regex.Match(plainText);
-                return match.Success;
-            }
+        
         }
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(IsValidPassword("shing"));
-            if (string.IsValidPassword(txtName.Text))
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = "datasource=127.0.0.1;port=3306;username=root;password=;";
+
+            Int32 verify;
+            string query1 = "Select count(*) from Login where Username='" + Username.Text + "' and Password='" + Password.Text + "' ";
+            MySqlCommand cmd1 = new MySqlCommand(query1, con);
+            con.Open();
+            verify = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+
+            if (verify > 0)
             {
-                MessageBox.Show("You must enter a password.");
-                return;
+                new FormMainMenu().Show();
+                this.Hide();
             }
-            else 
+            else
             {
-                MessageBox.Show("Your password must be at least 7 characters.");
-                return;
+                MessageBox.Show("Username or Password is Incorrect")
             }
-           
-                
-        
-    }
+
+
+
+        }
 }

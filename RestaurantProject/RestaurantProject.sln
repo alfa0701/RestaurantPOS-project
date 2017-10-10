@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerPOS", "DatabaseConnection\ManagerPOS.csproj", "{9E34B2BD-21F8-4D3E-893F-7ECE46AC01DE}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -11,9 +11,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{9178ED1A-DAA5-40F3-A357-B3B1D270F181}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaiterUI", "WaiterUI\WaiterUI.csproj", "{7834875A-7B77-4895-AE5E-E29B063F7C68}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9178ED1A-DAA5-40F3-A357-B3B1D270F181} = {9178ED1A-DAA5-40F3-A357-B3B1D270F181}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
