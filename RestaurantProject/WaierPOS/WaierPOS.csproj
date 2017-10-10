@@ -54,6 +54,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Database.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="MenuItem.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderDetail.cs" />
     <Compile Include="PrintingBill.xaml.cs">
       <DependentUpon>PrintingBill.xaml</DependentUpon>
     </Compile>

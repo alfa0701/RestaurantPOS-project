@@ -16,6 +16,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReport", "SalesReport\
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaierPOS", "WaierPOS\WaierPOS.csproj", "{D0243EBD-2662-438E-99D8-BA181A5F1001}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9178ED1A-DAA5-40F3-A357-B3B1D270F181} = {9178ED1A-DAA5-40F3-A357-B3B1D270F181}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

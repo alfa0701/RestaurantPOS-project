@@ -8,13 +8,22 @@
         Title="PrintingBill" Height="300" Width="300">
     <Grid>
         <ListView Name="List1" HorizontalAlignment="Left" Height="126" Margin="6,40,0,0" VerticalAlignment="Top" Width="98">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Item " Width="25" DisplayMemberBinding="{Binding Path=MenuName}"/>
+                    <GridViewColumn Header="qty" Width="30" DisplayMemberBinding="{Binding Path=qty}"/>
+                    <GridViewColumn Header="qty" Width="30" DisplayMemberBinding="{Binding Path=price}"/>
+
+
+                </GridView>
+            </ListView.View>
 
         </ListView>
         <ListView Name="List2" HorizontalAlignment="Left" Height="126" Margin="185,41,0,0" VerticalAlignment="Top" Width="98">
 
         </ListView>
         <Label Content="OrderID :" HorizontalAlignment="Left" Height="33" Margin="3,-1,0,0" VerticalAlignment="Top" Width="73"/>
-        <TextBox HorizontalAlignment="Left" Height="21" Margin="62,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64"/>
+        <TextBox Name="txtId" HorizontalAlignment="Left" Height="21" Margin="62,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64"/>
         <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="115,43,0,0" VerticalAlignment="Top" Width="61" />
         <Button Content="Dellete" HorizontalAlignment="Left" Height="20" Margin="115,74,0,0" VerticalAlignment="Top" Width="61"/>
         <Button Content="Select All" HorizontalAlignment="Left" Height="20" Margin="115,111,0,0" VerticalAlignment="Top" Width="61"/>
@@ -26,6 +35,7 @@
         <TextBox HorizontalAlignment="Left" Height="20" Margin="72,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="72,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72"/>
         <Button Content="Print" HorizontalAlignment="Left" Height="20" Margin="191,218,0,0" VerticalAlignment="Top" Width="61"/>
+        <Button Name="btnEnter"  Content="" HorizontalAlignment="Left" Height="20" Margin="130,2,0,0" VerticalAlignment="Top" Width="30" Click="Button_Click_1" />
 
     </Grid>
 </Window>

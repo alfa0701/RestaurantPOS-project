@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace WaierPOS
 {
     /// <summary>
@@ -21,8 +22,47 @@ namespace WaierPOS
     public partial class PrintingBill : Window
     {
         int orderId;
+        bool isModified = false;
 
+
+        Database db;
+        public PrintingBill()
+        {
+            try
+            {
+                db = new Database();
+                InitializeComponent();
+
+
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
+            }
+        }
+        private void ReloadOrderList()
+        {
+            List<OrderedItem> list = db.GetAllOrderDetails(orderId);
+            List1.Items.Clear();
+            foreach (OrderedItem o in list)
+            {
+                List1.Items.Add(o);
+            }
+        }
+
+
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            int orderId = System.Convert.ToInt32(txtId.Text);
+   
+            db.GetAllOrders(orderId);
+            ReloadOrderList();
+            isModified = true;
+        }
+        }
     }
+  
 
-
-}

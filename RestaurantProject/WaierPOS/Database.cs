@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace SharedLibrary
+namespace WaierPOS
 {
      public class Database
     {
@@ -184,10 +184,9 @@ namespace SharedLibrary
         public List<OrderedItem> GetAllOrders(int orderId)
         {
             List<OrderedItem> result = new List<OrderedItem>();
-            SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId, m.MenuName as Item,Count(od.qty) as Qty,p.Price as Price FROM [Order] as o" +
-                " INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +
-                " INNER Join [Menue] as m on p.Price = od.Price" +
-                " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId Group by m.MenuName ", conn);
+            SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId, m.MenuName as Item, od.qty as Qty,m.Price as Price FROM [Order] as o" +
+                " INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +              
+                " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId  ", conn);
             selectCommand.Parameters.Add(new SqlParameter("orderId", orderId));
             using (SqlDataReader reader = selectCommand.ExecuteReader())
             {
@@ -197,8 +196,6 @@ namespace SharedLibrary
                     int qty = (int)reader["Qty"];
                     string MenuName = (string)reader["Item"];
                     double Price = (double)reader["Price"];
-
-
                     OrderedItem item = new OrderedItem { OrderedItemId = id, MenuName = MenuName, qty = qty, amount=Price };
                     result.Add(item);
                 }
