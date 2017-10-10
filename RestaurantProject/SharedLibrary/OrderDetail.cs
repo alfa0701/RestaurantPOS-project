@@ -18,6 +18,7 @@ namespace SharedLibrary
 
     public class OrderedItem {
 
+        public int OrderedItemId { get; set; }
         public string MenuName { get; set; }
         public int qty { get; set; }
     }

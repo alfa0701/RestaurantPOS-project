@@ -52,11 +52,11 @@
             </TabItem>
 
         </TabControl>
-        <ListView Name="lstOrderItem" HorizontalAlignment="Left" Height="208" Margin="10,12,0,0" VerticalAlignment="Top" Width="173">
+        <ListView Name="lstOrderItem" HorizontalAlignment="Left" Height="261" Margin="10,12,0,0" VerticalAlignment="Top" Width="173">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Item " DisplayMemberBinding="{Binding Path=MenuName}"/>
-                    <GridViewColumn Header="qty" DisplayMemberBinding="{Binding Path=qty}"/>
+                    <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding Path=MenuName}"/>
+                    <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding Path=qty}"/>
 
 
                 </GridView>
@@ -87,7 +87,8 @@
             <ComboBoxItem Content="8"/>
         </ComboBox>
         <Button Name="btStart" Content="Start" HorizontalAlignment="Left" Margin="507,132,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="btStart_Click"/>
-        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Margin="65,243,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btOrder_Click"/>
+        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Margin="24,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btOrder_Click"/>
+        <Button Name="btCancel" Content="btCancel" HorizontalAlignment="Left" Margin="108,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btCancel_Click"/>
 
     </Grid>
 </Window>

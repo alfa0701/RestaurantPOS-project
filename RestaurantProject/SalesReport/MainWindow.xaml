@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <DataGrid Name="grdReport" HorizontalAlignment="Left" Height="193" Margin="47,88,0,0" VerticalAlignment="Top" Width="253">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding MenuName}" Width="100" Header="Item Name"/>
+                <DataGridTextColumn Binding="{Binding Qty}" Width="100" Header="Qty"/>
+           
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>

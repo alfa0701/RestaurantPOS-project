@@ -32,7 +32,7 @@ namespace ManagerPOS
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ChooseTable tableWin = new ChooseTable();
+            OrderWindow tableWin = new OrderWindow();
             tableWin.Show();
         }
     }
