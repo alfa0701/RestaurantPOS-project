@@ -68,14 +68,12 @@ C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnecti
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\EmpList.g.cs
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\MainWindow.g.cs
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\MenuWindow.g.cs
-C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\Order.g.cs
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\App.g.cs
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection_MarkupCompile.cache
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection_MarkupCompile.lref
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\EmpList.baml
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\MainWindow.baml
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\MenuWindow.baml
-C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\Order.baml
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.g.resources
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.Properties.Resources.resources
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\ManagerPOS.csproj.GenerateResource.Cache
@@ -86,3 +84,7 @@ C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.baml
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\OrderWindow.g.cs
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\OrderWindow.baml
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.g.cs
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\OrderWindow.g.cs
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.baml
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\OrderWindow.baml

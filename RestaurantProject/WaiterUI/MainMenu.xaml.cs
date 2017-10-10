@@ -19,9 +19,19 @@ namespace WaiterUI
     /// </summary>
     public partial class MainMenu : Window
     {
+        Database db;
         public MainMenu()
         {
             InitializeComponent();
+            db = new Database();
+        }
+       
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            TableChoice table = TableChoice();
+            table.Show();
+            this.Close();
         }
     }
 }
