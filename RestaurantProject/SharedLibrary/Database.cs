@@ -174,9 +174,6 @@ namespace SharedLibrary
             return pswd;
         }
 
-<<<<<<< HEAD
-        
-=======
         public void DeleteOrderDetailById(int OrderDetailId) {
             SqlCommand deleteCommand = new SqlCommand("DELETE  OrderDetail Where OrderDetailId =@id", conn);
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
@@ -198,7 +195,7 @@ namespace SharedLibrary
                     int id = (int)reader["Id"];
                     int qty = (int)reader["Qty"];
                     string MenuName = (string)reader["Item"];
-                    decimal Price = (decimal)reader["Price"];
+                    double Price = (double)reader["Price"];
 
 
                     OrderedItem item = new OrderedItem { OrderedItemId = id, MenuName = MenuName, qty = qty, amount=Price };
@@ -208,6 +205,6 @@ namespace SharedLibrary
             return result;
         }
 
->>>>>>> 79a3b7c225e8b2c193daad0d35963567160c6edf
+
     }
 }

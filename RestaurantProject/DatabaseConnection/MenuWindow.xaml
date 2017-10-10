@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Main Menu" Height="300" Width="300">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="162" Margin="52,44,0,0" VerticalAlignment="Top" Width="180">
+
+        <StackPanel HorizontalAlignment="Left" Height="141" Margin="52,44,0,0" VerticalAlignment="Top" Width="164">
             <Button Content="Employee" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="57" Margin="5,5,5,5" Click="Button_Click" />
             <Button Content="Sales Report" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="57" Margin="5,5,5,5" Click="Button_Click_1"/>
         </StackPanel>

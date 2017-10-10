@@ -28,13 +28,14 @@ namespace ManagerPOS
         {
             EmpList empWin = new EmpList();
             empWin.Show();
+            this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             OrderWindow orderWin = new OrderWindow();
-            orderWin.ShowDialog();
-            Close();
+            orderWin.Show();
+            this.Close();
         }
     }
 }

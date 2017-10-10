@@ -21,6 +21,7 @@ namespace ManagerPOS
     /// </summary>
     public partial class EmpList : Window
     {
+        bool isModified = false;
         private void ReloadEmployeeList()
         {
             List<Employee> list = db.GetAllEmployees();
@@ -105,6 +106,7 @@ namespace ManagerPOS
             selected = (Employee)lstEmployees.SelectedItem;
             db.DeleteEmployeeByID(selected.EmpId);
             ReloadEmployeeList();
+            isModified = false;
         }
 
         private void btUpdate_Click(object sender, RoutedEventArgs e)
@@ -121,6 +123,7 @@ namespace ManagerPOS
             selected.Password = txtPassword.Text;
             db.UpdateEmployee(selected);
             ReloadEmployeeList();
+            isModified = false;
         }
        public void clearContent() {
             txtFName.Text = "";
@@ -132,6 +135,72 @@ namespace ManagerPOS
         txtPostal.Text = "";
         txtPassword.Text =  "";
         lblID.Content ="ID : ";
+        }
+
+        private void btMain_Click(object sender, RoutedEventArgs e)
+        {
+            if (isModified)
+            {
+                if (MessageBox.Show("you have unsaved data. do you exit?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                 
+                    MainMenu menuWin = new MainMenu();
+                    menuWin.Show();
+                    this.Close();
+                }
+            }
+            else
+            {
+
+                MainMenu menuWin = new MainMenu();
+                menuWin.Show();
+                this.Close();
+            }
+
+        }
+
+        private void txtFName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            isModified = true;
+        }
+
+        private void txtLName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            isModified = true;
+        }
+
+        private void txtPhone_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            isModified = true;
+        }
+
+        private void txtPassword_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            isModified = true;
+        }
+
+        private void txtCity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            isModified = true;
+        }
+
+        private void txtStreet_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            isModified = true;
+        }
+
+        private void txtPostal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            isModified = true;
+        }
+
+        private void txtSIN_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            isModified = true;
         }
     }
 

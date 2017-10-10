@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace SalesReport
 {
     /// <summary>
@@ -27,6 +29,7 @@ namespace SalesReport
         public MainWindow()
         {
             InitializeComponent();
+            FillDataGrid();
         }
         private void FillDataGrid()
         {
