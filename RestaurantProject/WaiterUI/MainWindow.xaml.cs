@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -21,34 +25,47 @@ namespace WaiterUI
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
+
+
         public MainWindow()
         {
-        
+
         }
+
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = "datasource=127.0.0.1;port=3306;username=root;password=;";
+
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Server=tcp:mihoaka.database.windows.net,1433;Initial Catalog=Restaurant;Persist Security Info=False;User ID=sqladmin;Password=Mihoaka0215;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
 
             Int32 verify;
-            string query1 = "Select count(*) from Login where Username='" + Username.Text + "' and Password='" + Password.Text + "' ";
-            MySqlCommand cmd1 = new MySqlCommand(query1, con);
+            string query1 = "Select * from Employee where EmpId='" + txtId.Text + "' and Password='" + txtPass.Text + "' ";
+            SqlCommand cmd1 = new SqlCommand(query1, con);
             con.Open();
             verify = Convert.ToInt32(cmd1.ExecuteScalar());
             con.Close();
-
             if (verify > 0)
             {
-                new FormMainMenu().Show();
-                this.Hide();
+                MainMenu menuWin = new MainMenu();
+                menuWin.Show();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Username or Password is Incorrect")
+                MessageBox.Show("Incorrect pasword or Id");
             }
-
-
-
         }
+    }
 }
+
+
+
+
+
+
+
+

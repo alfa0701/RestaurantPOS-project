@@ -4,17 +4,26 @@
 winexe
 C#
 .cs
-D:\Project\DatabaseConnection\DatabaseConnection\obj\Debug\
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\
 DatabaseConnection
 none
 false
 DEBUG;TRACE
-D:\Project\DatabaseConnection\DatabaseConnection\App.xaml
-3819856292
+<<<<<<< HEAD
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\App.xaml
+5-297099534
 
-7-1036429108
-1474773875
-EmpList.xaml;MainWindow.xaml;MenuWindow.xaml;
+9-545096545
+14-1981671709
+ChooseTable.xaml;EmpList.xaml;MainWindow.xaml;MenuWindow.xaml;OrderWindow.xaml;
+=======
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\App.xaml
+6-483646267
 
-True
+10332499832
+14875367648
+ChooseTable.xaml;EmpList.xaml;MainWindow.xaml;MenuWindow.xaml;OrderWindow.xaml;Report.xaml;
+>>>>>>> 6781e98c7cc3682a3cdbdb014f3a1b051c99844d
+
+False
 

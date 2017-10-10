@@ -1,0 +1,14 @@
+﻿<Window x:Class="ManagerPOS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManagerPOS"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button Content="Log in" HorizontalAlignment="Left" Margin="175,166,0,0" VerticalAlignment="Top" Width="85" Height="37" Click="Button_Click"/>
+        <PasswordBox Name="pswd" HorizontalAlignment="Left" Margin="151,118,0,0" VerticalAlignment="Top" Height="24" Width="131"/>
+
+    </Grid>
+</Window>

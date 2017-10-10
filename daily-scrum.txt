@@ -26,3 +26,38 @@ Miho 2017/10/05
 2.Get log in page and add employee page work.make a link menu item info to button in orderpage
 3.I have to search about  linking menu item info to button in orderpage
 
+<<<<<<< HEAD
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam 2017/10/06
+1-I modified database definition, I created Order, Menu, Category, Tables for our database, I did waiter log in.
+2-I'going to finish keyboard on screen and I try to solve connection to database that sometimes occurs.
+3- I have to search more to implement keyboard, Ask of teacher to implement the simple one.
+=======
+Miho 2017/10/05
+1.Added image into background of log in page. order page is not done at all. 
+2. create all tables we need and insert some record to each table to test. make some view, procedures to make order page work.
+3. Help me, Gregory!!!!!
+
+>>>>>>> 2336797c2fb6e2b6a7c1184530d0e407ab992244
+
+Azam 2017/10/08
+1.I modified Log in page for Waiter,I was working on keyboard on click for log in page,but it has still error.
+2.I'm going to work on tables oage also inish key board screen.
+3.I need help modify keyboard code.
+
+Miho 2017/10/08
+1.EmployeeList window is done. I changed order window design to include table choice and guest number.
+ I implemented adding ordered items into list.  delete function is not implemented yet.
+2. I will start validation of property of each class and searching about printing.
+3.I need help to get value from previous window.
+
+.>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam  2017/10/09
+1.Tabechoze is done,I created Print window.I'm working on Printing for Print window.
+2.I'll search about defrences between FastReport and CrystalReport!
+3.I need help to load value from Orderdetail to Printing Bill.
+
+
+
+
+

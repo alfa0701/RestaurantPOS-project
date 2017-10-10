@@ -23,32 +23,131 @@ namespace SharedLibrary
         public List<Employee> GetAllEmployees()
         {
             List<Employee> result = new List<Employee>();
-            SqlCommand selectCommand = new SqlCommand("SELECT * FROM People ORDER BY Id", conn);
+            SqlCommand selectCommand = new SqlCommand("SELECT * FROM Employee ORDER BY EmpId", conn);
             using (SqlDataReader reader = selectCommand.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    int xId = (int)reader["Id"];
-                    string xName = (string)reader["Name"];
-                    int xAge = (int)reader["Age"];
-                    double xHeight = (float)reader["Height"]; // float -> double
-                    Employee p = new Employee { Id = xId, Name = xName, Age = xAge, Height = xHeight };
-                    result.Add(p);
+                    int xId = (int)reader["EmpId"];
+                    string xFName = (string)reader["FirstName"];
+                    string xLName = (string)reader["LastName"];
+                    string xStreet = (string)reader["Street"];
+                    string xCity = (string)reader["City"];
+                    string xPostal = (string)reader["Postal"];
+                    string xPhone = (string)reader["Phone"];
+                    string xSIN = (string)reader["SIN"];
+                    string xPassword = (string)reader["Password"];
+
+                    Employee emp = new Employee{ EmpId = xId, FName = xFName, LName = xLName, Phone = xPhone, SIN = xSIN, Street=xStreet,City = xCity,Postal=xPostal,Password=xPassword };
+                    result.Add(emp);
                 }
             }
             return result;
         }
 
-        // NOTE add modified so that it returns ID of the record just created
         public int AddEmployee(Employee p)
         {
-            SqlCommand insertCommand = new SqlCommand("INSERT INTO People (Name, Age, Height) VALUES (@Name, @Age, @Height); SELECT SCOPE_IDENTITY();", conn);
-            insertCommand.Parameters.Add(new SqlParameter("Name", p.Name));
-            insertCommand.Parameters.Add(new SqlParameter("Age", p.Age));
-            insertCommand.Parameters.Add(new SqlParameter("Height", p.Height));
-            //insertCommand.ExecuteNonQuery();
-            int id = (int)insertCommand.ExecuteScalar(); // return ID of the record just created
-            return id;
+            int newID;
+            SqlCommand insertCommand = new SqlCommand("INSERT INTO Employee (FirstName ,LastName, Phone , SIN , Street,City ,Postal,Password ) VALUES ( @FName ,@LName, @Phone, @SIN,@Street,@City,@Postal,@Password); SELECT SCOPE_IDENTITY() as INT;", conn);
+            insertCommand.Parameters.Add(new SqlParameter("FName", p.FName));
+            insertCommand.Parameters.Add(new SqlParameter("LName", p.LName));
+            insertCommand.Parameters.Add(new SqlParameter("Phone", p.Phone));
+            insertCommand.Parameters.Add(new SqlParameter("SIN", p.SIN));
+            insertCommand.Parameters.Add(new SqlParameter("Street", p.Street));
+            insertCommand.Parameters.Add(new SqlParameter("City", p.City));
+            insertCommand.Parameters.Add(new SqlParameter("Postal", p.Postal));
+
+            insertCommand.Parameters.Add(new SqlParameter("Password", p.Password));
+
+
+
+            newID = Convert.ToInt32(insertCommand.ExecuteScalar());
+            return newID;
+
+
         }
+        public void DeleteByID(int ID)
+        {
+            SqlCommand deleteCommand = new SqlCommand("DELETE  Employee Where EmpId =@id", conn);
+            deleteCommand.Parameters.Add(new SqlParameter("id", ID));
+            deleteCommand.ExecuteNonQuery();
+        }
+
+        public void UpdateEmployee(Employee e)
+        {
+            SqlCommand updateCommand = new SqlCommand("Update Employee SET FirstName=@fname ,LastName = @lname, Phone=@phone , SIN=@sin" +
+                " , Street = @street,City=@city ,Postal = @postal,Password = @pswd Where EmpId = @empId", conn);
+            updateCommand.Parameters.Add(new SqlParameter("fname",e.FName));
+            updateCommand.Parameters.Add(new SqlParameter("lname", e.LName));
+            updateCommand.Parameters.Add(new SqlParameter("phone", e.Phone));
+            updateCommand.Parameters.Add(new SqlParameter("sin",e.SIN));
+            updateCommand.Parameters.Add(new SqlParameter("street", e.Street));
+            updateCommand.Parameters.Add(new SqlParameter("city", e.City));
+            updateCommand.Parameters.Add(new SqlParameter("postal", e.Postal));
+            updateCommand.Parameters.Add(new SqlParameter("pswd", e.Password));
+            updateCommand.Parameters.Add(new SqlParameter("empId", e.EmpId));
+            updateCommand.ExecuteNonQuery();
+        }
+
+
+        ////////////// for ChooseTable Window  //////////////////////////////////////////
+        public int AddOrder(Order o)
+        {
+            int newID;
+            SqlCommand insertCommand = new SqlCommand("INSERT INTO [Order] (TableNumber, OrderDate) VALUES (@table ,@date); SELECT SCOPE_IDENTITY() as INT;", conn);
+            insertCommand.Parameters.Add(new SqlParameter("table", o.TableNo));
+            insertCommand.Parameters.Add(new SqlParameter("date", o.OrderDate));
+           
+
+
+
+            newID = Convert.ToInt32(insertCommand.ExecuteScalar());
+            return newID;
+
+
+        }
+
+
+
+        ////////////////////////////////for OrderWindow///////////////////////////////////////////
+        public List<OrderedItem> GetAllOrderDetails(int orderId)
+        {
+            List<OrderedItem> result = new List<OrderedItem>();
+            SqlCommand selectCommand = new SqlCommand("SELECT  m.MenuName as Item,Count(od.qty) as Qty FROM [Order] as o" +
+                " INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +
+                " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId Group by m.MenuName", conn);
+            selectCommand.Parameters.Add(new SqlParameter("orderId", orderId));
+            using (SqlDataReader reader = selectCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int qty = (int)reader["Qty"];
+                    string MenuName = (string)reader["Item"];
+                   
+
+                    OrderedItem item = new OrderedItem { MenuName = MenuName,qty= qty };
+                    result.Add(item);
+                }
+            }
+            return result;
+        }
+
+
+        public void AddNewOrderDetail(OrderDetail o){
+            SqlCommand insertCommand = new SqlCommand("INSERT INTO [OrderDetail] (MenuId,Qty,OrderId) VALUES ( @MenuId, @Qty,@OrderId);", conn);
+            insertCommand.Parameters.Add(new SqlParameter("OrderId", o.OrderId));
+            insertCommand.Parameters.Add(new SqlParameter("MenuId", o.MenuId));
+            insertCommand.Parameters.Add(new SqlParameter("Qty",o.Qty));
+            insertCommand.ExecuteNonQuery();
+        }
+        ////////////////////////////////for logIn///////////////////////////////////////////
+        public string PasswordByID(int Id)
+        {
+            string pswd = "";
+            SqlCommand selectCommand = new SqlCommand ("SELECT  Password  FROM [Employee] where Empid =Id");
+            pswd = (string)selectCommand.ExecuteScalar();
+            return pswd;
+        }
+
     }
 }

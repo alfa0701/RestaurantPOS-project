@@ -8,16 +8,17 @@ namespace SharedLibrary
 {
     public class Employee
     {
-       public int Id { get; set; }
-        private string FName { get; set; }
-        private string LName { get; set; }
+       public int EmpId { get; set; }
+        public string FName { get; set; }
+        public string LName { get; set; }
+        public string Phone { get; set; }
+        public string SIN { get; set; }
 
-        private string Street { get; set; }
-        private string City { get; set; }
-        private string Postal { get; set; }
-        private string Phone { get; set; }
-        private string SIN { get; set; }
-
+        public string Street { get; set; }
+        public string City { get; set; }
+        public string Postal { get; set; }
+        public string Password { get; set; }
+   
 
     }
 }
