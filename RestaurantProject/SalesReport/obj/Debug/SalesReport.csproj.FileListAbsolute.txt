@@ -1,0 +1,5 @@
+D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport.csprojResolveAssemblyReference.cache
+D:\Project\RestaurantProject\SalesReport\obj\Debug\MainWindow.g.cs
+D:\Project\RestaurantProject\SalesReport\obj\Debug\App.g.cs
+D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport_MarkupCompile.cache
+D:\Project\RestaurantProject\SalesReport\obj\Debug\SalesReport_MarkupCompile.lref

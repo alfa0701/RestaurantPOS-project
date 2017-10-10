@@ -4,11 +4,6 @@ D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.csprojResolv
 D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
 D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.dll
 D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.pdb
-D:\Project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.dll
-D:\Project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.pdb
-D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
-D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.dll
-D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.pdb
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.dll
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.pdb
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
@@ -21,3 +16,9 @@ C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\SharedLibrary\ob
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.dll
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.pdb
+D:\Project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.dll
+D:\Project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.pdb
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.dll
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.pdb

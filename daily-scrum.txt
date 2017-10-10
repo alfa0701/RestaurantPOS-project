@@ -33,7 +33,7 @@ Azam 2017/10/06
 2-I'going to finish keyboard on screen and I try to solve connection to database that sometimes occurs.
 3- I have to search more to implement keyboard, Ask of teacher to implement the simple one.
 =======
-Miho 2017/10/05
+Miho 2017/10/06
 1.Added image into background of log in page. order page is not done at all. 
 2. create all tables we need and insert some record to each table to test. make some view, procedures to make order page work.
 3. Help me, Gregory!!!!!
@@ -57,6 +57,10 @@ Azam  2017/10/09
 2.I'll search about defrences between FastReport and CrystalReport!
 3.I need help load value from Orderdetail to Printing Bill
 
+Miho 2017/10/09
+1. I changed Datetime value to insert. delete function in order Windowis not implemented yet.I started working on report window but I cant connect to database.
+2. I will figure out how to display sql result to datagrid.
+3.I need help to diplay result to datagrid and get value from previous window.
 
 
 

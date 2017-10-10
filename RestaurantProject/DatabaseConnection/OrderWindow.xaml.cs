@@ -163,5 +163,21 @@ namespace ManagerPOS
             lstOrderItem.Items.Clear();
         }
 
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Cancel this order??", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            {
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Order is cancelled.");
+               orderde
+
+
+
+                lstOrderItem.SelectedItems
+            }
+        }
     }
 }
