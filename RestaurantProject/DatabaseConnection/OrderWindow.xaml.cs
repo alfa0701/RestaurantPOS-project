@@ -69,14 +69,18 @@ namespace ManagerPOS
 
         private void btStart_Click(object sender, RoutedEventArgs e)
         {
-            if (table < 0 || guest < 0)
+            if (cmbGuest.SelectedIndex<0|| cmbTable.SelectedIndex<0)
             {
                 MessageBox.Show("select Table and guest count");
                 return;
             }
             else
             {
-                Order o = new Order { TableNo = table, GuestCount = guest, OrderDate = DateTime.Today };
+                tbctrlMenu.Visibility = Visibility.Visible;
+                DateTime date = DateTime.Now;
+                TimeSpan time = new TimeSpan(36, 0, 0, 0);
+                DateTime combined = date.Add(time);
+                Order o = new Order { TableNo = table, GuestCount = guest, OrderDate =combined };
                 orderId = db.AddOrder(o);
                 tbctrlMenu.Visibility = Visibility.Visible;
                 ReloadOrderList();
@@ -113,5 +117,51 @@ namespace ManagerPOS
         {
             AddToList(6);
         }
+
+        private void btSteak_Click(object sender, RoutedEventArgs e)
+        {
+            AddToList(15);
+        }
+
+        private void btChicken_Click(object sender, RoutedEventArgs e)
+        {
+            AddToList(16);
+        }
+
+        private void btHum_Click(object sender, RoutedEventArgs e)
+        {
+            AddToList(17);
+        }
+
+        private void btSpagheti_Click(object sender, RoutedEventArgs e)
+        {
+            AddToList(18);
+        }
+
+        private void btPizza_Click(object sender, RoutedEventArgs e)
+        {
+            AddToList(19);
+        }
+
+        
+        private void btIce_Click(object sender, RoutedEventArgs e)
+        {
+            AddToList(20);
+        }
+
+        private void btChoco_Click(object sender, RoutedEventArgs e)
+        {
+            AddToList(21);
+        }
+
+        private void btCheese_Click(object sender, RoutedEventArgs e)
+        {
+            AddToList(22);
+        }
+        private void btOrder_Click(object sender, RoutedEventArgs e)
+        {
+            lstOrderItem.Items.Clear();
+        }
+
     }
 }

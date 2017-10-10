@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Order" Height="400" Width="600">
     <Grid>
-        <TabControl Name="tbctrlMenu"  HorizontalAlignment="Left" Height="263" Margin="208,10,0,0" VerticalAlignment="Top" Width="242">
+        <TabControl Name="tbctrlMenu"  HorizontalAlignment="Left" Height="263" Margin="208,10,0,0" VerticalAlignment="Top" Width="242" Visibility="Hidden">
 
             <TabItem Header="Drink" Margin="-2,0,-1,0">
                 <Canvas>
@@ -22,11 +22,11 @@
             </TabItem>
             <TabItem Header="Main" Margin="-2,-1,-1,1">
                 <Canvas>
-                    <Button Name="btSteak" Content="Beef Steak" Height="50" Width="50" Canvas.Left="10" Canvas.Top="10"/>
-                    <Button Name="btChicken" Content="Grilled Chicken"  Height="50" Width="50" Canvas.Left="10" Canvas.Top="80" />
-                    <Button Name="btHum" Content="Humberger" Height="50" Width="50" Canvas.Left="10" Canvas.Top="150"/>
-                    <Button Name="btSpagheti"  Content="Spaghetti" Height="50" Width="50" Canvas.Left="80" Canvas.Top="10"/>
-                    <Button Name="btPizza" Content="Pizza" Height="50" Width="50" Canvas.Left="80" Canvas.Top="80"/>
+                    <Button Name="btSteak" Content="Beef Steak" Height="50" Width="50" Canvas.Left="10" Canvas.Top="10" Click="btSteak_Click"/>
+                    <Button Name="btChicken" Content="Grilled Chicken"  Height="50" Width="50" Canvas.Left="10" Canvas.Top="80" Click="btChicken_Click" />
+                    <Button Name="btHum" Content="Humberger" Height="50" Width="50" Canvas.Left="10" Canvas.Top="150" Click="btHum_Click"/>
+                    <Button Name="btSpagheti"  Content="Spaghetti" Height="50" Width="50" Canvas.Left="80" Canvas.Top="10" Click="btSpagheti_Click"/>
+                    <Button Name="btPizza" Content="Pizza" Height="50" Width="50" Canvas.Left="80" Canvas.Top="80" Click="btPizza_Click"/>
 
                 </Canvas>
             </TabItem>
@@ -39,9 +39,9 @@
             </TabItem>
             <TabItem Header="Dessert" Height="22" VerticalAlignment="Top" Margin="-2,-2,-11,0">
                 <Canvas>
-                    <Button Name="btIce" Content="Ice cream" Height="50" Width="50" Canvas.Left="10" Canvas.Top="10"/>
-                    <Button Name="btChoco" Content="Choco cake"  Height="50" Width="50" Canvas.Left="10" Canvas.Top="80" />
-                    <Button Name="btCheese" Content="Cheese cake" Height="50" Width="50" Canvas.Left="10" Canvas.Top="150"/>
+                    <Button Name="btIce" Content="Ice cream" Height="50" Width="50" Canvas.Left="10" Canvas.Top="10" Click="btIce_Click"/>
+                    <Button Name="btChoco" Content="Choco cake"  Height="50" Width="50" Canvas.Left="10" Canvas.Top="80" Click="btChoco_Click" />
+                    <Button Name="btCheese" Content="Cheese cake" Height="50" Width="50" Canvas.Left="10" Canvas.Top="150" Click="btCheese_Click"/>
 
                 </Canvas>
             </TabItem>
@@ -87,7 +87,7 @@
             <ComboBoxItem Content="8"/>
         </ComboBox>
         <Button Name="btStart" Content="Start" HorizontalAlignment="Left" Margin="507,132,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="btStart_Click"/>
-        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Margin="65,243,0,0" VerticalAlignment="Top" Width="75" Height="45"/>
+        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Margin="65,243,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btOrder_Click"/>
 
     </Grid>
 </Window>

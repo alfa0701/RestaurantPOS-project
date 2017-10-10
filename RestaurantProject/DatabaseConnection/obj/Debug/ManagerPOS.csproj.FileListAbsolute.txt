@@ -86,3 +86,5 @@ C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.baml
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\OrderWindow.g.cs
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\OrderWindow.baml
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\Report.g.cs
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\Report.baml
