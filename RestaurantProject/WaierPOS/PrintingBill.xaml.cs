@@ -41,9 +41,9 @@ namespace WaierPOS
                 MessageBox.Show("Database error: " + ex.Message);
             }
         }
-        private void ReloadOrderList()
+        private void ReloadOrderList(int orderId)
         {
-            List<OrderedItem> list = db.GetAllOrderDetails(orderId);
+            List<OrderedItem> list = db.GetAllOrders(orderId); ;
             List1.Items.Clear();
             foreach (OrderedItem o in list)
             {
@@ -57,9 +57,9 @@ namespace WaierPOS
         {
 
             int orderId = System.Convert.ToInt32(txtId.Text);
-   
-            db.GetAllOrders(orderId);
-            ReloadOrderList();
+
+            
+            ReloadOrderList(orderId);
             isModified = true;
         }
         }

@@ -58,7 +58,7 @@ Azam  2017/10/09
 3.I need help to load value from Orderdetail to Printing Bill.
 
 
-Miho 2017/10/09
+Miho 2017/10/10
 1. I changed Datetime value to insert. delete function in order Windowis not implemented yet.I started working on report window but I cant connect to database.
 2. I will figure out how to display sql result to datagrid.
 3.I need help to diplay result to datagrid and get value from previous window.
@@ -66,11 +66,20 @@ Miho 2017/10/09
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-Azam  2017/10/10
-1.I implemented load function,delete for printing bill table.
+Azam  2017/10/11
+1.I implemented load function,delete for printing bill table. need to check.
 1.I will finishe PrintingBill implementation.
 1.I need help to Calulate for Tax and Subtotal.
 
+Miho 2017/10/11
+1.I have made modal window to go back to main menu in orderwindow and employeelist.
+2.I will implement delete order by item and make table window to see availability.
+3.need to ask teacher about
+ -Delete item from order
+ -project dependancy 
+ -Validation
+ -send value to a new window
+ -data to Datagrid
  
 
 

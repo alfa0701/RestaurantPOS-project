@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WaierPOS"
         mc:Ignorable="d"
-        Title="PrintingBill" Height="300" Width="300">
+        Title="PrintingBill" Height="400" Width="600">
     <Grid>
         <ListView Name="List1" HorizontalAlignment="Left" Height="126" Margin="6,40,0,0" VerticalAlignment="Top" Width="98">
             <ListView.View>

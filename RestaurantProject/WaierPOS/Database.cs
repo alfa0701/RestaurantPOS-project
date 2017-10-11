@@ -184,7 +184,7 @@ namespace WaierPOS
         public List<OrderedItem> GetAllOrders(int orderId)
         {
             List<OrderedItem> result = new List<OrderedItem>();
-            SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId, m.MenuName as Item, od.qty as Qty,m.Price as Price FROM [Order] as o" +
+            SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId as Id, m.MenuName as Item, od.qty as Qty,m.Price as Price FROM [Order] as o" +
                 " INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +              
                 " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId  ", conn);
             selectCommand.Parameters.Add(new SqlParameter("orderId", orderId));
@@ -195,8 +195,8 @@ namespace WaierPOS
                     int id = (int)reader["Id"];
                     int qty = (int)reader["Qty"];
                     string MenuName = (string)reader["Item"];
-                    double Price = (double)reader["Price"];
-                    OrderedItem item = new OrderedItem { OrderedItemId = id, MenuName = MenuName, qty = qty, amount=Price };
+                    decimal Price = (decimal)reader["Price"];
+                    OrderedItem item = new OrderedItem { OrderedItemId = id, MenuName = MenuName, qty = qty, price=Price };
                     result.Add(item);
                 }
             }
