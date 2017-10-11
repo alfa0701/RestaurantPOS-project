@@ -21,8 +21,8 @@ namespace WaierPOS
     /// </summary>
     public partial class PrintingBill : Window
     {
-        int orderId;
-        bool isModified = false;
+        Boolean islist1Modified = false;
+        
 
 
         Database db;
@@ -43,7 +43,7 @@ namespace WaierPOS
         }
         private void ReloadOrderList(int orderId)
         {
-            List<OrderedItem> list = db.GetAllOrders(orderId); ;
+            List<OrderedItem> list = db.GetAllOrders(orderId); 
             List1.Items.Clear();
             foreach (OrderedItem o in list)
             {
@@ -52,17 +52,32 @@ namespace WaierPOS
         }
 
 
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
             int orderId = System.Convert.ToInt32(txtId.Text);
-
+       
             
             ReloadOrderList(orderId);
-            isModified = true;
+            islist1Modified = true;
+        }
+
+        ////ADD from list1 to list2
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            int orderdetalid = System.Convert.ToInt32(txtId.Text);
+            int paymentId = db.AddNewPayment();
+            int item = (int)List1.SelectedItem;
+            db.UpdateOrderDetailsByPaymentId(orderdetalid, paymentId);
+            List<OrderedItem> list = db.GetAllOrderDetailByPaymentId(orderdetalid, paymentId);
+            List2.Items.Clear();
+            foreach (OrderedItem o in list)
+            {
+                List2.Items.Add(o);
+            }
+
         }
         }
     }
-  
+    
 

@@ -174,6 +174,13 @@ namespace SharedLibrary
             return pswd;
         }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 7db14a6742d29cf9b12b481f4c793cf69d63623b
         public void DeleteOrderDetailById(int OrderDetailId) {
             SqlCommand deleteCommand = new SqlCommand("DELETE  OrderDetail Where OrderDetailId =@id", conn);
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
@@ -204,6 +211,7 @@ namespace SharedLibrary
             }
             return result;
         }
+<<<<<<< HEAD
         ////////////////Report Window////////////////////////////////////////////////
 
         public List<OrderedItem> GetTopSales(DateTime date, int category)
@@ -234,6 +242,8 @@ namespace SharedLibrary
             }
             return result;
         }
+=======
+>>>>>>> 7db14a6742d29cf9b12b481f4c793cf69d63623b
 
     }
 }
