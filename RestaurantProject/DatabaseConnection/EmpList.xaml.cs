@@ -54,8 +54,8 @@ namespace ManagerPOS
             string SIN = txtSIN.Text;
             string phone = txtPhone.Text;
             string street = txtStreet.Text;
-            string ciry = txtCity.Text;
-            string postal = txtPostal.Text;
+            string city = txtCity.Text;
+            string postal = txtPostal.Text.ToUpper();
             string pswd = txtPassword.Text;
 
             Employee emp = new Employee();
@@ -64,7 +64,7 @@ namespace ManagerPOS
             emp.Phone = phone;
             emp.SIN = SIN;
             emp.Street = street;
-            emp.City = ciry;
+            emp.City = city;
             emp.Password = pswd;
             emp.Postal = postal;
             int newId = db.AddEmployee(emp);
@@ -94,7 +94,7 @@ namespace ManagerPOS
                 txtPhone.Text = (string)selected.Phone;
                 txtStreet.Text = (string)selected.Street;
                 txtCity.Text = (string)selected.City;
-                txtPostal.Text = (string)selected.Postal;
+                txtPostal.Text = (string)selected.Postal.ToUpper();
                 txtPassword.Text = (string)selected.Password;
                 lblID.Content = String.Format("ID : {0}", selected.EmpId);
             }
@@ -119,7 +119,7 @@ namespace ManagerPOS
             selected.Phone = txtPhone.Text;
             selected.Street = txtStreet.Text;
             selected.City = txtCity.Text;
-            selected.Postal = txtPostal.Text;
+            selected.Postal = txtPostal.Text.ToUpper();
             selected.Password = txtPassword.Text;
             db.UpdateEmployee(selected);
             ReloadEmployeeList();

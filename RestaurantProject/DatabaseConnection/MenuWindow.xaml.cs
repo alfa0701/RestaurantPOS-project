@@ -26,7 +26,7 @@ namespace ManagerPOS
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            EmpList empWin = new EmpList();
+            Report empWin = new Report();
             empWin.Show();
             this.Close();
         }

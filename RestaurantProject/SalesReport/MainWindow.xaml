@@ -5,15 +5,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesReport"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="900">
     <Grid>
-        <DataGrid Name="grdReport" HorizontalAlignment="Left" Height="193" Margin="47,88,0,0" VerticalAlignment="Top" Width="253" ItemsSource="{Binding}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding MenuName}" Width="100" Header="Item Name"/>
-                <DataGridTextColumn Binding="{Binding Qty}" Width="100" Header="Qty"/>
-           
-            </DataGrid.Columns>
-        </DataGrid>
+        <TabControl HorizontalAlignment="Left" Height="422" Margin="26,69,0,0" VerticalAlignment="Top" Width="829">
+            <TabItem Header="Top5Sale">
+                <Canvas>
+                    <DatePicker Name="dpicker" Height="27" Width="145" Canvas.Left="21" Canvas.Top="17"/>
+                    <ListView x:Name="lstMain" HorizontalAlignment="Left" Height="243" VerticalAlignment="Top" Width="153" Canvas.Left="248" Canvas.Top="122">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding MenuName}"/>
+                                <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding qty}"/>
+
+
+                            </GridView>
+                        </ListView.View>
+                        <ListView x:Name="lstOrderItem_Copy2" HorizontalAlignment="Left" Height="243" VerticalAlignment="Top" Width="153">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding MenuName}"/>
+                                    <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding qty}"/>
+
+
+                                </GridView>
+                            </ListView.View>
+
+                        </ListView>
+
+                    </ListView>
+                    <ListView x:Name="lstStarter" HorizontalAlignment="Left" Height="243" VerticalAlignment="Top" Width="153" Canvas.Left="418" Canvas.Top="122">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding MenuName}"/>
+                                <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding qty}"/>
+
+
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+                    <ListView x:Name="lstDrink" HorizontalAlignment="Left" Height="243" VerticalAlignment="Top" Width="153" Canvas.Left="90" Canvas.Top="122">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding MenuName}"/>
+                                <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding qty}"/>
+
+
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+                    <ListView x:Name="lstDessert" HorizontalAlignment="Left" Height="243" VerticalAlignment="Top" Width="153" Canvas.Left="576" Canvas.Top="122">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding MenuName}"/>
+                                <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding qty}"/>
+
+
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+                    <Label Content="Drink" Canvas.Left="90" Canvas.Top="86" Width="60"/>
+                    <Label Content="Main" Canvas.Left="248" Canvas.Top="86" Width="60"/>
+                    <Label Content="Starter" Canvas.Left="418" Canvas.Top="91" Width="60"/>
+                    <Label Content="Dessert" Canvas.Left="576" Canvas.Top="91" Width="60"/>
+
+                </Canvas>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+
+        </TabControl>
 
     </Grid>
 </Window>

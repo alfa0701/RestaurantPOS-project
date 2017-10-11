@@ -5,47 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManagerPOS"
         mc:Ignorable="d"
-        Title="EmpList" Height="400" Width="600">
+        Title="EmpList" Height="600" Width="900">
     <Grid>
-        <ListView Name="lstEmployees" Margin="22,16,350,26" SelectionChanged="lstEmployees_SelectionChanged">
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top" Height="26">
+                <ToolBar>
+                    <Button Name="btMain"  Content="Back to Main" Width="80"/>
+                    <Button  Content="New" />
+                    <Button  Content="Delete" />
+                    <Button  Content="Save" />
+                </ToolBar>
+              
+            </ToolBarTray>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+        <ListView Name="lstEmployees" Margin="22,207,53,10" SelectionChanged="lstEmployees_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=EmpId}"/>
-                    <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding Path=FName}"/>
-                    <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding Path=LName}"/>
+                    <GridViewColumn Header="Id" Width="50" DisplayMemberBinding="{Binding Path=EmpId}"/>
+                    <GridViewColumn Header="FirstName" Width="80" DisplayMemberBinding="{Binding Path=FName}"/>
+                    <GridViewColumn Header="LastName" Width="80" DisplayMemberBinding="{Binding Path=LName}"/>
+                    <GridViewColumn Header="Phone" Width="80" DisplayMemberBinding="{Binding Path=Phone}"/>
+                   
 
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox Name="txtFName" HorizontalAlignment="Left" Height="23" Margin="264,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtFName_TextChanged"/>
-        <TextBox Name="txtLName" HorizontalAlignment="Left" Height="23" Margin="436,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.167,0.826"  TextChanged="txtLName_TextChanged"/>
-        <TextBox Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="264,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  TextChanged="txtPhone_TextChanged"/>
-        <TextBox Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="436,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPassword_TextChanged"/>
-       
-        <TextBox Name="txtCity"  HorizontalAlignment="Left" Height="23" Margin="436,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtCity_TextChanged"/>
-        <TextBox Name="txtStreet" HorizontalAlignment="Left" Height="23" Margin="264,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtStreet_TextChanged"/>
-        <TextBox Name="txtPostal" HorizontalAlignment="Left" Height="23" Margin="264,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPostal_TextChanged"/>
-        <TextBox Name="txtSIN" HorizontalAlignment="Left" Height="23" Margin="436,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtSIN_TextChanged"/>
+        <Canvas Margin="46,44,225,375">
+            <TextBox Name="txtFName" HorizontalAlignment="Left" Height="23" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtFName_TextChanged"/>
+            <TextBox Name="txtLName" HorizontalAlignment="Left" Height="23" Margin="158,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.167,0.826"  TextChanged="txtLName_TextChanged"/>
+            <TextBox Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="316,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  TextChanged="txtPhone_TextChanged"/>
+            <TextBox Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="481,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPassword_TextChanged" RenderTransformOrigin="0.919,-0.824"/>
+
+            <TextBox Name="txtCity"  HorizontalAlignment="Left" Height="23" Margin="316,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtCity_TextChanged"/>
+            <TextBox Name="txtStreet" HorizontalAlignment="Left" Height="23" Margin="10,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtStreet_TextChanged" RenderTransformOrigin="-1.193,-0.87"/>
+            <TextBox Name="txtPostal" HorizontalAlignment="Left" Height="23" Margin="158,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPostal_TextChanged"/>
+            <TextBox Name="txtSIN" HorizontalAlignment="Left" Height="23" Margin="481,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtSIN_TextChanged"/>
 
 
 
-        <Label Content="FirstName" HorizontalAlignment="Left" Margin="264,16,0,0" VerticalAlignment="Top"/>
-        <Label Content="LastName" HorizontalAlignment="Left" Margin="436,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.476,3.538"/>
-        <Label Content="Phone" HorizontalAlignment="Left" Margin="264,67,0,0" VerticalAlignment="Top"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="436,67,0,0" VerticalAlignment="Top"/>
-        <Label Content="Street" HorizontalAlignment="Left" Margin="264,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,3.462"/>
-        <Label Content="City" HorizontalAlignment="Left" Margin="436,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.667,0.423"/>
-        <Label Content="PostalCode" HorizontalAlignment="Left" Margin="274,172,0,0" VerticalAlignment="Top"/>
-        <Label Content="SIN" HorizontalAlignment="Left" Margin="437,170,0,0" VerticalAlignment="Top"/>
-        
-     
-       
-        
-        <Button Content="ADD" HorizontalAlignment="Left" Margin="285,262,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="391,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1" Click="btUpdate_Click"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="481,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" Click="btDelete_Click" />
-        <Label Name="lblID" Content="ID :" HorizontalAlignment="Left" Margin="264,226,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.316,0.048" Width="120"/>
-        <Button Name="btMain" Content="Back to Main" HorizontalAlignment="Left" Margin="456,328,0,0" VerticalAlignment="Top" Width="115" Height="35" Click="btMain_Click"/>
+            <Label Content="FirstName" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.328,-0.76" Canvas.Left="10" Canvas.Top="29"/>
+            <Label Content="LastName" HorizontalAlignment="Left" Margin="158,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.476,3.538"/>
+            <Label Content="Phone" HorizontalAlignment="Left" Margin="328,29,0,0" VerticalAlignment="Top"/>
+            <Label Content="Password" HorizontalAlignment="Left" Margin="481,29,0,0" VerticalAlignment="Top"/>
+            <Label Content="Street" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,3.462"/>
+            <Label Content="City" HorizontalAlignment="Left" Margin="158,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.667,0.423"/>
+            <Label Content="PostalCode" HorizontalAlignment="Left" Margin="316,83,0,0" VerticalAlignment="Top"/>
+            <Label Content="SIN" HorizontalAlignment="Left" Margin="481,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.872,-2.518"/>
+            <Label Name="lblID" Content="ID :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.316,0.048" Width="120" Canvas.Left="10"/>
+        </Canvas>
+
+
+        <Button Content="ADD" HorizontalAlignment="Left" Margin="690,35,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click" Height="43"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="690,86,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1" Click="btUpdate_Click" Height="44"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="690,135,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" Click="btDelete_Click" Height="44" />
 
 
     </Grid>

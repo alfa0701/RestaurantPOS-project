@@ -174,10 +174,6 @@ namespace SharedLibrary
             return pswd;
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4154179d385f121b1badd912ce5f5e64630c0102
         public void DeleteOrderDetailById(int OrderDetailId) {
             SqlCommand deleteCommand = new SqlCommand("DELETE  OrderDetail Where OrderDetailId =@id", conn);
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
@@ -208,10 +204,36 @@ namespace SharedLibrary
             }
             return result;
         }
-<<<<<<< HEAD
-=======
+        ////////////////Report Window////////////////////////////////////////////////
+
+        public List<OrderedItem> GetTopSales(DateTime date, int category)
+        {
+            List<OrderedItem> result = new List<OrderedItem>();
+            SqlCommand selectCommand = new SqlCommand("SELECT m.MenuName as Item, Count(od.qty) as Qty FROM[Order] as o" +
+                "INNER Join[OrderDetail] as od on o.OrderId = od.OrderId" +
+                "INNER JOIN[Menu] as m on m.MenuId = od.MenuId" +
+                "INNER JOIN[Category] as c on c.CategoryId = m.CategoryId" +
+                "Where CategoryId = @category and CAST(o.OrderDate AS DATE) = @date" +
+                "GROUP BY m.MenuName ORDER BY qty DESC ", conn);
+            selectCommand.Parameters.Add(new SqlParameter("category", category));
+            selectCommand.Parameters.Add(new SqlParameter("date", date));
+
+            using (SqlDataReader reader = selectCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string MenuName = (string)reader["Item"];
+
+                    int qty = (int)reader["Qty"];
 
 
->>>>>>> 4154179d385f121b1badd912ce5f5e64630c0102
+
+                    OrderedItem item = new OrderedItem { MenuName = MenuName, qty = qty };
+                    result.Add(item);
+                }
+            }
+            return result;
+        }
+
     }
 }
