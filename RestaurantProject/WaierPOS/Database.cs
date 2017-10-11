@@ -180,13 +180,13 @@ namespace WaierPOS
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
             deleteCommand.ExecuteNonQuery();
         }
-        ////////////////////////////////for Printing Bill///////////////////////////////////////////
+        ////////////////////////////////for Printing Bill(list1)///////////////////////////////////////////
         public List<OrderedItem> GetAllOrders(int orderId)
         {
             List<OrderedItem> result = new List<OrderedItem>();
             SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId as Id, m.MenuName as Item, od.qty as Qty,m.Price as Price FROM [Order] as o" +
-                " INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +              
-                " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId  ", conn);
+                " INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +
+                " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId and PaymentId is null ", conn);
             selectCommand.Parameters.Add(new SqlParameter("orderId", orderId));
             using (SqlDataReader reader = selectCommand.ExecuteReader())
             {
@@ -196,11 +196,51 @@ namespace WaierPOS
                     int qty = (int)reader["Qty"];
                     string MenuName = (string)reader["Item"];
                     decimal Price = (decimal)reader["Price"];
-                    OrderedItem item = new OrderedItem { OrderedItemId = id, MenuName = MenuName, qty = qty, price=Price };
+                    OrderedItem item = new OrderedItem { OrderedItemId = id, MenuName = MenuName, qty = qty, price=Price};
                     result.Add(item);
                 }
             }
             return result;
+        }
+        ////////////////////////////////for Printing Bill(list2)///////////////////////////////////////////
+        public List<OrderedItem> GetAllOrderDetailByPaymentId(int orderId,int paymentId)
+        {
+            List<OrderedItem> result = new List<OrderedItem>();
+            SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId as Id, m.MenuName as Item, od.qty as Qty,m.Price as Price FROM [Order] as o" +
+                " INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +
+                " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId and PaymentId =paymentId ", conn);
+            selectCommand.Parameters.Add(new SqlParameter("orderId", orderId));
+            using (SqlDataReader reader = selectCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int id = (int)reader["Id"];
+                    int qty = (int)reader["Qty"];
+                    string MenuName = (string)reader["Item"];
+                    decimal Price = (decimal)reader["Price"];
+                    OrderedItem item = new OrderedItem { OrderedItemId = id, MenuName = MenuName, qty = qty, price = Price };
+                    result.Add(item);
+                }
+            }
+            return result;
+        }
+        ///////UpdateOrderDetailsByPaymentId//////////// 
+        public void UpdateOrderDetailsByPaymentId(int orderdetalid, int PaymentId)
+        {
+            SqlCommand updateCommand = new SqlCommand("Update  OrderDetail SET PaymentId =@paymentId where OrderDetailId =@orderId;", conn);
+            updateCommand.Parameters.Add(new SqlParameter("orderId", orderdetalid));
+            updateCommand.Parameters.Add(new SqlParameter("@paymentId", PaymentId));
+            updateCommand.ExecuteNonQuery();
+        }
+
+        ///////Inset nethod//////////// 
+        public int AddNewPayment()
+        {
+            SqlCommand InserteCommand = new SqlCommand("INSERT INTO Payment(IsPaid) VALUES (0) ; SELECT SCOPE_IDENTITY() as INT;", conn);
+
+            int m = Convert.ToInt32(InserteCommand.ExecuteScalar());
+            return m;
+
         }
     }
 }
