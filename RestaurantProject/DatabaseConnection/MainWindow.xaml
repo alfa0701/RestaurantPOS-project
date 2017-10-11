@@ -5,10 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManagerPOS"
         mc:Ignorable="d"
-        Title="Log in" Height="350" Width="525">
+        Title="Log in" Height="350" Width="525"
+            WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="Log in" HorizontalAlignment="Left" Margin="175,166,0,0" VerticalAlignment="Top" Width="85" Height="37" Click="Button_Click"/>
-        <PasswordBox Name="pswd" HorizontalAlignment="Left" Margin="151,118,0,0" VerticalAlignment="Top" Height="24" Width="131"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="72*"/>
+            <ColumnDefinition Width="445*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Log in" HorizontalAlignment="Left" Margin="151.658,194,0,0" VerticalAlignment="Top" Width="85" Height="37" Click="Button_Click" Grid.Column="1"/>
+        <PasswordBox Name="pswd" HorizontalAlignment="Left" Margin="126.658,135,0,0" VerticalAlignment="Top" Height="42" Width="131" Grid.Column="1"/>
+        <Label Content="Restaurant POS  Project  - Manager POS" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top" Width="399" Height="66" Grid.Column="1" FontWeight="Bold" FontFamily="Showcard Gothic" FontSize="18"/>
 
     </Grid>
 </Window>

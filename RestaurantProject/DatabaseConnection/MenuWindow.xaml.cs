@@ -26,14 +26,16 @@ namespace ManagerPOS
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            EmpList empWin = new EmpList();
+            Report empWin = new Report();
             empWin.Show();
+            this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ChooseTable tableWin = new ChooseTable();
-            tableWin.Show();
+            OrderWindow orderWin = new OrderWindow();
+            orderWin.Show();
+            this.Close();
         }
     }
 }

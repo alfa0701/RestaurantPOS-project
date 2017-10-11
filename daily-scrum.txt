@@ -29,18 +29,18 @@ Miho 2017/10/05
 <<<<<<< HEAD
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Azam 2017/10/06
-1-I did connection to Miho database, I created Order, Menu, Category, Tables for our database, I did waiter log in.
-2-I am going to finish keyboard on screen and I try to solve connection to database that sometimes occurs.
+1-I modified database definition, I created Order, Menu, Category, Tables for our database, I did waiter log in.
+2-I'going to finish keyboard on screen and I try to solve connection to database that sometimes occurs.
 3- I have to search more to implement keyboard, Ask of teacher to implement the simple one.
 =======
-Miho 2017/10/05
+Miho 2017/10/06
 1.Added image into background of log in page. order page is not done at all. 
 2. create all tables we need and insert some record to each table to test. make some view, procedures to make order page work.
 3. Help me, Gregory!!!!!
 
 >>>>>>> 2336797c2fb6e2b6a7c1184530d0e407ab992244
 
-Azam 2017/10/
+Azam 2017/10/08
 1.I modified Log in page for Waiter,I was working on keyboard on click for log in page,but it has still error.
 2.I'm going to work on tables oage also inish key board screen.
 3.I need help modify keyboard code.
@@ -50,5 +50,36 @@ Miho 2017/10/08
  I implemented adding ordered items into list.  delete function is not implemented yet.
 2. I will start validation of property of each class and searching about printing.
 3.I need help to get value from previous window.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam  2017/10/09
+1.Tabechoze is done,I created PrintBill window.I'm working on Printing for Print window.I
+2.I'll search about the defrences between FastReport and CrystalReport!
+3.I need help to load value from Orderdetail to Printing Bill.
+
+
+Miho 2017/10/10
+1. I changed Datetime value to insert. delete function in order Windowis not implemented yet.I started working on report window but I cant connect to database.
+2. I will figure out how to display sql result to datagrid.
+3.I need help to diplay result to datagrid and get value from previous window.
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Azam  2017/10/11
+1.I implemented load function,delete for printing bill table. need to check.
+1.I will finishe PrintingBill implementation.
+1.I need help to Calulate for Tax and Subtotal.
+
+Miho 2017/10/11
+1.I have made modal window to go back to main menu in orderwindow and employeelist.
+2.I will implement delete order by item and make table window to see availability.
+3.need to ask teacher about
+ -Delete item from order
+ -project dependancy 
+ -Validation
+ -send value to a new window
+ -data to Datagrid
+ 
 
 

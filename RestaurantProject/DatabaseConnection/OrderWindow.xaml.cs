@@ -24,7 +24,10 @@ namespace ManagerPOS
         int table;
         int guest;
         int orderId;
-        
+        bool isModified = false;
+        Order o;
+
+
         Database db;
         public OrderWindow()
         {
@@ -54,18 +57,10 @@ namespace ManagerPOS
             OrderDetail od = new OrderDetail { OrderId = orderId, MenuId = menuId, Qty = 1 };
             db.AddNewOrderDetail(od);
             ReloadOrderList();
+            isModified = true;
         }
 
     
-
-        private void cmbTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            table = Convert.ToInt32(((ComboBoxItem)cmbTable.SelectedItem).Content);
-        }
-        private void cmbGuest_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            guest = Convert.ToInt32(((ComboBoxItem)cmbGuest.SelectedItem).Content);
-        }
 
         private void btStart_Click(object sender, RoutedEventArgs e)
         {
@@ -76,14 +71,16 @@ namespace ManagerPOS
             }
             else
             {
+                table = Convert.ToInt32(((ComboBoxItem)cmbTable.SelectedItem).Content);
+                guest = Convert.ToInt32(((ComboBoxItem)cmbGuest.SelectedItem).Content);
                 tbctrlMenu.Visibility = Visibility.Visible;
-                DateTime date = DateTime.Now;
-                TimeSpan time = new TimeSpan(36, 0, 0, 0);
-                DateTime combined = date.Add(time);
-                Order o = new Order { TableNo = table, GuestCount = guest, OrderDate =combined };
+                DateTime date = DateTime.Now;             
+               o = new Order { TableNo = table, GuestCount = guest, OrderDate =date };
                 orderId = db.AddOrder(o);
+                o._orderId = orderId;
                 tbctrlMenu.Visibility = Visibility.Visible;
                 ReloadOrderList();
+                isModified = true;
             }
         }
 
@@ -160,7 +157,103 @@ namespace ManagerPOS
         }
         private void btOrder_Click(object sender, RoutedEventArgs e)
         {
+            // Create a PrintDialog
+            PrintDialog printDlg = new PrintDialog();
+
+            // Create a FlowDocument dynamically.
+            List<OrderedItem> list = db.GetAllOrderDetails(orderId);
+            FlowDocument doc = CreateFlowDocument(o,list);
+            doc.Name = "FlowDoc"; 
+
+            // Create IDocumentPaginatorSource from FlowDocument
+            IDocumentPaginatorSource idpSource = doc;
+
+            // Call PrintDocument method to send document to printer
+            printDlg.PrintDocument(idpSource.DocumentPaginator, "Hello WPF Printing.");
             lstOrderItem.Items.Clear();
+            cmbGuest.SelectedIndex = -1;
+            cmbTable.SelectedIndex = -1;
+            orderId = 0;
+            MainMenu menuWin = new MainMenu();
+            menuWin.Show();
+            this.Close();
+
+        }
+        private FlowDocument CreateFlowDocument(Order o,List<OrderedItem> list)
+        {
+            string line;
+           
+            // Create a FlowDocument
+            FlowDocument doc = new FlowDocument();
+
+            // Create a Section
+            Section sec = new Section();
+
+            // Create first Paragraph
+            Paragraph p1 = new Paragraph();
+            Paragraph p2 = new Paragraph();
+            string id = Convert.ToString(o._orderId);
+            string table = Convert.ToString(o.TableNo);
+            p1.Inlines.Add("OrderID:"+id+"\nTableNo:"+table);
+            foreach (OrderedItem item in list)
+            {
+                line = item.qty + " " + item.MenuName+"\n";
+                p2.Inlines.Add(line);
+            }
+          
+
+            // Add Paragraph to Section
+            sec.Blocks.Add(p1);
+            sec.Blocks.Add(p2);
+
+
+            // Add Section to FlowDocument
+            doc.Blocks.Add(sec);
+
+            return doc;
+        }
+
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Cancel this order??", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            {
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Order is cancelled.");
+                db.DeleteAllOrderDetailByOrderId(orderId);
+                db.DeleteOrderByOrderId(orderId);
+                lstOrderItem.Items.Clear();
+               
+
+
+            }
+        }
+
+        private void btMain_Click(object sender, RoutedEventArgs e)
+        {
+            if (isModified)
+            {
+                if (MessageBox.Show("Cancel this order??", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Order is cancelled.");
+                    db.DeleteAllOrderDetailByOrderId(orderId);
+                    db.DeleteOrderByOrderId(orderId);
+                    MainMenu menuWin = new MainMenu();
+                    menuWin.Show();
+                    this.Close();
+                }
+            }
+            else {
+                MainMenu menuWin = new MainMenu();
+                menuWin.Show();
+                this.Close();
+            }
         }
 
     }

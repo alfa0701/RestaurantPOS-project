@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManagerPOS"
         mc:Ignorable="d"
-        Title="Main Menu" Height="300" Width="300">
+        Title="Main Menu" Height="600" Width="900"
+            WindowStartupLocation="CenterScreen">
+
+
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="162" Margin="52,44,0,0" VerticalAlignment="Top" Width="180">
-            <Button Content="Employee" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="57" Margin="5,5,5,5" Click="Button_Click" />
-            <Button Content="Sales Report" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="57" Margin="5,5,5,5" Click="Button_Click_1"/>
-        </StackPanel>
+
+
+        <Canvas Margin="224,76,257,115">
+            <Button Content="Employee" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="89" Click="Button_Click" Canvas.Left="83" Canvas.Top="33" />
+            <Button Content="Sales Report" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="89" Click="Button_Click_1" Canvas.Left="83" Canvas.Top="165"/>
+        </Canvas>
 
     </Grid>
 </Window>

@@ -1,0 +1,28 @@
+D:\Project\DatabaseConnection\SharedLibrary\bin\Debug\SharedLibrary.dll
+D:\Project\DatabaseConnection\SharedLibrary\bin\Debug\SharedLibrary.pdb
+D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
+D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
+D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.dll
+D:\Project\DatabaseConnection\SharedLibrary\obj\Debug\SharedLibrary.pdb
+<<<<<<< HEAD
+=======
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.dll
+D:\Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.pdb
+D:\Project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.dll
+D:\Project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.pdb
+>>>>>>> ba59813861da17f69fc0956da96c75eae9c3e2cc
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.dll
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.pdb
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.dll
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.pdb
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.dll
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\SharedLibrary\bin\Debug\SharedLibrary.pdb
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.dll
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\SharedLibrary\obj\Debug\SharedLibrary.pdb
+>>>>>>> 7319ca509b2eeefd80a8ad7c554962cc57c7bba2
