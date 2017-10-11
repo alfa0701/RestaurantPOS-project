@@ -51,10 +51,10 @@ Miho 2017/10/08
 2. I will start validation of property of each class and searching about printing.
 3.I need help to get value from previous window.
 
-.>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Azam  2017/10/09
-1.Tabechoze is done,I created Print window.I'm working on Printing for Print window.
-2.I'll search about defrences between FastReport and CrystalReport!
+1.Tabechoze is done,I created PrintBill window.I'm working on Printing for Print window.I
+2.I'll search about the defrences between FastReport and CrystalReport!
 3.I need help to load value from Orderdetail to Printing Bill.
 
 
@@ -63,5 +63,14 @@ Miho 2017/10/09
 2. I will figure out how to display sql result to datagrid.
 3.I need help to diplay result to datagrid and get value from previous window.
 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Azam  2017/10/10
+1.I implemented load function,delete for printing bill table.
+1.I will finishe PrintingBill implementation.
+1.I need help to Calulate for Tax and Subtotal.
+
+ 
 
 
