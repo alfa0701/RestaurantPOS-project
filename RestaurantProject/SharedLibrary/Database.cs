@@ -174,13 +174,7 @@ namespace SharedLibrary
             return pswd;
         }
 
-<<<<<<< HEAD
-=======
 
-
-
-
->>>>>>> 7db14a6742d29cf9b12b481f4c793cf69d63623b
         public void DeleteOrderDetailById(int OrderDetailId) {
             SqlCommand deleteCommand = new SqlCommand("DELETE  OrderDetail Where OrderDetailId =@id", conn);
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
@@ -211,19 +205,19 @@ namespace SharedLibrary
             }
             return result;
         }
-<<<<<<< HEAD
+
         ////////////////Report Window////////////////////////////////////////////////
 
-        public List<OrderedItem> GetTopSales(DateTime date, int category)
+        public List<OrderedItem> GetTopSales(string date, int category)
         {
             List<OrderedItem> result = new List<OrderedItem>();
-            SqlCommand selectCommand = new SqlCommand("SELECT m.MenuName as Item, Count(od.qty) as Qty FROM[Order] as o" +
-                "INNER Join[OrderDetail] as od on o.OrderId = od.OrderId" +
-                "INNER JOIN[Menu] as m on m.MenuId = od.MenuId" +
-                "INNER JOIN[Category] as c on c.CategoryId = m.CategoryId" +
-                "Where CategoryId = @category and CAST(o.OrderDate AS DATE) = @date" +
+            SqlCommand selectCommand = new SqlCommand("SELECT m.MenuName as Item, Count(od.qty) as Qty FROM[Order] " +
+                "INNER JOIN[OrderDetail] as od on [Order].OrderId = od.OrderId " +
+                "INNER JOIN[Menu] as m on m.MenuId = od.MenuId " +
+                "INNER JOIN[Category] as c on c.CategoryId = m.CategoryId " +
+                "WHERE CAST([Order].OrderDate AS DATE) = @date and c.CategoryId = @category " +
                 "GROUP BY m.MenuName ORDER BY qty DESC ", conn);
-            selectCommand.Parameters.Add(new SqlParameter("category", category));
+           selectCommand.Parameters.Add(new SqlParameter("category", category));
             selectCommand.Parameters.Add(new SqlParameter("date", date));
 
             using (SqlDataReader reader = selectCommand.ExecuteReader())
@@ -242,8 +236,7 @@ namespace SharedLibrary
             }
             return result;
         }
-=======
->>>>>>> 7db14a6742d29cf9b12b481f4c793cf69d63623b
+
 
     }
 }

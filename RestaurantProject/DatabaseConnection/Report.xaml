@@ -8,9 +8,9 @@
          Title="MainWindow" Height="600" Width="900">
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="422" Margin="26,69,0,0" VerticalAlignment="Top" Width="829">
-            <TabItem Header="Top5 Sale">
+            <TabItem Header="Top5 Sale" Width="100" Height="40">
                 <Canvas>
-                    <DatePicker Name="dpicker" Height="27" Width="145" Canvas.Left="21" Canvas.Top="17"/>
+                    <DatePicker Name="dpicker" Height="27" Width="145" Canvas.Left="21" Canvas.Top="17" SelectedDateChanged="dpicker_SelectedDateChanged"/>
                     <ListView x:Name="lstMain" HorizontalAlignment="Left" Height="243" VerticalAlignment="Top" Width="153" Canvas.Left="248" Canvas.Top="122">
                         <ListView.View>
                             <GridView>
@@ -73,9 +73,10 @@
 
                 </Canvas>
             </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Sales" Width="100" Height="40">
+                <Canvas Height="100" Width="200"/>
             </TabItem>
+            
 
         </TabControl>
 
