@@ -54,11 +54,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Database.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="MenuItem.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderDetail.cs" />
     <Compile Include="PrintingBill.xaml.cs">
       <DependentUpon>PrintingBill.xaml</DependentUpon>
     </Compile>
@@ -118,6 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj">
+      <Project>{9178ed1a-daa5-40f3-a357-b3b1d270f181}</Project>
+      <Name>SharedLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,7 +15,7 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding MenuName}"/>
-                                <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding qty}"/>
+                                <GridViewColumn Header="Qty" Width="50" DisplayMemberBinding="{Binding Qty}"/>
 
 
                             </GridView>
@@ -24,7 +24,7 @@
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding MenuName}"/>
-                                    <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding qty}"/>
+                                    <GridViewColumn Header="Qty" Width="50" DisplayMemberBinding="{Binding Qty}"/>
 
 
                                 </GridView>
@@ -37,7 +37,7 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding MenuName}"/>
-                                <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding qty}"/>
+                                <GridViewColumn Header="Qty" Width="50" DisplayMemberBinding="{Binding Qty}"/>
 
 
                             </GridView>
@@ -48,7 +48,7 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding MenuName}"/>
-                                <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding qty}"/>
+                                <GridViewColumn Header="Qty" Width="50" DisplayMemberBinding="{Binding Qty}"/>
 
 
                             </GridView>
@@ -59,7 +59,7 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding MenuName}"/>
-                                <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding qty}"/>
+                                <GridViewColumn Header="Qty" Width="50" DisplayMemberBinding="{Binding Qty}"/>
 
 
                             </GridView>

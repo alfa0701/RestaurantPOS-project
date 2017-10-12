@@ -46,9 +46,10 @@ namespace ManagerPOS
     private void ReloadSalesList(ListView lv,string date,int category)
         {
             lv.Items.Clear();
-            List<OrderedItem> list = db.GetTopSales(date, category);
+            List<OrderDetail> list = db.GetTopSales(date, category);
             
-            foreach (OrderedItem item in list)
+            
+            foreach (OrderDetail item in list)
             {
                 lv.Items.Add(item);
             }

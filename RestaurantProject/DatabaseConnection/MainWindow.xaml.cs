@@ -16,12 +16,14 @@ using System.Windows.Shapes;
 
 namespace ManagerPOS
 {
+    
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         Database db;
+        public static string TEST = "test";
 
         public static string password = "admin";
         public MainWindow()
