@@ -52,7 +52,7 @@ Miho 2017/10/08
 3.I need help to get value from previous window.
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-Azam  2017/10/09
+Azam  2017/10/10
 1.Tabechoze is done,I created PrintBill window.I'm working on Printing for Print window.I
 2.I'll search about the defrences between FastReport and CrystalReport!
 3.I need help to load value from Orderdetail to Printing Bill.
@@ -80,6 +80,16 @@ Miho 2017/10/11
  -Validation
  -send value to a new window
  -data to Datagrid
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Azam 2017/10/12
+1.The load data to PrintingBill done,Add button done but it has still errr(not working)
+
+2.I will to do subtotal,and printing.
+3.I will ask for spilit Bill.
+
+
  
 
 
