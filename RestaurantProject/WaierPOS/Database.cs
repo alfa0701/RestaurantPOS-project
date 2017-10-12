@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WaierPOS
 {
-     public class Database
+    public class Database
     {
         private string CONN_STRING = @"Server=tcp:mihoaka.database.windows.net,1433;Initial Catalog=Restaurant;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         private SqlConnection conn;
@@ -38,7 +38,7 @@ namespace WaierPOS
                     string xSIN = (string)reader["SIN"];
                     string xPassword = (string)reader["Password"];
 
-                    Employee emp = new Employee{ EmpId = xId, FName = xFName, LName = xLName, Phone = xPhone, SIN = xSIN, Street=xStreet,City = xCity,Postal=xPostal,Password=xPassword };
+                    Employee emp = new Employee { EmpId = xId, FName = xFName, LName = xLName, Phone = xPhone, SIN = xSIN, Street = xStreet, City = xCity, Postal = xPostal, Password = xPassword };
                     result.Add(emp);
                 }
             }
@@ -77,10 +77,10 @@ namespace WaierPOS
         {
             SqlCommand updateCommand = new SqlCommand("Update Employee SET FirstName=@fname ,LastName = @lname, Phone=@phone , SIN=@sin" +
                 " , Street = @street,City=@city ,Postal = @postal,Password = @pswd Where EmpId = @empId", conn);
-            updateCommand.Parameters.Add(new SqlParameter("fname",e.FName));
+            updateCommand.Parameters.Add(new SqlParameter("fname", e.FName));
             updateCommand.Parameters.Add(new SqlParameter("lname", e.LName));
             updateCommand.Parameters.Add(new SqlParameter("phone", e.Phone));
-            updateCommand.Parameters.Add(new SqlParameter("sin",e.SIN));
+            updateCommand.Parameters.Add(new SqlParameter("sin", e.SIN));
             updateCommand.Parameters.Add(new SqlParameter("street", e.Street));
             updateCommand.Parameters.Add(new SqlParameter("city", e.City));
             updateCommand.Parameters.Add(new SqlParameter("postal", e.Postal));
@@ -119,14 +119,14 @@ namespace WaierPOS
             using (SqlDataReader reader = selectCommand.ExecuteReader())
             {
                 while (reader.Read())
-                {                  
+                {
                     string MenuName = (string)reader["Item"];
 
                     int qty = (int)reader["Qty"];
-             
 
 
-                    OrderedItem item = new OrderedItem {MenuName = MenuName,qty= qty };
+
+                    OrderedItem item = new OrderedItem { MenuName = MenuName, qty = qty };
                     result.Add(item);
                 }
             }
@@ -135,11 +135,12 @@ namespace WaierPOS
 
 
 
-        public void AddNewOrderDetail(OrderDetail o){
+        public void AddNewOrderDetail(OrderDetail o)
+        {
             SqlCommand insertCommand = new SqlCommand("INSERT INTO [OrderDetail] (MenuId,Qty,OrderId) VALUES ( @MenuId, @Qty,@OrderId);", conn);
             insertCommand.Parameters.Add(new SqlParameter("OrderId", o.OrderId));
             insertCommand.Parameters.Add(new SqlParameter("MenuId", o.MenuId));
-            insertCommand.Parameters.Add(new SqlParameter("Qty",o.Qty));
+            insertCommand.Parameters.Add(new SqlParameter("Qty", o.Qty));
             insertCommand.ExecuteNonQuery();
         }
 
@@ -150,7 +151,8 @@ namespace WaierPOS
             deleteCommand.ExecuteNonQuery();
         }
 
-        public void DeleteOrderDetailByOrderDetailId(int OrderDetailId) {
+        public void DeleteOrderDetailByOrderDetailId(int OrderDetailId)
+        {
 
             SqlCommand deleteCommand = new SqlCommand("DELETE  From [OrderDetail] Where OrderDetailId =@id", conn);
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
@@ -169,13 +171,14 @@ namespace WaierPOS
         public string PasswordByID(int Id)
         {
             string pswd = "";
-            SqlCommand selectCommand = new SqlCommand ("SELECT  Password  FROM [Employee] where Empid =Id");
+            SqlCommand selectCommand = new SqlCommand("SELECT  Password  FROM [Employee] where Empid =Id");
             pswd = (string)selectCommand.ExecuteScalar();
             return pswd;
         }
 
 
-        public void DeleteOrderDetailById(int OrderDetailId) {
+        public void DeleteOrderDetailById(int OrderDetailId)
+        {
             SqlCommand deleteCommand = new SqlCommand("DELETE  OrderDetail Where OrderDetailId =@id", conn);
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
             deleteCommand.ExecuteNonQuery();
@@ -196,18 +199,18 @@ namespace WaierPOS
                     int qty = (int)reader["Qty"];
                     string MenuName = (string)reader["Item"];
                     decimal Price = (decimal)reader["Price"];
-                    OrderedItem item = new OrderedItem { OrderedItemId = id, MenuName = MenuName, qty = qty, price=Price};
+                    OrderedItem item = new OrderedItem { OrderedItemId = id, MenuName = MenuName, qty = qty, price = Price };
                     result.Add(item);
                 }
             }
             return result;
         }
-<<<<<<< HEAD
 
-      
-=======
+
+
+
         ////////////////////////////////for Printing Bill(list2)///////////////////////////////////////////
-        public List<OrderedItem> GetAllOrderDetailByPaymentId(int orderId,int paymentId)
+        public List<OrderedItem> GetAllOrderDetailByPaymentId(int orderId, int paymentId)
         {
             List<OrderedItem> result = new List<OrderedItem>();
             SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId as Id, m.MenuName as Item, od.qty as Qty,m.Price as Price FROM [Order] as o" +
@@ -237,7 +240,7 @@ namespace WaierPOS
             updateCommand.ExecuteNonQuery();
         }
 
-        ///////Inset nethod//////////// 
+        ///////Inset method//////////// 
         public int AddNewPayment()
         {
             SqlCommand InserteCommand = new SqlCommand("INSERT INTO Payment(IsPaid) VALUES (0) ; SELECT SCOPE_IDENTITY() as INT;", conn);
@@ -246,6 +249,6 @@ namespace WaierPOS
             return m;
 
         }
->>>>>>> 7db14a6742d29cf9b12b481f4c793cf69d63623b
+
     }
 }

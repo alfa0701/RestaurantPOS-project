@@ -81,3 +81,5 @@ C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnecti
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\ManagerPOS.csproj.CoreCompileInputs.cache
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.exe
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.pdb
+D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.g.cs
+D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.baml

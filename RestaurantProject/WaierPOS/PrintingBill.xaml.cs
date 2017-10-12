@@ -67,7 +67,7 @@ namespace WaierPOS
         {
             int orderdetalid = System.Convert.ToInt32(txtId.Text);
             int paymentId = db.AddNewPayment();
-            int item = (int)List1.SelectedItem;
+            //int item = (int)List1.SelectedItem;
             db.UpdateOrderDetailsByPaymentId(orderdetalid, paymentId);
             List<OrderedItem> list = db.GetAllOrderDetailByPaymentId(orderdetalid, paymentId);
             List2.Items.Clear();
