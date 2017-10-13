@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,8 +24,13 @@ namespace WaierPOS
     /// </summary>
     public partial class PrintingBill : Window
     {
+<<<<<<< HEAD
        Boolean islist1Modified = false;
         
+=======
+
+
+>>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1
 
 
         Database db;
@@ -44,9 +51,14 @@ namespace WaierPOS
         }
         private void ReloadOrderList(int orderId)
         {
+<<<<<<< HEAD
             List<OrderDetail> list = db.GetAllOrders(orderId); 
+=======
+            List<OrderDetail> list = db.GetAllOrders(orderId);
+           
+>>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1
             List1.Items.Clear();
-            foreach (OrderedItem o in list)
+            foreach (OrderDetail o in list)
             {
                 List1.Items.Add(o);
             }
@@ -57,30 +69,23 @@ namespace WaierPOS
         {
 
             int orderId = System.Convert.ToInt32(txtId.Text);
-       
-            
+
             ReloadOrderList(orderId);
-            islist1Modified = true;
+
         }
 
         ////ADD from list1 to list2
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            String item = (String)List1.SelectedItem;
-            if (item == null)
-            {
-                MessageBox.Show("You must select a city First!");
-            }
-            else
-            {
-                List2.Items.Add(item);
-                islist1Modified = true;
-            }
 
-        }
+
+
+    }
 
 
     }
     }
     
+    
 
+    
