@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharedLibrary;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace WaierPOS
     /// </summary>
     public partial class MainWindow : Window
     {
+        Database db;
+
         public MainWindow()
         {
             InitializeComponent();

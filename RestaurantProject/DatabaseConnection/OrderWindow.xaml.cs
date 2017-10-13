@@ -45,9 +45,9 @@ namespace ManagerPOS
         }
         private void ReloadOrderList()
         {
-            List<OrderedItem> list = db.GetAllOrderDetails(orderId);
+            List<OrderDetail> list = db.GetAllOrderDetails(orderId);
             lstOrderItem.Items.Clear();
-            foreach (OrderedItem o in list)
+            foreach (OrderDetail o in list)
             {
                 lstOrderItem.Items.Add(o);
             }
@@ -161,7 +161,7 @@ namespace ManagerPOS
             PrintDialog printDlg = new PrintDialog();
 
             // Create a FlowDocument dynamically.
-            List<OrderedItem> list = db.GetAllOrderDetails(orderId);
+            List<OrderDetail> list = db.GetAllOrderDetails(orderId);
             FlowDocument doc = CreateFlowDocument(o,list);
             doc.Name = "FlowDoc"; 
 
@@ -179,7 +179,7 @@ namespace ManagerPOS
             this.Close();
 
         }
-        private FlowDocument CreateFlowDocument(Order o,List<OrderedItem> list)
+        private FlowDocument CreateFlowDocument(Order o,List<OrderDetail> list)
         {
             string line;
            
@@ -195,9 +195,9 @@ namespace ManagerPOS
             string id = Convert.ToString(o._orderId);
             string table = Convert.ToString(o.TableNo);
             p1.Inlines.Add("OrderID:"+id+"\nTableNo:"+table);
-            foreach (OrderedItem item in list)
+            foreach (OrderDetail item in list)
             {
-                line = item.qty + " " + item.MenuName+"\n";
+                line = item.Qty + " " + item.MenuName+"\n";
                 p2.Inlines.Add(line);
             }
           

@@ -109,24 +109,24 @@ namespace SharedLibrary
 
 
         ////////////////////////////////for OrderWindow///////////////////////////////////////////
-        public List<OrderedItem> GetAllOrderDetails(int orderId)
+        public List<OrderDetail> GetAllOrderDetails(int orderId)
         {
-            List<OrderedItem> result = new List<OrderedItem>();
-            SqlCommand selectCommand = new SqlCommand("SELECT m.MenuName as Item,Count(od.qty) as Qty" +
+            List<OrderDetail> result = new List<OrderDetail>();
+            SqlCommand selectCommand = new SqlCommand("SELECT m.MenuId,m.MenuName as Item,Count(od.qty) as Qty" +
                 " FROM [Order] as o INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +
-                " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId Group by m.MenuName ", conn);
+                " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId Group by m.MenuName,m.MenuId", conn);
             selectCommand.Parameters.Add(new SqlParameter("orderId", orderId));
             using (SqlDataReader reader = selectCommand.ExecuteReader())
             {
                 while (reader.Read())
                 {                  
                     string MenuName = (string)reader["Item"];
-
+                    int id = (int)reader["MenuId"];
                     int qty = (int)reader["Qty"];
-             
 
 
-                    OrderedItem item = new OrderedItem {MenuName = MenuName,qty= qty };
+
+                    OrderDetail item = new OrderDetail {MenuId=id, MenuName = MenuName,Qty= qty };
                     result.Add(item);
                 }
             }
@@ -180,7 +180,7 @@ namespace SharedLibrary
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
             deleteCommand.ExecuteNonQuery();
         }
-        ////////////////////////////////for Printing Bill///////////////////////////////////////////
+    ////////////////////////////////for Printing Bill///////////////////////////////////////////
         public List<OrderedItem> GetAllOrders(int orderId)
         {
             List<OrderedItem> result = new List<OrderedItem>();
@@ -206,11 +206,13 @@ namespace SharedLibrary
             return result;
         }
 
+
+
         ////////////////Report Window////////////////////////////////////////////////
 
-        public List<OrderedItem> GetTopSales(string date, int category)
+        public List<OrderDetail> GetTopSales(string date, int category)
         {
-            List<OrderedItem> result = new List<OrderedItem>();
+            List<OrderDetail> result = new List<OrderDetail>();
             SqlCommand selectCommand = new SqlCommand("SELECT m.MenuName as Item, Count(od.qty) as Qty FROM[Order] " +
                 "INNER JOIN[OrderDetail] as od on [Order].OrderId = od.OrderId " +
                 "INNER JOIN[Menu] as m on m.MenuId = od.MenuId " +
@@ -230,7 +232,7 @@ namespace SharedLibrary
 
 
 
-                    OrderedItem item = new OrderedItem { MenuName = MenuName, qty = qty };
+                    OrderDetail item = new OrderDetail { MenuName = MenuName, Qty = qty };
                     result.Add(item);
                 }
             }

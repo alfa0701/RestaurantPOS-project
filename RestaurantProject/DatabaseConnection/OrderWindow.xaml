@@ -57,7 +57,7 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding Path=MenuName}"/>
-                    <GridViewColumn Header="qty" Width="50" DisplayMemberBinding="{Binding Path=qty}"/>
+                    <GridViewColumn Header="Qty" Width="50" DisplayMemberBinding="{Binding Path=Qty}"/>
 
 
                 </GridView>
