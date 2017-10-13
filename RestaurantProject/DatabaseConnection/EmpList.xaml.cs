@@ -22,15 +22,7 @@ namespace ManagerPOS
     public partial class EmpList : Window
     {
         bool isModified = false;
-        private void ReloadEmployeeList()
-        {
-            List<Employee> list = db.GetAllEmployees();
-            lstEmployees.Items.Clear();
-            foreach (Employee e in list)
-            {
-                lstEmployees.Items.Add(e);
-            }
-        }
+      
         Database db = new Database();
         public EmpList()
         {
@@ -46,7 +38,15 @@ namespace ManagerPOS
                 MessageBox.Show("Database error: " + ex.Message);
             }
         }
-
+        private void ReloadEmployeeList()
+        {
+            List<Employee> list = db.GetAllEmployees();
+            lstEmployees.Items.Clear();
+            foreach (Employee e in list)
+            {
+                lstEmployees.Items.Add(e);
+            }
+        }
         private void btAdd_Click(object sender, RoutedEventArgs e)
         {
             string fName = txtFName.Text;

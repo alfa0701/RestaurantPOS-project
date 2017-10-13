@@ -4,11 +4,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SharedLibrary
 {
-     public class Database
+    public class Database
     {
         private string CONN_STRING = @"Server=tcp:mihoaka.database.windows.net,1433;Initial Catalog=Restaurant;Persist Security Info=False;User ID=sqladmin;Password=Mihoaka0215;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         private SqlConnection conn;
@@ -19,6 +19,20 @@ namespace SharedLibrary
             conn.ConnectionString = CONN_STRING;
             conn.Open();
         }
+
+
+        /**************Waiter Login*********************/
+        public  bool CheckLogin(int EmpId, string pswd)
+        {
+                   
+            SqlCommand selectCommand = new SqlCommand("SELECT*FROM Employee WHERE EmpId = @empId and Password=@pswd;SELECT SCOPE_IDENTITY() as INT", conn);
+            selectCommand.Parameters.Add(new SqlParameter("empId", EmpId));
+            selectCommand.Parameters.Add(new SqlParameter("pswd", pswd));
+            int result = Convert.ToInt32(selectCommand.ExecuteScalar());
+            if (result == 0)
+                return false;
+            else return true;
+        } 
 
         public List<Employee> GetAllEmployees()
         {
