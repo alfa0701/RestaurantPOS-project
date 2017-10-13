@@ -66,19 +66,21 @@ namespace WaierPOS
         ////ADD from list1 to list2
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            int orderdetalid = System.Convert.ToInt32(txtId.Text);
-            int paymentId = db.AddNewPayment();
-            //int item = (int)List1.SelectedItem;
-            db.UpdateOrderDetailsByPaymentId(orderdetalid, paymentId);
-            List<OrderedItem> list = db.GetAllOrderDetailByPaymentId(orderdetalid, paymentId);
-            List2.Items.Clear();
-            foreach (OrderedItem o in list)
+            String item = (String)List1.SelectedItem;
+            if (item == null)
             {
-                List2.Items.Add(o);
+                MessageBox.Show("You must select a city First!");
+            }
+            else
+            {
+                List2.Items.Add(item);
+                islist1Modified = true;
             }
 
         }
-        }
+
+
+    }
     }
     
 

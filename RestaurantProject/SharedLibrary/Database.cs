@@ -180,7 +180,7 @@ namespace SharedLibrary
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
             deleteCommand.ExecuteNonQuery();
         }
-     /*   ////////////////////////////////for Printing Bill///////////////////////////////////////////
+    ////////////////////////////////for Printing Bill///////////////////////////////////////////
         public List<OrderedItem> GetAllOrders(int orderId)
         {
             List<OrderedItem> result = new List<OrderedItem>();
@@ -204,7 +204,9 @@ namespace SharedLibrary
                 }
             }
             return result;
-        }*/
+        }
+
+
 
         ////////////////Report Window////////////////////////////////////////////////
 
