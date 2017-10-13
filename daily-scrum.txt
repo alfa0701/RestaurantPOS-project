@@ -81,13 +81,15 @@ Miho 2017/10/11
  -send value to a new window
  -data to Datagrid
 
+
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-Azam 2017/10/12
-1.The load data to PrintingBill done,Add button done but it has still errr(not working)
-
-2.I will to do subtotal,and printing.
+Azam 2017/10/13
+1.I created Print but no check.
+2.I will to work on printing bill.
 3.I will ask for spilit Bill.
+
+
 
 
  
