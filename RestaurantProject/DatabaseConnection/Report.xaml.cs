@@ -67,6 +67,13 @@ namespace ManagerPOS
             strDate = dpicker.ToString();
             ReloadAllLists(strDate);
         }
+
+        private void btMain_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu menuWin = new MainMenu();
+            menuWin.Show();
+            this.Close();
+        }
     }
     }
 

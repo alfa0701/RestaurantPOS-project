@@ -23,5 +23,11 @@ namespace WaierPOS
         {
             InitializeComponent();
         }
+
+        private void btOrder_Click(object sender, RoutedEventArgs e)
+        {
+            OrderWindow orderWin = new OrderWindow();
+            this.Close();
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace WaierPOS
             con.Close();
             if (verify > 0)
             {
-                PrintingBill menuWin = new PrintingBill();
+                MainMenu menuWin = new MainMenu();
                 menuWin.Show();
                 this.Close();
             }

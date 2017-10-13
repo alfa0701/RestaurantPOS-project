@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="PrintingBill" Height="400" Width="600">
     <Grid>
-        <ListView Name="List1" SelectionMode="Single" HorizontalAlignment="Left" Height="196" Margin="7,40,0,0" VerticalAlignment="Top" Width="187" SelectionChanged="List1_SelectionChanged">
+        <ListView Name="lstOrder" SelectionMode="Single" HorizontalAlignment="Left" Height="196" Margin="7,40,0,0" VerticalAlignment="Top" Width="187" SelectionChanged="List1_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item " Width="90" DisplayMemberBinding="{Binding Path=MenuName}"/>
@@ -17,7 +17,7 @@
             </ListView.View>
 
         </ListView>
-        <ListView Name="List2" HorizontalAlignment="Left" Height="195" Margin="379,42,0,0" VerticalAlignment="Top" Width="187" SelectionChanged="List2_SelectionChanged">
+        <ListView Name="lstPayment" HorizontalAlignment="Left" Height="195" Margin="379,42,0,0" VerticalAlignment="Top" Width="187" SelectionChanged="List2_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item " Width="90" DisplayMemberBinding="{Binding Path=MenuName}"/>

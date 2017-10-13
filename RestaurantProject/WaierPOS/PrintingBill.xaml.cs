@@ -22,7 +22,7 @@ namespace WaierPOS
     /// </summary>
     public partial class PrintingBill : Window
     {
-        Boolean islist1Modified = false;
+       Boolean islist1Modified = false;
         
 
 
@@ -44,7 +44,7 @@ namespace WaierPOS
         }
         private void ReloadOrderList(int orderId)
         {
-            List<OrderedItem> list = db.GetAllOrders(orderId); 
+            List<OrderDetail> list = db.GetAllOrders(orderId); 
             List1.Items.Clear();
             foreach (OrderedItem o in list)
             {

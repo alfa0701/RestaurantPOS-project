@@ -7,7 +7,11 @@
         mc:Ignorable="d"
          Title="MainWindow" Height="600" Width="900">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="422" Margin="26,69,0,0" VerticalAlignment="Top" Width="829">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="767*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="422" Margin="26,69,0,0" VerticalAlignment="Top" Width="829" Grid.ColumnSpan="2">
             <TabItem Header="Top5 Sale" Width="100" Height="40">
                 <Canvas>
                     <DatePicker Name="dpicker" Height="27" Width="145" Canvas.Left="21" Canvas.Top="17" SelectedDateChanged="dpicker_SelectedDateChanged"/>
@@ -76,9 +80,10 @@
             <TabItem Header="Sales" Width="100" Height="40">
                 <Canvas Height="100" Width="200"/>
             </TabItem>
-            
+
 
         </TabControl>
+        <Button Name="btMain" Content="Back to Main" HorizontalAlignment="Left" Margin="26,32,0,0" VerticalAlignment="Top" Width="99" Height="32" Click="btMain_Click"/>
 
     </Grid>
 </Window>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Project\RestaurantProject\DatabaseConnection\App.xaml
-7-916124515
+7-196827199
 
-15978366006
+15747643885
 15912726264
-ChooseTable.xaml;EmpList.xaml;MainWindow.xaml;MenuWindow.xaml;OrderWindow.xaml;Report.xaml;TimeClock.xaml;
+EmpList.xaml;MainWindow.xaml;MenuWindow.xaml;OrderWindow.xaml;Report.xaml;TimeClock.xaml;UpdateQty.xaml;
 
-True
+False
 

@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ManagerPOS"
         mc:Ignorable="d"
-        Title="Order" Height="400" Width="600">
+        Title="Order" Height="400" Width="600"
+         WindowStartupLocation="CenterScreen">
     <Grid>
-      
+
         <TabControl Name="tbctrlMenu"  HorizontalAlignment="Left" Height="263" Margin="208,10,0,0" VerticalAlignment="Top" Width="242" Visibility="Hidden" Grid.ColumnSpan="2">
 
             <TabItem Header="Drink" Margin="-2,0,-1,0">
@@ -53,7 +54,7 @@
             </TabItem>
 
         </TabControl>
-        <ListView Name="lstOrderItem" HorizontalAlignment="Left" Height="261" Margin="10,12,0,0" VerticalAlignment="Top" Width="173" Grid.ColumnSpan="2">
+        <ListView Name="lstOrderItem" HorizontalAlignment="Left" Height="261" Margin="10,12,0,0" VerticalAlignment="Top" Width="173" Grid.ColumnSpan="2" SelectionChanged="lstOrderItem_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding Path=MenuName}"/>
@@ -88,9 +89,10 @@
             <ComboBoxItem Content="8"/>
         </ComboBox>
         <Button Name="btStart" Content="Start" HorizontalAlignment="Left" Margin="507,132,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="btStart_Click" Grid.ColumnSpan="2"/>
-        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Margin="24,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btOrder_Click" Grid.ColumnSpan="2"/>
+        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Margin="24,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btOrder_Click" Grid.ColumnSpan="2" FontWeight="Bold"/>
         <Button Name="btCancel" Content="Cancel" HorizontalAlignment="Left" Margin="108,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btCancel_Click" Grid.ColumnSpan="2"/>
         <Button Name="btMain" Content="Main" HorizontalAlignment="Left" Margin="507,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btMain_Click"/>
+        <Button Name="btDelete" Visibility="Hidden" Content="Delete Item" HorizontalAlignment="Left" Margin="208,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btDelete_Click"/>
 
     </Grid>
 </Window>
