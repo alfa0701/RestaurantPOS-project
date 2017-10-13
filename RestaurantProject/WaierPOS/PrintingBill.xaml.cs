@@ -24,13 +24,10 @@ namespace WaierPOS
     /// </summary>
     public partial class PrintingBill : Window
     {
-<<<<<<< HEAD
-       Boolean islist1Modified = false;
-        
-=======
 
-
->>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1
+        double subtotal = 0;
+        double tax;
+        double total;
 
 
         Database db;
@@ -51,21 +48,18 @@ namespace WaierPOS
         }
         private void ReloadOrderList(int orderId)
         {
-<<<<<<< HEAD
-            List<OrderDetail> list = db.GetAllOrders(orderId); 
-=======
             List<OrderDetail> list = db.GetAllOrders(orderId);
            
->>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1
-            List1.Items.Clear();
+
+            lstOrder.Items.Clear();
             foreach (OrderDetail o in list)
             {
-                List1.Items.Add(o);
+                lstOrder.Items.Add(o);
             }
         }
 
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
 
             int orderId = System.Convert.ToInt32(txtId.Text);
@@ -78,9 +72,39 @@ namespace WaierPOS
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
 
+            OrderDetail selected =(OrderDetail) lstOrder.SelectedItem;
+            lstOrder.Items.Remove(selected);
+            lstPayment.Items.Add(selected);
+            subtotal += Convert.ToDouble(selected.Price);
+           
+            ShowTotal();
+        }
 
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+            OrderDetail selected = (OrderDetail)lstPayment.SelectedItem;
+            lstPayment.Items.Remove(selected);
+            lstOrder.Items.Add(selected);
+            subtotal -= Convert.ToDouble(selected.Price);
+            
+           
+           
+            ShowTotal();
+        }
+        public void ShowTotal()
+        {
+            tax = subtotal * 0.15;
+           total = subtotal + tax;
+            string strSubtotal = string.Format("{0:0.00}", subtotal);
+            string strTax = string.Format("{0:0.00}", tax);
+            string strTotal = string.Format("{0:0.00}", total);
 
-    }
+            txtSub.Text = Convert.ToString(strSubtotal);
+            txtTax.Text = Convert.ToString(tax);
+            txtTotal.Text = Convert.ToString(total);
+
+        }
+   
 
 
     }

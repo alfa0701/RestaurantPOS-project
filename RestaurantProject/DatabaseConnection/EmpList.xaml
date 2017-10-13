@@ -32,9 +32,9 @@
             <TextBox Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="316,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  TextChanged="txtPhone_TextChanged"/>
             <TextBox Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="481,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPassword_TextChanged" RenderTransformOrigin="0.919,-0.824"/>
 
-            <TextBox Name="txtCity"  HorizontalAlignment="Left" Height="23" Margin="316,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtCity_TextChanged"/>
+            <TextBox Name="txtPostal"  HorizontalAlignment="Left" Height="23" Margin="316,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtCity_TextChanged"/>
             <TextBox Name="txtStreet" HorizontalAlignment="Left" Height="23" Margin="10,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtStreet_TextChanged" RenderTransformOrigin="-1.193,-0.87"/>
-            <TextBox Name="txtPostal" HorizontalAlignment="Left" Height="23" Margin="158,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPostal_TextChanged"/>
+            <TextBox Name="txtCity" HorizontalAlignment="Left" Height="23" Margin="158,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPostal_TextChanged"/>
             <TextBox Name="txtSIN" HorizontalAlignment="Left" Height="23" Margin="481,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtSIN_TextChanged"/>
 
 

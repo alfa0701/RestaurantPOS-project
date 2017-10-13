@@ -47,7 +47,7 @@ namespace SharedLibrary
 
         public int AddEmployee(Employee p)
         {
-            int newID;
+          
             SqlCommand insertCommand = new SqlCommand("INSERT INTO Employee (FirstName ,LastName, Phone , SIN , Street,City ,Postal,Password ) VALUES ( @FName ,@LName, @Phone, @SIN,@Street,@City,@Postal,@Password); SELECT SCOPE_IDENTITY() as INT;", conn);
             insertCommand.Parameters.Add(new SqlParameter("FName", p.FName));
             insertCommand.Parameters.Add(new SqlParameter("LName", p.LName));
@@ -61,8 +61,8 @@ namespace SharedLibrary
 
 
 
-            newID = Convert.ToInt32(insertCommand.ExecuteScalar());
-            return newID;
+            return  Convert.ToInt32(insertCommand.ExecuteScalar()); ///get Id
+           
 
 
         }
@@ -197,13 +197,12 @@ namespace SharedLibrary
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
             deleteCommand.ExecuteNonQuery();
         }
-<<<<<<< HEAD
-  ////////////////////////////////for Printing Bill///////////////////////////////////////////
-        public List<OrderedItem> GetAllOrders(int orderId)
-=======
+
+
+
         ////////////////////////////////for Printing Bill///////////////////////////////////////////
         public List<OrderDetail> GetAllOrders(int orderId)
->>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1
+
         {
             List<OrderDetail> result = new List<OrderDetail>();
             SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId as Id, m.MenuName as Item, od.qty as Qty,m.Price as Price FROM [Order] as o" +

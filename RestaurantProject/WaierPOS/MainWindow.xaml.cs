@@ -46,8 +46,7 @@ namespace WaierPOS
             con.Close();
             if (verify > 0)
             {
-                MainMenu menuWin = new MainMenu();
-                menuWin.Show();
+            
                 this.Close();
             }
             else
@@ -56,7 +55,7 @@ namespace WaierPOS
             }
         }
 
-        
+       
     }
 }
    

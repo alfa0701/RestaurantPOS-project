@@ -82,3 +82,4 @@ C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnecti
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.g.cs
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.baml
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.g.cs
+D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.baml

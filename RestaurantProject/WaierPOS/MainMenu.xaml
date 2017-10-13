@@ -5,24 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WaierPOS"
         mc:Ignorable="d"
-        Title="MainMenu" Height="300" Width="300">
+        Title="MainMenu" Height="600" Width="600" Loaded="Window_Loaded">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Height="62" Margin="46,36,0,0" VerticalAlignment="Top" Width="108"/>
-<<<<<<< HEAD
-        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Height="62" Margin="154,36,0,0" VerticalAlignment="Top" Width="108" Click="btOrder_Click" />
-        <Button Content="IN Time" HorizontalAlignment="Left" Height="61" Margin="46,98,0,0" VerticalAlignment="Top" Width="108"/>
-        <Button Name="btntable" Content="Table" HorizontalAlignment="Left" Height="62" Margin="46,36,0,0" VerticalAlignment="Top" Width="108" />
-        <Button Content="Out Time" HorizontalAlignment="Left" Height="61" Margin="154,98,0,0" VerticalAlignment="Top" Width="108"/>
-        <Button Content="Payment " HorizontalAlignment="Left" Height="62" Margin="46,159,0,0" VerticalAlignment="Top" Width="108"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Height="62" Margin="154,159,0,0" VerticalAlignment="Top" Width="108"/>
-=======
-        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Height="62" Margin="154,36,0,0" VerticalAlignment="Top" Width="108" FontFamily="Segoe UI Black" FontSize="20" Background="#FFE8E5F0" />
-        <Button Content="IN Time" HorizontalAlignment="Left" Height="61" Margin="46,98,0,0" VerticalAlignment="Top" Width="108" FontSize="20" FontFamily="Segoe UI Black" Background="#FFE8E5F0"/>
-        <Button Name="btntable" Content="Table" HorizontalAlignment="Left" Height="62" Margin="46,36,0,0" VerticalAlignment="Top" Width="108" Background="#FFE8E5F0" FontFamily="Segoe UI Black" FontSize="20" />
-        <Button Content="Out Time" HorizontalAlignment="Left" Height="61" Margin="154,98,0,0" VerticalAlignment="Top" Width="108" FontFamily="Segoe UI Black" FontSize="20" Background="#FFE8E5F0"/>
-        <Button Content="Payment " HorizontalAlignment="Left" Height="62" Margin="46,159,0,0" VerticalAlignment="Top" Width="108" FontSize="20" FontFamily="Segoe UI Black" Background="#FFE8E5F0"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Height="62" Margin="154,159,0,0" VerticalAlignment="Top" Width="108" FontFamily="Segoe UI Black" FontSize="20" Background="#FFE8E5F0"/>
->>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1
+        <Button Content="Button" HorizontalAlignment="Left" Height="62" Margin="173,79,0,0" VerticalAlignment="Top" Width="108"/>
+        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Height="62" Margin="281,79,0,0" VerticalAlignment="Top" Width="108" Click="btOrder_Click" />
+        <Button Content="IN Time" HorizontalAlignment="Left" Height="61" Margin="173,141,0,0" VerticalAlignment="Top" Width="108"/>
+        <Button Name="btntable" Content="Table" HorizontalAlignment="Left" Height="62" Margin="173,79,0,0" VerticalAlignment="Top" Width="108" />
+        <Button Content="Out Time" HorizontalAlignment="Left" Height="61" Margin="281,141,0,0" VerticalAlignment="Top" Width="108"/>
+        <Button Content="Payment " HorizontalAlignment="Left" Height="62" Margin="173,202,0,0" VerticalAlignment="Top" Width="108" Click="Button_Click"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Height="62" Margin="281,202,0,0" VerticalAlignment="Top" Width="108"/>
+
 
 
     </Grid>
