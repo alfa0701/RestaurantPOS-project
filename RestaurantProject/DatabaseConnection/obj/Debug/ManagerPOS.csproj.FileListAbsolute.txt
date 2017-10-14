@@ -4,7 +4,6 @@ D:\Project\RestaurantProject\DatabaseConnection\bin\Debug\DatabaseConnection.pdb
 D:\Project\RestaurantProject\DatabaseConnection\bin\Debug\SharedLibrary.dll
 D:\Project\RestaurantProject\DatabaseConnection\bin\Debug\SharedLibrary.pdb
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\ManagerPOS.csprojResolveAssemblyReference.cache
-D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.g.cs
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\EmpList.g.cs
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\MainWindow.g.cs
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\MenuWindow.g.cs
@@ -13,7 +12,6 @@ D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\Report.g.cs
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\App.g.cs
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection_MarkupCompile.cache
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection_MarkupCompile.lref
-D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.baml
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\EmpList.baml
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\MainWindow.baml
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\MenuWindow.baml
@@ -81,3 +79,7 @@ C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnecti
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\ManagerPOS.csproj.CoreCompileInputs.cache
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.exe
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection.pdb
+D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.g.cs
+D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.baml
+D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.g.cs
+D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.baml

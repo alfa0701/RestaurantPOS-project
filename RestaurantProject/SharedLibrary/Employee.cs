@@ -11,17 +11,17 @@ namespace SharedLibrary
     public class Employee
     {
        public int EmpId { get; set; }
-        private string _fName;
-        private string _lName;
-        private string _phone { get; set; }
-        private string _sin { get; set; }
+        public string FName { get; set; }
+        public string LName { get; set; }
+        public string Phone { get; set; }
+        public string SIN { get; set; }
 
         public string Street { get; set; }
         public string City { get; set; }
         public string Postal { get; set; }
         public string Password { get; set; }
 
-        public string FName
+      /*  public string FName
         {
             get { return _fName; }
             set
@@ -78,7 +78,7 @@ namespace SharedLibrary
                     value = _sin;
                 }
             }
-        }
+        }*/
 
 
     }

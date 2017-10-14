@@ -7,18 +7,13 @@
         mc:Ignorable="d"
         Title="EmpList" Height="600" Width="900">
     <Grid>
-        <DockPanel>
-            <ToolBarTray DockPanel.Dock="Top" Height="26">
-                <ToolBar>
-                    <Button Name="btMain"  Content="Back to Main" Width="80"/>
-                    <Button  Content="New" />
-                    <Button  Content="Delete" />
-                    <Button  Content="Save" />
-                </ToolBar>
+        
+                   
+         
+                  
+             
               
-            </ToolBarTray>
-            <TextBox AcceptsReturn="True" />
-        </DockPanel>
+        
         <ListView Name="lstEmployees" Margin="22,207,53,10" SelectionChanged="lstEmployees_SelectionChanged">
             <ListView.View>
                 <GridView>
@@ -37,9 +32,9 @@
             <TextBox Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="316,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  TextChanged="txtPhone_TextChanged"/>
             <TextBox Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="481,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPassword_TextChanged" RenderTransformOrigin="0.919,-0.824"/>
 
-            <TextBox Name="txtCity"  HorizontalAlignment="Left" Height="23" Margin="316,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtCity_TextChanged"/>
+            <TextBox Name="txtPostal"  HorizontalAlignment="Left" Height="23" Margin="316,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtCity_TextChanged"/>
             <TextBox Name="txtStreet" HorizontalAlignment="Left" Height="23" Margin="10,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtStreet_TextChanged" RenderTransformOrigin="-1.193,-0.87"/>
-            <TextBox Name="txtPostal" HorizontalAlignment="Left" Height="23" Margin="158,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPostal_TextChanged"/>
+            <TextBox Name="txtCity" HorizontalAlignment="Left" Height="23" Margin="158,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPostal_TextChanged"/>
             <TextBox Name="txtSIN" HorizontalAlignment="Left" Height="23" Margin="481,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtSIN_TextChanged"/>
 
 
@@ -56,9 +51,9 @@
         </Canvas>
 
 
-        <Button Content="ADD" HorizontalAlignment="Left" Margin="690,35,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click" Height="43"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="690,86,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1" Click="btUpdate_Click" Height="44"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="690,135,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" Click="btDelete_Click" Height="44" />
+        <Button Name="btAdd" Content="ADD" HorizontalAlignment="Left" Margin="690,35,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click" Height="43"/>
+        <Button Name="btUpdate" Content="Update" HorizontalAlignment="Left" Margin="690,86,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1" Click="btUpdate_Click" Height="44"/>
+        <Button Name="btDelete" Content="Delete" HorizontalAlignment="Left" Margin="690,135,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" Click="btDelete_Click" Height="44" />
 
 
     </Grid>

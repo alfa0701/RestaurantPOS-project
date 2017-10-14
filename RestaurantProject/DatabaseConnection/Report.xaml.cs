@@ -46,9 +46,10 @@ namespace ManagerPOS
     private void ReloadSalesList(ListView lv,string date,int category)
         {
             lv.Items.Clear();
-            List<OrderedItem> list = db.GetTopSales(date, category);
+            List<OrderDetail> list = db.GetTopSales(date, category);
             
-            foreach (OrderedItem item in list)
+            
+            foreach (OrderDetail item in list)
             {
                 lv.Items.Add(item);
             }
@@ -65,6 +66,13 @@ namespace ManagerPOS
         {
             strDate = dpicker.ToString();
             ReloadAllLists(strDate);
+        }
+
+        private void btMain_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu menuWin = new MainMenu();
+            menuWin.Show();
+            this.Close();
         }
     }
     }

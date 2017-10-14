@@ -7,39 +7,43 @@
         mc:Ignorable="d"
         Title="PrintingBill" Height="400" Width="600">
     <Grid>
-        <ListView Name="List1" SelectionMode="Single" HorizontalAlignment="Left" Height="196" Margin="7,40,0,0" VerticalAlignment="Top" Width="187">
+
+        <ListView Name="lstOrder" SelectionMode="Single" HorizontalAlignment="Left" Height="196" Margin="7,40,0,0" VerticalAlignment="Top" Width="187">
+
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item " Width="90" DisplayMemberBinding="{Binding Path=MenuName}"/>
-                    <GridViewColumn Header="qty" Width="30" DisplayMemberBinding="{Binding Path=qty}"/>
-                    <GridViewColumn Header="Price" Width="70" DisplayMemberBinding="{Binding Path=price}"/>
+                    <GridViewColumn Header="qty" Width="30" DisplayMemberBinding="{Binding Path=Qty}"/>
+                    <GridViewColumn Header="Price" Width="70" DisplayMemberBinding="{Binding Path=Price}"/>
                 </GridView>
             </ListView.View>
 
         </ListView>
-        <ListView Name="List2" HorizontalAlignment="Left" Height="195" Margin="379,42,0,0" VerticalAlignment="Top" Width="187">
+
+
+        <ListView Name="lstPayment" HorizontalAlignment="Left" Height="195" Margin="379,42,0,0" VerticalAlignment="Top" Width="187" >
+
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item " Width="90" DisplayMemberBinding="{Binding Path=MenuName}"/>
-                    <GridViewColumn Header="qty" Width="30" DisplayMemberBinding="{Binding Path=qty}"/>
-                    <GridViewColumn Header="Price" Width="70" DisplayMemberBinding="{Binding Path=price}"/>
+                    <GridViewColumn Header="qty" Width="30" DisplayMemberBinding="{Binding Path=Qty}"/>
+                    <GridViewColumn Header="Price" Width="70" DisplayMemberBinding="{Binding Path=Price}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="OrderID :" HorizontalAlignment="Left" Height="33" Margin="3,-1,0,0" VerticalAlignment="Top" Width="73"/>
-        <TextBox Name="txtId" HorizontalAlignment="Left" Height="21" Margin="62,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64"/>
+        <Label Content="OrderID :" HorizontalAlignment="Left" Height="33" Margin="7,7,0,0" VerticalAlignment="Top" Width="73"/>
+        <TextBox Name="txtId" HorizontalAlignment="Left" Height="21" Margin="62,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
         <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Height="31" Margin="215,45,0,0" VerticalAlignment="Top" Width="116" Click="btnAdd_Click" />
-        <Button Content="Dellete" HorizontalAlignment="Left" Height="31" Margin="215,93,0,0" VerticalAlignment="Top" Width="116"/>
+        <Button Name="btDelete" Content="Dellete" HorizontalAlignment="Left" Height="31" Margin="215,93,0,0" VerticalAlignment="Top" Width="116" Click="btDelete_Click"/>
         <Button Content="Select All" HorizontalAlignment="Left" Height="31" Margin="215,150,0,0" VerticalAlignment="Top" Width="116"/>
-        <Label Content="Subtotal:" HorizontalAlignment="Left" Height="39" Margin="10,240,0,0" VerticalAlignment="Top" Width="108"/>
-        <Label Content="Tax :" HorizontalAlignment="Left" Height="39" Margin="18,277,0,0" VerticalAlignment="Top" Width="88"/>
-        <Label Content="Total :" HorizontalAlignment="Left" Height="39" Margin="18,313,0,0" VerticalAlignment="Top" Width="109"/>
-        <TextBox HorizontalAlignment="Left" Height="31" Margin="133,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
-        <TextBox HorizontalAlignment="Left" Height="31" Margin="133,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
-        <TextBox HorizontalAlignment="Left" Height="31" Margin="133,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
-        <Button Content="Print Id" HorizontalAlignment="Left" Height="31" Margin="314,276,0,0" VerticalAlignment="Top" Width="84"/>
-        <Button Name="btnEnter"  Content="" HorizontalAlignment="Left" Height="20" Margin="130,2,0,0" VerticalAlignment="Top" Width="30" Click="Button_Click_1" />
-        <Button Content="Spilit" HorizontalAlignment="Left" Height="31" Margin="441,275,0,0" VerticalAlignment="Top" Width="84"/>
+        <Label Content="Subtotal:" HorizontalAlignment="Left" Height="39" Margin="380,240,0,0" VerticalAlignment="Top" Width="108"/>
+        <Label Content="Tax :" HorizontalAlignment="Left" Height="39" Margin="388,277,0,0" VerticalAlignment="Top" Width="88"/>
+        <Label Content="Total :" HorizontalAlignment="Left" Height="39" Margin="388,313,0,0" VerticalAlignment="Top" Width="109"/>
+        <TextBox Name="txtSub" HorizontalAlignment="Left" Height="31" Margin="447,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
+        <TextBox Name="txtTax" HorizontalAlignment="Left" Height="31" Margin="447,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
+        <TextBox Name="txtTotal" HorizontalAlignment="Left" Height="31" Margin="447,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" RenderTransformOrigin="0.16,0.662"/>
+        <Button Content="Print Id" HorizontalAlignment="Left" Height="58" Margin="232,261,0,0" VerticalAlignment="Top" Width="84"/>
+        <Button Name="btnEnter"  Content="Enter" HorizontalAlignment="Left" Height="31" Margin="148,1,0,0" VerticalAlignment="Top" Width="30" Click="btnEnter_Click" />
 
     </Grid>
 </Window>

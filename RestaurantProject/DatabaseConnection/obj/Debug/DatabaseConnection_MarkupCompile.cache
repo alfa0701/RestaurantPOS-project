@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\
+D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\
 DatabaseConnection
 none
 false
 DEBUG;TRACE
-C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\App.xaml
-7-916124515
+D:\Project\RestaurantProject\DatabaseConnection\App.xaml
+7-196827199
 
-11-1842115240
-15-56080290
-ChooseTable.xaml;EmpList.xaml;MainWindow.xaml;MenuWindow.xaml;OrderWindow.xaml;Report.xaml;TimeClock.xaml;
+11-2072837361
+15912726264
+EmpList.xaml;MainWindow.xaml;MenuWindow.xaml;OrderWindow.xaml;Report.xaml;TimeClock.xaml;UpdateQty.xaml;
 
 False
 

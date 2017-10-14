@@ -22,6 +22,26 @@ namespace WaierPOS
         public MainMenu()
         {
             InitializeComponent();
+           
+
+        }
+
+        private void btOrder_Click(object sender, RoutedEventArgs e)
+        {
+            OrderWindow orderWin = new OrderWindow();
+            orderWin.ShowDialog();
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        { PrintingBill printWin = new PrintingBill();
+            printWin.ShowDialog();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            MainWindow login = new MainWindow();
+            login.ShowDialog();
         }
     }
 }

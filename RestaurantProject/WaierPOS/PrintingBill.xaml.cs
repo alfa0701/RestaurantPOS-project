@@ -1,7 +1,10 @@
-﻿using System;
+﻿using SharedLibrary;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,8 +24,10 @@ namespace WaierPOS
     /// </summary>
     public partial class PrintingBill : Window
     {
-        Boolean islist1Modified = false;
-        
+
+        double subtotal = 0;
+        double tax;
+        double total;
 
 
         Database db;
@@ -43,41 +48,68 @@ namespace WaierPOS
         }
         private void ReloadOrderList(int orderId)
         {
-            List<OrderedItem> list = db.GetAllOrders(orderId); 
-            List1.Items.Clear();
-            foreach (OrderedItem o in list)
+            List<OrderDetail> list = db.GetAllOrders(orderId);
+           
+
+            lstOrder.Items.Clear();
+            foreach (OrderDetail o in list)
             {
-                List1.Items.Add(o);
+                lstOrder.Items.Add(o);
             }
         }
 
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
 
             int orderId = System.Convert.ToInt32(txtId.Text);
-       
-            
+
             ReloadOrderList(orderId);
-            islist1Modified = true;
+
         }
 
         ////ADD from list1 to list2
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            int orderdetalid = System.Convert.ToInt32(txtId.Text);
-            int paymentId = db.AddNewPayment();
-            int item = (int)List1.SelectedItem;
-            db.UpdateOrderDetailsByPaymentId(orderdetalid, paymentId);
-            List<OrderedItem> list = db.GetAllOrderDetailByPaymentId(orderdetalid, paymentId);
-            List2.Items.Clear();
-            foreach (OrderedItem o in list)
-            {
-                List2.Items.Add(o);
-            }
+
+            OrderDetail selected =(OrderDetail) lstOrder.SelectedItem;
+            lstOrder.Items.Remove(selected);
+            lstPayment.Items.Add(selected);
+            subtotal += Convert.ToDouble(selected.Price);
+           
+            ShowTotal();
+        }
+
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+            OrderDetail selected = (OrderDetail)lstPayment.SelectedItem;
+            lstPayment.Items.Remove(selected);
+            lstOrder.Items.Add(selected);
+            subtotal -= Convert.ToDouble(selected.Price);
+            
+           
+           
+            ShowTotal();
+        }
+        public void ShowTotal()
+        {
+            tax = subtotal * 0.15;
+           total = subtotal + tax;
+            string strSubtotal = string.Format("{0:0.00}", subtotal);
+            string strTax = string.Format("{0:0.00}", tax);
+            string strTotal = string.Format("{0:0.00}", total);
+
+            txtSub.Text = Convert.ToString(strSubtotal);
+            txtTax.Text = Convert.ToString(tax);
+            txtTotal.Text = Convert.ToString(total);
 
         }
-        }
+   
+
+
+    }
     }
     
+    
 
+    

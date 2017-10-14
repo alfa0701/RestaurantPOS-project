@@ -45,17 +45,33 @@ namespace ManagerPOS
         }
         private void ReloadOrderList()
         {
-            List<OrderedItem> list = db.GetAllOrderDetails(orderId);
+            List<OrderDetail> list = db.GetAllOrderDetails(orderId);
             lstOrderItem.Items.Clear();
-            foreach (OrderedItem o in list)
+            foreach (OrderDetail o in list)
             {
                 lstOrderItem.Items.Add(o);
             }
         }
         private void AddToList(int menuId)
         {
-            OrderDetail od = new OrderDetail { OrderId = orderId, MenuId = menuId, Qty = 1 };
-            db.AddNewOrderDetail(od);
+            bool isExist = false;
+            foreach (OrderDetail item in lstOrderItem.Items)
+            {
+                if (item.MenuId == menuId)
+                {
+                    isExist = true;
+                }
+            }
+            if (isExist)
+            {
+                db.UpdateOrderDetailQtyBy1(orderId, menuId);
+            }
+            else
+            {
+                OrderDetail od = new OrderDetail { OrderId = orderId, MenuId = menuId, Qty = 1 };
+                db.AddNewOrderDetail(od);
+                             
+            }
             ReloadOrderList();
             isModified = true;
         }
@@ -161,7 +177,7 @@ namespace ManagerPOS
             PrintDialog printDlg = new PrintDialog();
 
             // Create a FlowDocument dynamically.
-            List<OrderedItem> list = db.GetAllOrderDetails(orderId);
+            List<OrderDetail> list = db.GetAllOrderDetails(orderId);
             FlowDocument doc = CreateFlowDocument(o,list);
             doc.Name = "FlowDoc"; 
 
@@ -179,7 +195,7 @@ namespace ManagerPOS
             this.Close();
 
         }
-        private FlowDocument CreateFlowDocument(Order o,List<OrderedItem> list)
+        private FlowDocument CreateFlowDocument(Order o,List<OrderDetail> list)
         {
             string line;
            
@@ -195,9 +211,9 @@ namespace ManagerPOS
             string id = Convert.ToString(o._orderId);
             string table = Convert.ToString(o.TableNo);
             p1.Inlines.Add("OrderID:"+id+"\nTableNo:"+table);
-            foreach (OrderedItem item in list)
+            foreach (OrderDetail item in list)
             {
-                line = item.qty + " " + item.MenuName+"\n";
+                line = item.Qty + " " + item.MenuName+"\n";
                 p2.Inlines.Add(line);
             }
           
@@ -225,7 +241,8 @@ namespace ManagerPOS
                 db.DeleteAllOrderDetailByOrderId(orderId);
                 db.DeleteOrderByOrderId(orderId);
                 lstOrderItem.Items.Clear();
-               
+                cmbGuest.SelectedIndex = -1;
+                cmbTable.SelectedIndex = -1;
 
 
             }
@@ -245,7 +262,7 @@ namespace ManagerPOS
                     db.DeleteAllOrderDetailByOrderId(orderId);
                     db.DeleteOrderByOrderId(orderId);
                     MainMenu menuWin = new MainMenu();
-                    menuWin.Show();
+                    menuWin.ShowDialog();
                     this.Close();
                 }
             }
@@ -256,5 +273,14 @@ namespace ManagerPOS
             }
         }
 
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lstOrderItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }
