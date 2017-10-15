@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\
+=======
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\
+>>>>>>> 3ffc2646e49faeea4bfd2a7b6a7d177fea78095a
 DatabaseConnection
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\App.xaml
 7-196827199
 
 11-2072837361
 15-1494008229
+=======
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\App.xaml
+7-196827199
+
+11-2072837361
+15-56080290
+>>>>>>> 3ffc2646e49faeea4bfd2a7b6a7d177fea78095a
 EmpList.xaml;MainWindow.xaml;MenuWindow.xaml;OrderWindow.xaml;Report.xaml;TimeClock.xaml;UpdateQty.xaml;
 
 False
