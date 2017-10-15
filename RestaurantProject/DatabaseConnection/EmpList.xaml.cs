@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,7 +23,7 @@ namespace ManagerPOS
     public partial class EmpList : Window
     {
         bool isModified = false;
-      
+
         Database db = new Database();
         public EmpList()
         {
@@ -31,7 +32,7 @@ namespace ManagerPOS
                 db = new Database();
                 InitializeComponent();
                 ReloadEmployeeList();
-            
+
             }
             catch (SqlException ex)
             {
@@ -69,8 +70,8 @@ namespace ManagerPOS
             emp.Postal = postal;
             int newId = db.AddEmployee(emp);
 
-       
-           
+
+
 
             List<Employee> empList = new List<Employee>();
             ReloadEmployeeList();
@@ -78,7 +79,7 @@ namespace ManagerPOS
 
 
         }
-       
+
 
         private void lstEmployees_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -125,16 +126,16 @@ namespace ManagerPOS
             ReloadEmployeeList();
             isModified = false;
         }
-       public void clearContent() {
+        public void clearContent() {
             txtFName.Text = "";
-        txtLName.Text =  "";
-        txtSIN.Text =  "";
-        txtPhone.Text =  "";
-        txtStreet.Text = "";
-        txtCity.Text =  "";
-        txtPostal.Text = "";
-        txtPassword.Text =  "";
-        lblID.Content ="ID : ";
+            txtLName.Text = "";
+            txtSIN.Text = "";
+            txtPhone.Text = "";
+            txtStreet.Text = "";
+            txtCity.Text = "";
+            txtPostal.Text = "";
+            txtPassword.Text = "";
+            lblID.Content = "ID : ";
         }
 
         private void btMain_Click(object sender, RoutedEventArgs e)
@@ -147,7 +148,7 @@ namespace ManagerPOS
                 }
                 else
                 {
-                 
+
                     MainMenu menuWin = new MainMenu();
                     menuWin.Show();
                     this.Close();
@@ -202,8 +203,109 @@ namespace ManagerPOS
         {
             isModified = true;
         }
+        /////////////getter and setter>>>>>>>>>>>>>>>>>>>
+        private string _firstname;
+        private string _lastname;
+        private string _phone;
+        private string _street;
+        private string _city;
+        private string _postalCode;
+        private string _sIN;
 
-    
+        public int Id { get; set; }
+        public string FirstName
+        {
+            get { return _firstname; }
+            set
+            {
+                if (value.Length < 2 || value.Length > 50)
+                {
+                    throw new ArgumentOutOfRangeException("FirstName must be between 2 and 50 characters long");
+                }
+                _firstname = value;
+            }
+        }
+        public string LastName
+        {
+            get { return _lastname; }
+            set
+            {
+                if (value.Length < 2 || value.Length > 50)
+                {
+                    throw new ArgumentOutOfRangeException("LastName must be between 2 and 50 characters long");
+                }
+                _firstname = value;
+            }
+        }
+        public string PoneNumber
+        {
+            get { return _phone; }
+            set
+            {
+                if ((Regex.Match(_phone, @"^(\+[0-9])$").Success)|| _phone.Length ==10)
+                {
+                    throw new ArgumentOutOfRangeException("Phone number must be 10 digit");
+                }
+
+                _phone = value;
+            }
+        }
+        public string Phone
+        {
+            get { return _postalCode; }
+            set
+            {
+                if (Regex.Match(_postalCode, @"^\d{5}$|^\d{5}-\d{4}$").Success)
+                {
+                    throw new ArgumentOutOfRangeException("Postal Code must be 10 digit");
+                }
+
+                _postalCode = value;
+            }
+        }
+        public string SinNumber
+        {
+            get { return _sIN; }
+            set
+            {
+                if ((Regex.Match(_sIN, @"^(\+[0-9])$").Success) || _sIN.Length == 9)
+                {
+                    throw new ArgumentOutOfRangeException("Sin number must be 9 digit");
+                }
+
+                _sIN= value;
+            }
+        }
+        public string City
+        {
+            get { return _city; }
+            set
+            {
+                if (value.Length < 2 || value.Length > 50)
+                {
+                    throw new ArgumentOutOfRangeException("Street must be between 2 and 50 characters long");
+                }
+                _city = value;
+            }
+        }
+        public string Street
+        {
+            get { return _street; }
+            set
+            {
+                if (value.Length < 2 || value.Length > 50)
+                {
+                    throw new ArgumentOutOfRangeException("Street must be between 2 and 50 characters long");
+                }
+                _street = value;
+            }
+        }
+
+
+
     }
 
 }
+
+
+    

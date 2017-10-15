@@ -56,7 +56,6 @@ C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnecti
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\bin\Debug\SharedLibrary.dll
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\bin\Debug\SharedLibrary.pdb
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\ManagerPOS.csprojResolveAssemblyReference.cache
-C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.g.cs
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\EmpList.g.cs
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\MainWindow.g.cs
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\MenuWindow.g.cs
@@ -66,7 +65,6 @@ C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnecti
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\App.g.cs
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection_MarkupCompile.cache
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection_MarkupCompile.lref
-C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.baml
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\EmpList.baml
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\MainWindow.baml
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\MenuWindow.baml
@@ -83,3 +81,5 @@ D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.g.cs
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.baml
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.g.cs
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.baml
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.g.cs
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.baml
