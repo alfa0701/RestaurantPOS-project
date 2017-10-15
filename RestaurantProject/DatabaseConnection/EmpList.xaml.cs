@@ -204,100 +204,102 @@ namespace ManagerPOS
             isModified = true;
         }
         /////////////getter and setter>>>>>>>>>>>>>>>>>>>
-        private string _firstname;
-        private string _lastname;
-        private string _phone;
-        private string _street;
-        private string _city;
-        private string _postalCode;
-        private string _sIN;
+        
+
+        private string fName;
+        private string lName;
+        private string phone;
+        private string street;
+        private string city;
+        private string postal;
+        private string SIN;
 
         public int Id { get; set; }
         public string FirstName
         {
-            get { return _firstname; }
+            get { return fName; }
             set
             {
                 if (value.Length < 2 || value.Length > 50)
                 {
                     throw new ArgumentOutOfRangeException("FirstName must be between 2 and 50 characters long");
                 }
-                _firstname = value;
+                fName = value;
             }
         }
         public string LastName
         {
-            get { return _lastname; }
+            get { return lName; }
             set
             {
                 if (value.Length < 2 || value.Length > 50)
                 {
                     throw new ArgumentOutOfRangeException("LastName must be between 2 and 50 characters long");
                 }
-                _firstname = value;
+                lName = value;
             }
         }
         public string PoneNumber
         {
-            get { return _phone; }
+            get { return phone; }
             set
             {
-                if ((Regex.Match(_phone, @"^(\+[0-9])$").Success)|| _phone.Length ==10)
+                if ((Regex.Match(phone, @"^(\+[0-9])$").Success)|| phone.Length ==10)
                 {
                     throw new ArgumentOutOfRangeException("Phone number must be 10 digit");
                 }
 
-                _phone = value;
+                phone = value;
             }
         }
         public string Phone
         {
-            get { return _postalCode; }
+            get { return postal; }
             set
             {
-                if (Regex.Match(_postalCode, @"^\d{5}$|^\d{5}-\d{4}$").Success)
+                if (Regex.Match(postal, @"^\d{5}$|^\d{5}-\d{4}$").Success)
                 {
                     throw new ArgumentOutOfRangeException("Postal Code must be 10 digit");
                 }
 
-                _postalCode = value;
+                postal = value;
             }
         }
         public string SinNumber
         {
-            get { return _sIN; }
+            get { return SIN; }
             set
             {
-                if ((Regex.Match(_sIN, @"^(\+[0-9])$").Success) || _sIN.Length == 9)
+                if ((Regex.Match(SIN, @"^(\+[0-9])$").Success) || SIN.Length == 9)
                 {
                     throw new ArgumentOutOfRangeException("Sin number must be 9 digit");
                 }
 
-                _sIN= value;
+                SIN= value;
             }
         }
         public string City
         {
-            get { return _city; }
+            get { return city; }
             set
             {
                 if (value.Length < 2 || value.Length > 50)
                 {
                     throw new ArgumentOutOfRangeException("Street must be between 2 and 50 characters long");
                 }
-                _city = value;
+                city = value;
             }
         }
         public string Street
         {
-            get { return _street; }
+            get { return street; }
             set
             {
                 if (value.Length < 2 || value.Length > 50)
                 {
                     throw new ArgumentOutOfRangeException("Street must be between 2 and 50 characters long");
                 }
-                _street = value;
+                street = value;
             }
         }
 
