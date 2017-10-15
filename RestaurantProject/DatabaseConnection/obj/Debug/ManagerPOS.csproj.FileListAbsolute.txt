@@ -29,7 +29,6 @@ C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\bin\Debug\SharedLibrary.dll
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\bin\Debug\SharedLibrary.pdb
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\ManagerPOS.csprojResolveAssemblyReference.cache
-C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.g.cs
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\EmpList.g.cs
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\MainWindow.g.cs
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\MenuWindow.g.cs
@@ -38,7 +37,6 @@ C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\App.g.cs
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection_MarkupCompile.cache
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\DatabaseConnection_MarkupCompile.lref
-C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\ChooseTable.baml
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\EmpList.baml
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\MainWindow.baml
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\MenuWindow.baml
@@ -83,3 +81,7 @@ D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.g.cs
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.baml
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.g.cs
 D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.baml
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.g.cs
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.g.cs
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\TimeClock.baml
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\UpdateQty.baml

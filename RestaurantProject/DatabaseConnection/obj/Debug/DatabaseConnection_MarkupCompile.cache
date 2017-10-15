@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Project\RestaurantProject\DatabaseConnection\obj\Debug\
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\obj\Debug\
 DatabaseConnection
 none
 false
 DEBUG;TRACE
-D:\Project\RestaurantProject\DatabaseConnection\App.xaml
+C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\DatabaseConnection\App.xaml
 7-196827199
 
 11-2072837361
-15912726264
+15-1494008229
 EmpList.xaml;MainWindow.xaml;MenuWindow.xaml;OrderWindow.xaml;Report.xaml;TimeClock.xaml;UpdateQty.xaml;
 
 False

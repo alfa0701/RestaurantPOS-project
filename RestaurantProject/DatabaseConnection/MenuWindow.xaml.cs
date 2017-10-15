@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using SharedLibrary
+using SharedLibrary;
 namespace ManagerPOS
 {
     /// <summary>
@@ -34,15 +34,15 @@ namespace ManagerPOS
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             EmpList empWin = new EmpList();
-            empWin.Show();
+            empWin.ShowDialog();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             
             Report reportWin = new Report();
-            reportWin.Show();
-            this.Close();
+            reportWin.ShowDialog();
+            
         }
 
   
