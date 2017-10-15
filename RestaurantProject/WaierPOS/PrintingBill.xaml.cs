@@ -104,8 +104,7 @@ namespace WaierPOS
             txtTotal.Text = Convert.ToString(total);
 
         }
-   
-
+        
 
     }
     }
