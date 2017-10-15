@@ -23,6 +23,7 @@ namespace ManagerPOS
     public partial class EmpList : Window
     {
         bool isModified = false;
+        int selectedIndex = -1;
 
         Database db = new Database();
         public EmpList()
@@ -58,18 +59,26 @@ namespace ManagerPOS
             string city = txtCity.Text;
             string postal = txtPostal.Text.ToUpper();
             string pswd = txtPassword.Text;
-
             Employee emp = new Employee();
-            emp.FName = fName;
-            emp.LName = lName;
-            emp.Phone = phone;
-            emp.SIN = SIN;
-            emp.Street = street;
-            emp.City = city;
-            emp.Password = pswd;
-            emp.Postal = postal;
-            int newId = db.AddEmployee(emp);
+            try
+            {              
+                emp.FName = fName;
+                emp.LName = lName;
+                emp.Phone = phone;
+                emp.SIN = SIN;
+                emp.Street = street;
+                emp.City = city;
+                emp.Password = pswd;
+                emp.Postal = postal;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Input error: " + ex.Message);
 
+            }
+
+            int newId = db.AddEmployee(emp);
+            MessageBox.Show("Added successfully", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
 
 
 
@@ -83,11 +92,14 @@ namespace ManagerPOS
 
         private void lstEmployees_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (lstEmployees.SelectedIndex < 0) {
+            if (lstEmployees.SelectedIndex < 0)
+            {
                 clearContent();
                 return;
             }
-            else { Employee selected = new Employee();
+            else
+            {
+                Employee selected = new Employee();
                 selected = (Employee)lstEmployees.SelectedItem;
                 txtFName.Text = (string)selected.FName;
                 txtLName.Text = (string)selected.LName;
@@ -102,31 +114,61 @@ namespace ManagerPOS
         }
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
-        {
-            Employee selected = new Employee();
-            selected = (Employee)lstEmployees.SelectedItem;
-            db.DeleteEmployeeByID(selected.EmpId);
-            ReloadEmployeeList();
-            isModified = false;
-        }
+        {if (selectedIndex == -1)
+            {
+                MessageBox.Show("Select an employee to delete");
 
+            }
+            else
+            {
+                if (MessageBox.Show("Delete an Employee??", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    Employee selected = new Employee();
+                    selected = (Employee)lstEmployees.SelectedItem;
+                    db.DeleteEmployeeByID(selected.EmpId);
+                    MessageBox.Show("Deleted successfully", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ReloadEmployeeList();
+                    isModified = false;
+                }
+            }
+        }
         private void btUpdate_Click(object sender, RoutedEventArgs e)
         {
-            Employee selected = new Employee();
-            selected = (Employee)lstEmployees.SelectedItem;
-            selected.FName = txtFName.Text;
-            selected.LName = txtLName.Text;
-            selected.SIN = txtSIN.Text;
-            selected.Phone = txtPhone.Text;
-            selected.Street = txtStreet.Text;
-            selected.City = txtCity.Text;
-            selected.Postal = txtPostal.Text.ToUpper();
-            selected.Password = txtPassword.Text;
-            db.UpdateEmployee(selected);
-            ReloadEmployeeList();
-            isModified = false;
+            if (selectedIndex < 0)
+            {
+                MessageBox.Show("Select an employee to update");
+            }
+            else
+            {
+                Employee selected = new Employee();
+                try
+                {
+                    selected = (Employee)lstEmployees.SelectedItem;
+                    selected.FName = txtFName.Text;
+                    selected.LName = txtLName.Text;
+                    selected.SIN = txtSIN.Text;
+                    selected.Phone = txtPhone.Text;
+                    selected.Street = txtStreet.Text;
+                    selected.City = txtCity.Text;
+                    selected.Postal = txtPostal.Text.ToUpper();
+                    selected.Password = txtPassword.Text;
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show("Input error: " + ex.Message);
+                }
+                db.UpdateEmployee(selected);
+                MessageBox.Show("Updated successfully", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+                ReloadEmployeeList();
+                isModified = false;
+            }
         }
-        public void clearContent() {
+        public void clearContent()
+        {
             txtFName.Text = "";
             txtLName.Text = "";
             txtSIN.Text = "";
@@ -148,9 +190,6 @@ namespace ManagerPOS
                 }
                 else
                 {
-
-                    MainMenu menuWin = new MainMenu();
-                    menuWin.Show();
                     this.Close();
                 }
             }
@@ -203,111 +242,9 @@ namespace ManagerPOS
         {
             isModified = true;
         }
-        /////////////getter and setter>>>>>>>>>>>>>>>>>>>
-        
-
-        private string fName;
-        private string lName;
-        private string phone;
-        private string street;
-        private string city;
-        private string postal;
-        private string SIN;
-
-        public int Id { get; set; }
-        public string FirstName
-        {
-            get { return fName; }
-            set
-            {
-                if (value.Length < 2 || value.Length > 50)
-                {
-                    throw new ArgumentOutOfRangeException("FirstName must be between 2 and 50 characters long");
-                }
-                fName = value;
-            }
-        }
-        public string LastName
-        {
-            get { return lName; }
-            set
-            {
-                if (value.Length < 2 || value.Length > 50)
-                {
-                    throw new ArgumentOutOfRangeException("LastName must be between 2 and 50 characters long");
-                }
-                lName = value;
-            }
-        }
-        public string PoneNumber
-        {
-            get { return phone; }
-            set
-            {
-                if ((Regex.Match(phone, @"^(\+[0-9])$").Success)|| phone.Length ==10)
-                {
-                    throw new ArgumentOutOfRangeException("Phone number must be 10 digit");
-                }
-
-                phone = value;
-            }
-        }
-        public string Phone
-        {
-            get { return postal; }
-            set
-            {
-                if (Regex.Match(postal, @"^\d{5}$|^\d{5}-\d{4}$").Success)
-                {
-                    throw new ArgumentOutOfRangeException("Postal Code must be 10 digit");
-                }
-
-                postal = value;
-            }
-        }
-        public string SinNumber
-        {
-            get { return SIN; }
-            set
-            {
-                if ((Regex.Match(SIN, @"^(\+[0-9])$").Success) || SIN.Length == 9)
-                {
-                    throw new ArgumentOutOfRangeException("Sin number must be 9 digit");
-                }
-
-                SIN= value;
-            }
-        }
-        public string City
-        {
-            get { return city; }
-            set
-            {
-                if (value.Length < 2 || value.Length > 50)
-                {
-                    throw new ArgumentOutOfRangeException("Street must be between 2 and 50 characters long");
-                }
-                city = value;
-            }
-        }
-        public string Street
-        {
-            get { return street; }
-            set
-            {
-                if (value.Length < 2 || value.Length > 50)
-                {
-                    throw new ArgumentOutOfRangeException("Street must be between 2 and 50 characters long");
-                }
-                street = value;
-            }
-        }
-
-
-
     }
-
 }
 
 
-    
+
+

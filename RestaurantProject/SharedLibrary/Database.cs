@@ -32,7 +32,22 @@ namespace SharedLibrary
             if (result == 0)
                 return false;
             else return true;
-        } 
+        }
+
+        public string GetPassword(int empId)
+        {
+            string pswd = "";
+            SqlCommand selectCommand = new SqlCommand("SELECT Password FROM Employee WHERE EmpId = @empId;", conn);
+            selectCommand.Parameters.Add(new SqlParameter("empId", empId));
+            using (SqlDataReader reader = selectCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    pswd = (string)reader["Password"];
+                }
+            }
+            return pswd;
+        }
 
         public List<Employee> GetAllEmployees()
         {

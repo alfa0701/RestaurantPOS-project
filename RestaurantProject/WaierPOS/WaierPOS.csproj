@@ -63,6 +63,9 @@
     <Compile Include="TableChoose.xaml.cs">
       <DependentUpon>TableChoose.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpdateQty.xaml.cs">
+      <DependentUpon>UpdateQty.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TableChoose.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateQty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

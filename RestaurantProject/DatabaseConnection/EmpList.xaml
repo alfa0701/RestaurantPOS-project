@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="EmpList" Height="600" Width="900">
     <Grid>
-        
-                   
-         
-                  
-             
-              
-        
+
+
+
+
+
+
+
         <ListView Name="lstEmployees" Margin="22,207,53,10" SelectionChanged="lstEmployees_SelectionChanged">
             <ListView.View>
                 <GridView>
@@ -21,7 +21,7 @@
                     <GridViewColumn Header="FirstName" Width="80" DisplayMemberBinding="{Binding Path=FName}"/>
                     <GridViewColumn Header="LastName" Width="80" DisplayMemberBinding="{Binding Path=LName}"/>
                     <GridViewColumn Header="Phone" Width="80" DisplayMemberBinding="{Binding Path=Phone}"/>
-                   
+
 
                 </GridView>
             </ListView.View>
@@ -54,6 +54,9 @@
         <Button Name="btAdd" Content="ADD" HorizontalAlignment="Left" Margin="690,35,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click" Height="43"/>
         <Button Name="btUpdate" Content="Update" HorizontalAlignment="Left" Margin="690,86,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1" Click="btUpdate_Click" Height="44"/>
         <Button Name="btDelete" Content="Delete" HorizontalAlignment="Left" Margin="690,135,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" Click="btDelete_Click" Height="44" />
+        <Button Name="btDiscard" Content="Discard" HorizontalAlignment="Left" Margin="784,35,0,0" VerticalAlignment="Top" Width="74" Height="43"/>
+        <Button Name="btSave" Content="Save" HorizontalAlignment="Left" Margin="784,86,0,0" VerticalAlignment="Top" Width="75" Height="44"/>
+        <Button Name="btExit" Content="Exit" HorizontalAlignment="Left" Margin="784,135,0,0" VerticalAlignment="Top" Width="75" Height="44"/>
 
 
     </Grid>

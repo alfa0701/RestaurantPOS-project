@@ -27,6 +27,7 @@ namespace WaierPOS
         int orderId;
         bool isModified = false;
         Order o;
+        string empId = Application.Current.FindResource("EmpId").ToString();
 
 
         Database db;
@@ -36,6 +37,7 @@ namespace WaierPOS
             {
                 db = new Database();
                 InitializeComponent();
+                lblEmp.Content = string.Format("EmpID:{0}", empId);
 
 
             }
@@ -269,8 +271,7 @@ namespace WaierPOS
             }
             else
             {
-                MainMenu menuWin = new MainMenu();
-                menuWin.Show();
+              
                 this.Close();
             }
         }
