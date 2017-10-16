@@ -54,8 +54,24 @@ namespace ManagerPOS
         }
         private void AddToList(int menuId)
         {
-            OrderDetail od = new OrderDetail { OrderId = orderId, MenuId = menuId, Qty = 1 };
-            db.AddNewOrderDetail(od);
+            bool isExist = false;
+            foreach (OrderDetail item in lstOrderItem.Items)
+            {
+                if (item.MenuId == menuId)
+                {
+                    isExist = true;
+                }
+            }
+            if (isExist)
+            {
+                db.UpdateOrderDetailQtyBy1(orderId, menuId);
+            }
+            else
+            {
+                OrderDetail od = new OrderDetail { OrderId = orderId, MenuId = menuId, Qty = 1 };
+                db.AddNewOrderDetail(od);
+                             
+            }
             ReloadOrderList();
             isModified = true;
         }
@@ -225,7 +241,8 @@ namespace ManagerPOS
                 db.DeleteAllOrderDetailByOrderId(orderId);
                 db.DeleteOrderByOrderId(orderId);
                 lstOrderItem.Items.Clear();
-               
+                cmbGuest.SelectedIndex = -1;
+                cmbTable.SelectedIndex = -1;
 
 
             }
@@ -245,7 +262,7 @@ namespace ManagerPOS
                     db.DeleteAllOrderDetailByOrderId(orderId);
                     db.DeleteOrderByOrderId(orderId);
                     MainMenu menuWin = new MainMenu();
-                    menuWin.Show();
+                    menuWin.ShowDialog();
                     this.Close();
                 }
             }
@@ -256,5 +273,14 @@ namespace ManagerPOS
             }
         }
 
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lstOrderItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }

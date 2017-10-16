@@ -40,5 +40,9 @@ C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaierPOS\obj\Deb
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaierPOS\obj\Debug\WaierPOS.csproj.CoreCompileInputs.cache
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaierPOS\obj\Debug\WaierPOS.exe
 C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaierPOS\obj\Debug\WaierPOS.pdb
+<<<<<<< HEAD
+D:\Project\RestaurantProject\WaierPOS\obj\Debug\OrderWindow.g.cs
+=======
 D:\Project\RestaurantProject\WaierPOS\bin\Debug\SharedLibrary.dll
 D:\Project\RestaurantProject\WaierPOS\bin\Debug\SharedLibrary.pdb
+>>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1

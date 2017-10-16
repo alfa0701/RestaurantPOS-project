@@ -112,7 +112,7 @@ namespace SharedLibrary
         public List<OrderDetail> GetAllOrderDetails(int orderId)
         {
             List<OrderDetail> result = new List<OrderDetail>();
-            SqlCommand selectCommand = new SqlCommand("SELECT m.MenuId,m.MenuName as Item,Count(od.qty) as Qty" +
+            SqlCommand selectCommand = new SqlCommand("SELECT m.MenuId,m.MenuName as Item,Sum(od.qty) as Qty" +
                 " FROM [Order] as o INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +
                 " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId Group by m.MenuName,m.MenuId", conn);
             selectCommand.Parameters.Add(new SqlParameter("orderId", orderId));
@@ -165,8 +165,25 @@ namespace SharedLibrary
             deleteCommand.ExecuteNonQuery();
         }
 
-        ////////////////////////////////for logIn///////////////////////////////////////////
-        public string PasswordByID(int Id)
+        public void UpdateOrderDetailQtyBy1(int orderId, int menuId) {
+            SqlCommand deleteCommand = new SqlCommand("Update  [OrderDetail] SET Qty = Qty+1 Where OrderId =@orderid and MenuId = @menuid", conn);
+            deleteCommand.Parameters.Add(new SqlParameter("orderid", orderId));
+            deleteCommand.Parameters.Add(new SqlParameter("menuid", menuId));
+            deleteCommand.ExecuteNonQuery();
+
+
+        }
+        public void UpdateOrderDetailQty(int orderId, int menuId, int count)
+        {
+            SqlCommand deleteCommand = new SqlCommand("Update  [OrderDetail] SET Qty = Qty-@count Where OrderId =@orderid and MenuId = @menuid", conn);
+            deleteCommand.Parameters.Add(new SqlParameter("orderid", orderId));
+            deleteCommand.Parameters.Add(new SqlParameter("menuid", menuId));
+            deleteCommand.Parameters.Add(new SqlParameter("count", count));
+            deleteCommand.ExecuteNonQuery();
+
+        }
+            ////////////////////////////////for logIn///////////////////////////////////////////
+            public string PasswordByID(int Id)
         {
             string pswd = "";
             SqlCommand selectCommand = new SqlCommand ("SELECT  Password  FROM [Employee] where Empid =Id");
@@ -180,8 +197,13 @@ namespace SharedLibrary
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
             deleteCommand.ExecuteNonQuery();
         }
+<<<<<<< HEAD
+  ////////////////////////////////for Printing Bill///////////////////////////////////////////
+        public List<OrderedItem> GetAllOrders(int orderId)
+=======
         ////////////////////////////////for Printing Bill///////////////////////////////////////////
         public List<OrderDetail> GetAllOrders(int orderId)
+>>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1
         {
             List<OrderDetail> result = new List<OrderDetail>();
             SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId as Id, m.MenuName as Item, od.qty as Qty,m.Price as Price FROM [Order] as o" +

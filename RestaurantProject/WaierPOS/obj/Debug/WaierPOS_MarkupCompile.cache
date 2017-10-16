@@ -10,11 +10,17 @@ none
 false
 DEBUG;TRACE
 D:\Project\RestaurantProject\WaierPOS\App.xaml
-4-455332227
+5-725925984
 
+<<<<<<< HEAD
+92121746052
+14-1012865155
+MainMenu.xaml;MainWindow.xaml;OrderWindow.xaml;PrintingBill.xaml;TableChoose.xaml;
+=======
 8451208694
 14-1012865155
 MainMenu.xaml;MainWindow.xaml;PrintingBill.xaml;TableChoose.xaml;
+>>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1
 
 False
 

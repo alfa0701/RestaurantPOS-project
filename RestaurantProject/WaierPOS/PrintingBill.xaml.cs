@@ -24,8 +24,13 @@ namespace WaierPOS
     /// </summary>
     public partial class PrintingBill : Window
     {
+<<<<<<< HEAD
+       Boolean islist1Modified = false;
+        
+=======
 
 
+>>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1
 
 
         Database db;
@@ -46,8 +51,12 @@ namespace WaierPOS
         }
         private void ReloadOrderList(int orderId)
         {
+<<<<<<< HEAD
+            List<OrderDetail> list = db.GetAllOrders(orderId); 
+=======
             List<OrderDetail> list = db.GetAllOrders(orderId);
            
+>>>>>>> d5ecbdf93d9db29c7c3e1e7c5f20b1495f017ab1
             List1.Items.Clear();
             foreach (OrderDetail o in list)
             {
