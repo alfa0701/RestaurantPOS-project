@@ -7,17 +7,20 @@
         mc:Ignorable="d"
         Title="MainMenu" Height="400" Width="600" Loaded="Window_Loaded"
          WindowStartupLocation="CenterScreen">
-    <Grid Background="#FFEDBFF7">
-        <Label Name="lblMessage" Content="Hello"  HorizontalAlignment="Left" Margin="170,32,0,0" VerticalAlignment="Top" Height="44" Width="262" Foreground="#FF040404" FontFamily="Sitka Display" FontSize="18"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <Label Name="lblMessage" Content="Hello"  HorizontalAlignment="Left" Margin="170,32,0,0" VerticalAlignment="Top" Height="44" Width="262" Foreground="#FF040404" FontFamily="Segoe UI Black" FontSize="24" FontWeight="Bold"/>
         <StackPanel HorizontalAlignment="Left" Height="223" Margin="153,94,0,0" VerticalAlignment="Top" Width="130">
-            <Button x:Name="btntable" Content="Table" HorizontalAlignment="Left" Height="62" Margin="5,5,5,5" VerticalAlignment="Top" Width="108" Foreground="Black" BorderBrush="#FF837A7A" Background="#FFDEDEDD" />
-            <Button x:Name="btOrder" Content="Order" HorizontalAlignment="Left" Height="62" Margin="5,5,5,5" VerticalAlignment="Top" Width="108" Click="btOrder_Click" />
-            <Button Content="Payment " HorizontalAlignment="Left" Height="62" Margin="5,5,5,5"  VerticalAlignment="Top" Width="108" Click="Button_Click"/>
+            <Button x:Name="btntable" Content="Table" HorizontalAlignment="Left" Height="62" Margin="5,5,5,5" VerticalAlignment="Top" Width="108" Foreground="Black" BorderBrush="#FF837A7A" Background="#FFDEDEDD" FontFamily="Segoe UI Black" FontSize="20" FontWeight="Bold" />
+            <Button x:Name="btOrder" Content="Order" HorizontalAlignment="Left" Height="62" Margin="5,5,5,5" VerticalAlignment="Top" Width="108" Click="btOrder_Click" FontSize="20" FontFamily="Segoe UI Black" />
+            <Button Content="Payment " HorizontalAlignment="Left" Height="62" Margin="5,5,5,5"  VerticalAlignment="Top" Width="108" Click="Button_Click" FontSize="20" FontWeight="Bold" FontFamily="Segoe UI Black"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="222" Margin="324,95,0,0" VerticalAlignment="Top" Width="131">
-            <Button Content="Clock In" HorizontalAlignment="Left" Height="61" Margin="5,5,5,5" VerticalAlignment="Top" Width="108"/>
-            <Button Content="Clock Out" HorizontalAlignment="Left" Height="61" Margin="5,5,5,5"  VerticalAlignment="Top" Width="108"/>
-            <Button Content="Exit" HorizontalAlignment="Left" Height="62" Margin="5,5,5,5"  VerticalAlignment="Top" Width="108" Background="#FFDEDDDC"/>
+            <Button Content="Clock In" HorizontalAlignment="Left" Height="61" Margin="5,5,5,5" VerticalAlignment="Top" Width="108" FontSize="20" FontFamily="Segoe UI Black"/>
+            <Button Content="Clock Out" HorizontalAlignment="Left" Height="61" Margin="5,5,5,5"  VerticalAlignment="Top" Width="108" FontSize="20" FontFamily="Segoe UI Black"/>
+            <Button Content="Exit" HorizontalAlignment="Left" Height="62" Margin="5,5,5,5"  VerticalAlignment="Top" Width="108" Background="#FFDEDDDC" FontSize="20" FontFamily="Segoe UI Black"/>
         </StackPanel>
 
 

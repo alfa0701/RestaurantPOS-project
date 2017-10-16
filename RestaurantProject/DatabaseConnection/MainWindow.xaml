@@ -7,12 +7,16 @@
         mc:Ignorable="d"
         Title="Log in" Height="350" Width="525"
             WindowStartupLocation="CenterScreen">
+    
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="72*"/>
             <ColumnDefinition Width="445*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Log in" HorizontalAlignment="Left" Margin="145,164,0,0" VerticalAlignment="Top" Width="85" Height="37" Click="Button_Click" Grid.Column="1"/>
+        <Button Content="Log in" HorizontalAlignment="Left" Margin="145,164,0,0" VerticalAlignment="Top" Width="85" Height="37" Click="Button_Click" Grid.Column="1" FontSize="14" FontFamily="Segoe UI Black" FontWeight="Bold"/>
         <PasswordBox Name="pswd" HorizontalAlignment="Left" Margin="127,135,0,0" VerticalAlignment="Top" Height="24" Width="131" Grid.Column="1"/>
         <Label Content="Restaurant POS  Project  - Manager POS" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top" Width="399" Height="66" Grid.Column="1" FontWeight="Bold" FontFamily="Showcard Gothic" FontSize="18"/>
 

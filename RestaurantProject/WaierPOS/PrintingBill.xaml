@@ -8,6 +8,10 @@
         Title="PrintingBill" Height="400" Width="600"
          WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>
+        </Grid.Background>
+
 
         <ListView MouseDoubleClick="lstOrder_MouseDoubleClick" Name="lstOrder"  HorizontalAlignment="Left" Height="270" Margin="38,46,0,0" VerticalAlignment="Top" Width="187">
 
@@ -32,18 +36,18 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="OrderID :" HorizontalAlignment="Left" Height="33" Margin="7,7,0,0" VerticalAlignment="Top" Width="73"/>
+        <Label Content="OrderID :" HorizontalAlignment="Left" Height="33" Margin="7,7,0,0" VerticalAlignment="Top" Width="73" FontWeight="Bold" FontFamily="Segoe UI Black"/>
         <TextBox Name="txtId" HorizontalAlignment="Left" Height="21" Margin="62,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-        <Button  Name="btAll" Click="btAll_Click" Content="Select All" HorizontalAlignment="Left" Height="60" Margin="257,74,0,0" VerticalAlignment="Top" Width="91"/>
-        <Label Content="Subtotal :" HorizontalAlignment="Left" Height="39" Margin="431,240,0,0" VerticalAlignment="Top" Width="62"/>
-        <Label Content="Tax :" HorizontalAlignment="Left" Height="39" Margin="452,277,0,0" VerticalAlignment="Top" Width="45"/>
-        <Label Content="Total :" HorizontalAlignment="Left" Height="39" Margin="442,313,0,0" VerticalAlignment="Top" Width="55"/>
+        <Button  Name="btAll" Click="btAll_Click" Content="Select All" HorizontalAlignment="Left" Height="60" Margin="257,74,0,0" VerticalAlignment="Top" Width="91" FontFamily="Segoe UI Black" FontSize="14"/>
+        <Label Content="Subtotal :" HorizontalAlignment="Left" Height="39" Margin="431,240,0,0" VerticalAlignment="Top" Width="62" FontFamily="Segoe UI Black" FontSize="14"/>
+        <Label Content="Tax :" HorizontalAlignment="Left" Height="39" Margin="434,277,0,0" VerticalAlignment="Top" Width="45" FontFamily="Segoe UI Black" FontSize="14"/>
+        <Label Content="Total :" HorizontalAlignment="Left" Height="39" Margin="432,313,0,0" VerticalAlignment="Top" Width="55" FontFamily="Segoe UI Black" FontSize="14"/>
         <TextBox Name="txtSub" HorizontalAlignment="Right" Height="31" Margin="0,240,11,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="67"/>
         <TextBox Name="txtTax" HorizontalAlignment="Right" Height="31" Margin="0,277,11,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="67"/>
         <TextBox Name="txtTotal" HorizontalAlignment="Right" Height="31" Margin="0,313,11,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.16,0.662"/>
-        <Button Content="Print" HorizontalAlignment="Left" Height="58" Margin="264,258,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click" />
-        <Button Name="btnEnter"  Content="Enter" HorizontalAlignment="Left" Height="31" Margin="148,1,0,0" VerticalAlignment="Top" Width="62" Click="btnEnter_Click" />
-        <Label Name="lblEmp" Content="Employee :" HorizontalAlignment="Left" Margin="390,11,0,0" VerticalAlignment="Top" Width="189"/>
+        <Button Content="Print" HorizontalAlignment="Left" Height="58" Margin="264,258,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click" FontFamily="Segoe UI Black" FontSize="14" />
+        <Button Name="btnEnter"  Content="Enter" HorizontalAlignment="Left" Height="31" Margin="148,1,0,0" VerticalAlignment="Top" Width="62" Click="btnEnter_Click" FontWeight="Bold" FontFamily="Segoe UI Black" FontSize="14" />
+        <Label Name="lblEmp" Content="Employee :" HorizontalAlignment="Left" Margin="390,11,0,0" VerticalAlignment="Top" Width="189" FontWeight="Bold" FontFamily="Segoe UI Black" FontSize="16"/>
 
     </Grid>
 </Window>
