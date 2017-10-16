@@ -20,14 +20,19 @@
                     <GridViewColumn Header="Id" Width="50" DisplayMemberBinding="{Binding Path=EmpId}"/>
                     <GridViewColumn Header="FirstName" Width="80" DisplayMemberBinding="{Binding Path=FName}"/>
                     <GridViewColumn Header="LastName" Width="80" DisplayMemberBinding="{Binding Path=LName}"/>
-                    <GridViewColumn Header="Phone" Width="80" DisplayMemberBinding="{Binding Path=Phone}"/>
+                    <GridViewColumn Header="Phone" Width="100" DisplayMemberBinding="{Binding Path=Phone}"/>
+                    <GridViewColumn Header="Street" Width="100" DisplayMemberBinding="{Binding Path=Street}"/>
+                    <GridViewColumn Header="City" Width="80" DisplayMemberBinding="{Binding Path=City}"/>
+                    <GridViewColumn Header="Postal" Width="80" DisplayMemberBinding="{Binding Path=Postal}"/>
+                    <GridViewColumn Header="SIN" Width="100" DisplayMemberBinding="{Binding Path=SIN}"/>
+                    <GridViewColumn Header="Password" Width="80" DisplayMemberBinding="{Binding Path=Password}"/>
 
 
                 </GridView>
             </ListView.View>
         </ListView>
         <Canvas Margin="46,44,225,375">
-            <TextBox Name="txtFName" HorizontalAlignment="Left" Height="23" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtFName_TextChanged"/>
+            <TextBox Name="txtFName"  HorizontalAlignment="Left" Height="23" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtFName_TextChanged"/>
             <TextBox Name="txtLName" HorizontalAlignment="Left" Height="23" Margin="158,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.167,0.826"  TextChanged="txtLName_TextChanged"/>
             <TextBox Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="316,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  TextChanged="txtPhone_TextChanged"/>
             <TextBox Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="481,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPassword_TextChanged" RenderTransformOrigin="0.919,-0.824"/>
@@ -51,13 +56,9 @@
         </Canvas>
 
 
-        <Button Name="btAdd" Content="ADD" HorizontalAlignment="Left" Margin="690,35,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click" Height="43"/>
-        <Button Name="btUpdate" Content="Update" HorizontalAlignment="Left" Margin="690,86,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1" Click="btUpdate_Click" Height="44"/>
-        <Button Name="btDelete" Content="Delete" HorizontalAlignment="Left" Margin="690,135,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" Click="btDelete_Click" Height="44" />
-        <Button Name="btDiscard" Content="Discard" HorizontalAlignment="Left" Margin="784,35,0,0" VerticalAlignment="Top" Width="74" Height="43"/>
-        <Button Name="btSave" Content="Save" HorizontalAlignment="Left" Margin="784,86,0,0" VerticalAlignment="Top" Width="75" Height="44"/>
-        <Button Name="btExit" Content="Exit" HorizontalAlignment="Left" Margin="784,135,0,0" VerticalAlignment="Top" Width="75" Height="44"/>
-
-
+        <Button Name="btAdd" Content="Add New" HorizontalAlignment="Left" Margin="690,35,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click" Height="43"/>
+        <Button Name="btUpdate" Content="Update" IsEnabled="False" HorizontalAlignment="Left" Margin="690,86,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1" Click="btUpdate_Click" Height="44"/>
+        <Button Name="btDelete" Content="Delete" IsEnabled="False" HorizontalAlignment="Left" Margin="690,135,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" Click="btDelete_Click" Height="44" />
+    
     </Grid>
 </Window>

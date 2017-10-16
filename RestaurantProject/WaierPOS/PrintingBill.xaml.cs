@@ -187,7 +187,7 @@ namespace WaierPOS
             p1.Inlines.Add(employee.PadRight(15) + "\n");
             foreach (OrderDetail item in list)
         {
-                string strLine = String.Format("{0:20}{1:5}{2:C2}", item.MenuName, item.Qty,item.Price);
+                string strLine = String.Format("{0} {1} {2}", item.MenuName, item.Qty,item.Price+"\n");
                     /*item.MenuName.PadRight(25, ' ')
                     +(item.Qty.ToString()).PadRight(5,' ')
                     +(item.Price.ToString()).PadRight(10,' ') + "\n";  */

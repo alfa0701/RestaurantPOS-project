@@ -27,9 +27,11 @@ namespace WaierPOS
         int orderId;
         string menuName;
 
+        OrderWindow parentOrderWindow;
 
-        public UpdateQty()
+        public UpdateQty(OrderWindow parent)
         {
+            parentOrderWindow = parent;
             try
             {
                 db = new Database();
@@ -65,6 +67,7 @@ namespace WaierPOS
             Application.Current.Resources.Remove("OrderId");
             Application.Current.Resources.Remove("Qty");
             this.Close();
+            parentOrderWindow.ReloadOrderList();
         }
 
 

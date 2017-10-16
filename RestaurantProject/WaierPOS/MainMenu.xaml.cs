@@ -22,9 +22,13 @@ namespace WaierPOS
         public MainMenu()
         {
             InitializeComponent();
-        //    string empName = Application.Current.FindResource("EmpName").ToString();
-         //   lblMessage.Content = String.Format("Hello, {0}", empName);
-           
+            //    string empName = Application.Current.FindResource("EmpName").ToString();
+            //   lblMessage.Content = String.Format("Hello, {0}", empName);
+
+
+        }
+        public void DisplayEmpName(string name) {
+            lblMessage.Content = String.Format("Hello " + name);
 
         }
 
@@ -43,7 +47,7 @@ namespace WaierPOS
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindow login = new MainWindow();
+            MainWindow login = new MainWindow(this);
             login.ShowDialog();
         }
     }

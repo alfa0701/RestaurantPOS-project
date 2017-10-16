@@ -23,8 +23,10 @@ namespace WaierPOS
     public partial class MainWindow : Window
     {
         Database db;
-        public MainWindow()
+        MainMenu parentWindow;
+        public MainWindow(MainMenu parent)
         {
+            parentWindow = parent;
             try
             {
                 db = new Database();
@@ -51,6 +53,8 @@ namespace WaierPOS
                 this.Close();
                 Application.Current.Resources.Add("EmpId",empId);
                 Application.Current.Resources.Add("EmpName", empName);
+                string Name = Application.Current.FindResource("EmpName").ToString();
+                parentWindow.DisplayEmpName(Name);
 
             }
             else

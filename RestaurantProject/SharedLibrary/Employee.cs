@@ -53,7 +53,7 @@ namespace SharedLibrary
             get { return _phone; }
             set
             {
-                if ((Regex.Match(value, @"^(\+[0-9]{10})$").Success))
+                if (!Regex.Match(value, @"^\d{10}$").Success)
                 {
                     throw new ArgumentOutOfRangeException("Phone number must be 10 digit");
                 }
@@ -66,7 +66,7 @@ namespace SharedLibrary
             get { return _postal; }
             set
             {
-                if (Regex.Match(value, @"^\d[A-Z][0-9][A-Z][0-9][A-Z][0-9]$").Success)
+                if (!Regex.Match(value, @"^[A-Z][0-9][A-Z][0-9][A-Z][0-9]$").Success)
                 {
                     throw new ArgumentOutOfRangeException("Postal Code must be 10 digit");
                 }
@@ -79,7 +79,7 @@ namespace SharedLibrary
             get { return _SIN; }
             set
             {
-                if ((Regex.Match(value, @"^(\+[0-9]{9})$").Success) )
+                if (!Regex.Match(value, @"^\d{9}$").Success) 
                 {
                     throw new ArgumentOutOfRangeException("Sin number must be 9 digit");
                 }

@@ -92,10 +92,16 @@ namespace ManagerPOS
             if (lstEmployees.SelectedIndex < 0)
             {
                 clearContent();
+                btDelete.IsEnabled = false ;
+                btUpdate.IsEnabled = false;
+                btAdd.IsEnabled = true;
                 return;
             }
             else
             {
+                btDelete.IsEnabled = true;
+                btUpdate.IsEnabled = true;
+                btAdd.IsEnabled = false;
                 Employee selected = new Employee();
                 selected = (Employee)lstEmployees.SelectedItem;
                 txtFName.Text = (string)selected.FName;
@@ -111,7 +117,8 @@ namespace ManagerPOS
         }
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
-        {if (selectedIndex == -1)
+        {
+            if (lstEmployees.SelectedIndex < 0)
             {
                 MessageBox.Show("Select an employee to delete");
 
@@ -135,7 +142,7 @@ namespace ManagerPOS
         }
         private void btUpdate_Click(object sender, RoutedEventArgs e)
         {
-            if (selectedIndex < 0)
+            if (lstEmployees.SelectedIndex < 0)
             {
                 MessageBox.Show("Select an employee to update");
             }
@@ -238,6 +245,11 @@ namespace ManagerPOS
         private void txtSIN_TextChanged(object sender, TextChangedEventArgs e)
         {
             isModified = true;
+        }
+
+        private void txtFName_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

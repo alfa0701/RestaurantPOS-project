@@ -106,8 +106,6 @@ namespace SharedLibrary
 
             insertCommand.Parameters.Add(new SqlParameter("Password", p.Password));
 
-
-
             return Convert.ToInt32(insertCommand.ExecuteScalar()); ///get Id
 
 

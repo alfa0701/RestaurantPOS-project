@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\WaierPOS\obj\Debug\
+D:\Project\RestaurantProject\WaierPOS\obj\Debug\
 WaierPOS
 none
 false
 DEBUG;TRACE
-C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\WaierPOS\App.xaml
+D:\Project\RestaurantProject\WaierPOS\App.xaml
 6-852990737
 
 10711819136
-14875367648
+14-1012865155
 MainMenu.xaml;MainWindow.xaml;OrderWindow.xaml;PrintingBill.xaml;TableChoose.xaml;UpdateQty.xaml;
 
 False

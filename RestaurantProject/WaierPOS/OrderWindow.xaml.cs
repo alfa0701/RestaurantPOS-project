@@ -52,7 +52,7 @@ namespace WaierPOS
             
            
         }
-        private void ReloadOrderList()
+        public void ReloadOrderList()
         {
             List<OrderDetail> list = db.GetAllOrderDetails(orderId);
             lstOrderItem.Items.Clear();
@@ -210,7 +210,7 @@ namespace WaierPOS
             cmbTable.SelectedIndex = -1;
             orderId = 0;
             MainMenu menuWin = new MainMenu();
-            menuWin.Show();
+         
             this.Close();
 
         }
@@ -315,7 +315,7 @@ namespace WaierPOS
 
         private void lstOrderItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {          
-            UpdateQty updateWin = new UpdateQty();
+            UpdateQty updateWin = new UpdateQty(this);
             updateWin.ShowDialog();
         }
     }
