@@ -22,7 +22,7 @@ namespace ManagerPOS
     /// </summary>
     public partial class MainWindow : Window
     {
-        Database db;
+        
         static string password = "admin";
         public MainWindow()
         {

@@ -23,11 +23,8 @@ namespace WaierPOS
     public partial class MainWindow : Window
     {
         Database db;
-
         public MainWindow()
         {
-
-            Database db;
             try
             {
                 db = new Database();
@@ -39,13 +36,13 @@ namespace WaierPOS
             {
                 MessageBox.Show("Database error: " + ex.Message);
             }
-
         }
-      
-       private void btnLogIn_Click(object sender, RoutedEventArgs e)
+
+
+        private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
             int empId = Convert.ToInt32(txtId.Text);
-            string pswd = txtId.Text;
+            string pswd = txtPass.Text;
          
             if (db.CheckLogin(empId,pswd))
             {

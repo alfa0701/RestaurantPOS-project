@@ -83,7 +83,7 @@
 
 
         </TabControl>
-        <Button Name="btMain" Content="Back to Main" HorizontalAlignment="Left" Margin="26,32,0,0" VerticalAlignment="Top" Width="99" Height="32" Click="btMain_Click"/>
+        <Button Name="btMain" Content="Back to Main" HorizontalAlignment="Left" Margin="26,32,0,0" VerticalAlignment="Top" Width="89" Height="32" Click="btMain_Click"/>
 
     </Grid>
 </Window>

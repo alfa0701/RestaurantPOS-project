@@ -8,6 +8,10 @@
   Title="Order" Height="400" Width="600"
          WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="29*"/>
+        </Grid.ColumnDefinitions>
 
         <TabControl Name="tbctrlMenu"  HorizontalAlignment="Left" Height="263" Margin="208,10,0,0" VerticalAlignment="Top" Width="242" Visibility="Hidden" Grid.ColumnSpan="2">
 
@@ -54,7 +58,7 @@
             </TabItem>
 
         </TabControl>
-        <ListView Name="lstOrderItem" HorizontalAlignment="Left" Height="261" Margin="10,12,0,0" VerticalAlignment="Top" Width="173" Grid.ColumnSpan="2" SelectionChanged="lstOrderItem_SelectionChanged">
+        <ListView Name="lstOrderItem" HorizontalAlignment="Left" Height="261" Margin="10,12,0,0" VerticalAlignment="Top" Width="173" SelectionChanged="lstOrderItem_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding Path=MenuName}"/>
@@ -65,8 +69,8 @@
             </ListView.View>
 
         </ListView>
-        <Label Content="Table:" HorizontalAlignment="Left" Margin="475,19,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="cmbTable"  HorizontalAlignment="Left" Margin="532,23,0,0" VerticalAlignment="Top" Width="40" Grid.ColumnSpan="2">
+        <Label Content="Table:" HorizontalAlignment="Left" Margin="113,39,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.525,1.236"/>
+        <ComboBox x:Name="cmbTable"  HorizontalAlignment="Left" Margin="172,39,0,0" VerticalAlignment="Top" Width="40" Grid.Column="1" RenderTransformOrigin="0.545,1.42">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="3"/>
@@ -77,8 +81,8 @@
             <ComboBoxItem Content="8"/>
         </ComboBox>
 
-        <Label Content="GuestCount:" HorizontalAlignment="Left" Margin="455,70,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="cmbGuest"  HorizontalAlignment="Left" Margin="532,74,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.52,2.221" Grid.ColumnSpan="2">
+        <Label Content="GuestCount:" HorizontalAlignment="Left" Margin="94.938,70,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <ComboBox x:Name="cmbGuest"  HorizontalAlignment="Left" Margin="171.938,74,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.52,2.221" Grid.Column="1">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="3"/>
@@ -88,11 +92,12 @@
             <ComboBoxItem Content="7"/>
             <ComboBoxItem Content="8"/>
         </ComboBox>
-        <Button Name="btStart" Content="Start" HorizontalAlignment="Left" Margin="507,132,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="btStart_Click" Grid.ColumnSpan="2"/>
-        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Margin="24,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btOrder_Click" Grid.ColumnSpan="2" FontWeight="Bold"/>
-        <Button Name="btCancel" Content="Cancel" HorizontalAlignment="Left" Margin="108,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btCancel_Click" Grid.ColumnSpan="2"/>
-        <Button Name="btMain" Content="Main" HorizontalAlignment="Left" Margin="507,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btMain_Click"/>
+        <Button Name="btStart" Content="Start" HorizontalAlignment="Left" Margin="146.938,132,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="btStart_Click" Grid.Column="1"/>
+        <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Margin="24,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btOrder_Click" FontWeight="Bold"/>
+        <Button Name="btCancel" Content="Cancel" HorizontalAlignment="Left" Margin="108,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btCancel_Click"/>
+        <Button Name="btMain" Content="Exit" HorizontalAlignment="Left" Margin="146.938,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btMain_Click" Grid.Column="1"/>
         <Button Name="btDelete" Visibility="Hidden" Content="Delete Item" HorizontalAlignment="Left" Margin="208,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btDelete_Click"/>
+        <Label Name="lblEmp" Content="EmpId" Grid.Column="1" HorizontalAlignment="Left" Margin="95,0,0,0" VerticalAlignment="Top" Width="117"/>
 
     </Grid>
 </Window>

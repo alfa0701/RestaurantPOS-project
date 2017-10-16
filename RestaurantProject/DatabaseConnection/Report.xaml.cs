@@ -32,9 +32,11 @@ namespace ManagerPOS
             {
                 db = new Database();
                 InitializeComponent();
-                strDate = DateTime.Now.ToString("yyyy-MM-dd");
+               dpicker.SelectedDate= DateTime.Now;
+               
                 MessageBox.Show(strDate);
                 ReloadAllLists(strDate);
+               
      
 
             }
@@ -70,8 +72,7 @@ namespace ManagerPOS
 
         private void btMain_Click(object sender, RoutedEventArgs e)
         {
-            MainMenu menuWin = new MainMenu();
-            menuWin.Show();
+        
             this.Close();
         }
     }
