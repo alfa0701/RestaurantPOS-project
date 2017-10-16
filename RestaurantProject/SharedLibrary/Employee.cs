@@ -10,17 +10,18 @@ namespace SharedLibrary
 {
     public class Employee
     {
-       public int EmpId { get; set; }
+
+        public int EmpId { get; set; }
         private string _fName;
         private string _lName;
-        private string _phone { get; set; }
-        private string _sin { get; set; }
-
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string Postal { get; set; }
+        private string _phone;
+        private string _street;
+        private string _city;
+        private string _postal;
+        private string _SIN;
         public string Password { get; set; }
 
+        
         public string FName
         {
             get { return _fName; }
@@ -28,7 +29,9 @@ namespace SharedLibrary
             {
                 if (value.Length < 2 || value.Length > 50)
                 {
-                    throw new ArgumentOutOfRangeException("Name must be between 2 and 30 characters long");
+                  
+                    throw new ArgumentOutOfRangeException("FirstName must be between 2 and 50 characters long");
+                    
                 }
                 _fName = value;
             }
@@ -40,46 +43,78 @@ namespace SharedLibrary
             {
                 if (value.Length < 2 || value.Length > 50)
                 {
-                    throw new ArgumentOutOfRangeException("Name must be between 2 and 30 characters long");
+                    throw new ArgumentOutOfRangeException("LastName must be between 2 and 50 characters long");
                 }
                 _lName = value;
             }
         }
-
-        public string Phone {
-        get { return _phone; }
-            set {
-               
-                Regex regex = new Regex(@"[0-9]{10}");
-                if (regex.IsMatch(value))
+        public string Phone
+        {
+            get { return _phone; }
+            set
+            {
+                if ((Regex.Match(value, @"^(\+[0-9]{10})$").Success))
                 {
-                    value = _phone;
-                }
-               
-                else
-                {
-                    throw new ArgumentOutOfRangeException("Phone must be 10 degit");
+                    throw new ArgumentOutOfRangeException("Phone number must be 10 digit");
                 }
 
+                _phone = value;
+            }
+        }
+        public string Postal
+        {
+            get { return _postal; }
+            set
+            {
+                if (Regex.Match(value, @"^\d[A-Z][0-9][A-Z][0-9][A-Z][0-9]$").Success)
+                {
+                    throw new ArgumentOutOfRangeException("Postal Code must be 10 digit");
+                }
+
+                _postal = value;
             }
         }
         public string SIN
         {
-            get { return _sin; }
+            get { return _SIN; }
             set
             {
-                Regex regex = new Regex(@"[0-9]{9}");
-                Match match = regex.Match(value);
-                if (!match.Success)
+                if ((Regex.Match(value, @"^(\+[0-9]{9})$").Success) )
                 {
-                    throw new ArgumentOutOfRangeException("Phone must be 9 degit");
+                    throw new ArgumentOutOfRangeException("Sin number must be 9 digit");
                 }
-                else {
-                    value = _sin;
+
+                _SIN = value;
+            }
+        }
+        public string City
+        {
+            get { return _city; }
+            set
+            {
+                if (value.Length < 2 || value.Length > 50)
+                {
+                    throw new ArgumentOutOfRangeException("Street must be between 2 and 50 characters long");
                 }
+                _city = value;
+            }
+        }
+        public string Street
+        {
+            get { return _street; }
+            set
+            {
+                if (value.Length < 2 || value.Length > 50)
+                {
+                    throw new ArgumentOutOfRangeException("Street must be between 2 and 50 characters long");
+                }
+                _street = value;
             }
         }
 
 
+
     }
+
 }
+

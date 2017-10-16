@@ -7,12 +7,15 @@
         mc:Ignorable="d"
          Title="MainWindow" Height="600" Width="900">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="125*"/>
             <ColumnDefinition Width="767*"/>
         </Grid.ColumnDefinitions>
-        <TabControl HorizontalAlignment="Left" Height="422" Margin="26,69,0,0" VerticalAlignment="Top" Width="829" Grid.ColumnSpan="2">
-            <TabItem Header="Top5 Sale" Width="100" Height="40">
+        <TabControl HorizontalAlignment="Left" Height="422" Margin="26,116,0,0" VerticalAlignment="Top" Width="829" Grid.ColumnSpan="2">
+            <TabItem Header="Top5 Sale" Width="100" Height="40" FontSize="14" FontFamily="Segoe UI Black">
                 <Canvas>
                     <DatePicker Name="dpicker" Height="27" Width="145" Canvas.Left="21" Canvas.Top="17" SelectedDateChanged="dpicker_SelectedDateChanged"/>
                     <ListView x:Name="lstMain" HorizontalAlignment="Left" Height="243" VerticalAlignment="Top" Width="153" Canvas.Left="248" Canvas.Top="122">
@@ -70,20 +73,24 @@
                         </ListView.View>
 
                     </ListView>
-                    <Label Content="Drink" Canvas.Left="90" Canvas.Top="86" Width="60"/>
-                    <Label Content="Main" Canvas.Left="248" Canvas.Top="86" Width="60"/>
-                    <Label Content="Starter" Canvas.Left="418" Canvas.Top="91" Width="60"/>
-                    <Label Content="Dessert" Canvas.Left="576" Canvas.Top="91" Width="60"/>
+                    <Label Content="Drink" Canvas.Left="90" Canvas.Top="86" Width="60" FontSize="16"/>
+                    <Label Content="Main" Canvas.Left="248" Canvas.Top="86" Width="60" FontSize="16"/>
+                    <Label Content="Starter" Canvas.Left="418" Canvas.Top="91" Width="60" FontSize="16"/>
+                    <Label Content="Dessert" Canvas.Left="576" Canvas.Top="91" Width="60" FontSize="16"/>
+                    <Label Content="Guest" Canvas.Left="205" Canvas.Top="26" FontSize="16"/>
+                    <TextBox Name="txtGuest" Height="23" Canvas.Left="262" TextWrapping="Wrap" Text="" Canvas.Top="30" Width="120"/>
+                    <Label  Content="Sales" Canvas.Left="205" Canvas.Top="52" RenderTransformOrigin="0.538,1.404" FontSize="16"/>
+                    <TextBox Name="txtSales" Height="23" Canvas.Left="264" TextWrapping="Wrap" Text="" Canvas.Top="58" Width="120" RenderTransformOrigin="0.496,1.674"/>
 
                 </Canvas>
             </TabItem>
-            <TabItem Header="Sales" Width="100" Height="40">
+            <TabItem Header="Sales" Width="100" Height="40" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black">
                 <Canvas Height="100" Width="200"/>
             </TabItem>
 
 
         </TabControl>
-        <Button Name="btMain" Content="Back to Main" HorizontalAlignment="Left" Margin="26,32,0,0" VerticalAlignment="Top" Width="99" Height="32" Click="btMain_Click"/>
+        <Button Name="btMain" Content="Back to Main" HorizontalAlignment="Left" Margin="26,32,0,0" VerticalAlignment="Top" Width="144" Height="32" Click="btMain_Click" FontFamily="Segoe UI Black" FontSize="16" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

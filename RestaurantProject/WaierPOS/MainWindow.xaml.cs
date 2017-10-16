@@ -23,32 +23,35 @@ namespace WaierPOS
     public partial class MainWindow : Window
     {
         Database db;
-
         public MainWindow()
         {
-            InitializeComponent();
-           
+            try
+            {
+                db = new Database();
+                InitializeComponent();
 
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
+            }
         }
+
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Server=tcp:mihoaka.database.windows.net,1433;Initial Catalog=Restaurant;Persist Security Info=False;User ID=sqladmin;Password=Mihoaka0215;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
-
-            Int32 verify;
-            string query1 = "Select * from Employee where EmpId='" + txtId.Text + "' and Password='" + txtPass.Text + "' ";
-            SqlCommand cmd1 = new SqlCommand(query1, con);
-             
-            con.Open();
-            verify = Convert.ToInt32(cmd1.ExecuteScalar());
-            con.Close();
-            if (verify > 0)
+            int empId = Convert.ToInt32(txtId.Text);
+            string pswd = txtPass.Password.ToString();
+            string empName = db.GetFullNameOfEmployee(empId);
+         
+            if (db.CheckLogin(empId,pswd))
             {
-                MainMenu menuWin = new MainMenu();
-                menuWin.Show();
+              
                 this.Close();
+                Application.Current.Resources.Add("EmpId",empId);
+                Application.Current.Resources.Add("EmpName", empName);
+
             }
             else
             {
@@ -56,7 +59,7 @@ namespace WaierPOS
             }
         }
 
-        
+       
     }
 }
    

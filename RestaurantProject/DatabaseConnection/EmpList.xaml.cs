@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,23 @@ namespace ManagerPOS
     public partial class EmpList : Window
     {
         bool isModified = false;
+        int selectedIndex = -1;
+
+        Database db = new Database();
+        public EmpList()
+        {
+            try
+            {
+                db = new Database();
+                InitializeComponent();
+                ReloadEmployeeList();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
+            }
+        }
         private void ReloadEmployeeList()
         {
             List<Employee> list = db.GetAllEmployees();
@@ -31,22 +49,6 @@ namespace ManagerPOS
                 lstEmployees.Items.Add(e);
             }
         }
-        Database db = new Database();
-        public EmpList()
-        {
-            try
-            {
-                db = new Database();
-                InitializeComponent();
-                ReloadEmployeeList();
-            
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Database error: " + ex.Message);
-            }
-        }
-
         private void btAdd_Click(object sender, RoutedEventArgs e)
         {
             string fName = txtFName.Text;
@@ -57,20 +59,28 @@ namespace ManagerPOS
             string city = txtCity.Text;
             string postal = txtPostal.Text.ToUpper();
             string pswd = txtPassword.Text;
-
             Employee emp = new Employee();
-            emp.FName = fName;
-            emp.LName = lName;
-            emp.Phone = phone;
-            emp.SIN = SIN;
-            emp.Street = street;
-            emp.City = city;
-            emp.Password = pswd;
-            emp.Postal = postal;
-            int newId = db.AddEmployee(emp);
+            try
+            {              
+                emp.FName = fName;
+                emp.LName = lName;
+                emp.Phone = phone;
+                emp.SIN = SIN;
+                emp.Street = street;
+                emp.City = city;
+                emp.Password = pswd;
+                emp.Postal = postal;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Input error: " + ex.Message);
 
-       
-           
+            }
+
+            int newId = db.AddEmployee(emp);
+            MessageBox.Show("Added successfully", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
 
             List<Employee> empList = new List<Employee>();
             ReloadEmployeeList();
@@ -78,15 +88,18 @@ namespace ManagerPOS
 
 
         }
-       
+
 
         private void lstEmployees_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (lstEmployees.SelectedIndex < 0) {
+            if (lstEmployees.SelectedIndex < 0)
+            {
                 clearContent();
                 return;
             }
-            else { Employee selected = new Employee();
+            else
+            {
+                Employee selected = new Employee();
                 selected = (Employee)lstEmployees.SelectedItem;
                 txtFName.Text = (string)selected.FName;
                 txtLName.Text = (string)selected.LName;
@@ -101,40 +114,70 @@ namespace ManagerPOS
         }
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
-        {
-            Employee selected = new Employee();
-            selected = (Employee)lstEmployees.SelectedItem;
-            db.DeleteEmployeeByID(selected.EmpId);
-            ReloadEmployeeList();
-            isModified = false;
-        }
+        {if (selectedIndex == -1)
+            {
+                MessageBox.Show("Select an employee to delete");
 
+            }
+            else
+            {
+                if (MessageBox.Show("Delete an Employee??", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    Employee selected = new Employee();
+                    selected = (Employee)lstEmployees.SelectedItem;
+                    db.DeleteEmployeeByID(selected.EmpId);
+                    MessageBox.Show("Deleted successfully", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ReloadEmployeeList();
+                    isModified = false;
+                }
+            }
+        }
         private void btUpdate_Click(object sender, RoutedEventArgs e)
         {
-            Employee selected = new Employee();
-            selected = (Employee)lstEmployees.SelectedItem;
-            selected.FName = txtFName.Text;
-            selected.LName = txtLName.Text;
-            selected.SIN = txtSIN.Text;
-            selected.Phone = txtPhone.Text;
-            selected.Street = txtStreet.Text;
-            selected.City = txtCity.Text;
-            selected.Postal = txtPostal.Text.ToUpper();
-            selected.Password = txtPassword.Text;
-            db.UpdateEmployee(selected);
-            ReloadEmployeeList();
-            isModified = false;
+            if (selectedIndex < 0)
+            {
+                MessageBox.Show("Select an employee to update");
+            }
+            else
+            {
+                Employee selected = new Employee();
+                try
+                {
+                    selected = (Employee)lstEmployees.SelectedItem;
+                    selected.FName = txtFName.Text;
+                    selected.LName = txtLName.Text;
+                    selected.SIN = txtSIN.Text;
+                    selected.Phone = txtPhone.Text;
+                    selected.Street = txtStreet.Text;
+                    selected.City = txtCity.Text;
+                    selected.Postal = txtPostal.Text.ToUpper();
+                    selected.Password = txtPassword.Text;
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show("Input error: " + ex.Message);
+                }
+                db.UpdateEmployee(selected);
+                MessageBox.Show("Updated successfully", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+                ReloadEmployeeList();
+                isModified = false;
+            }
         }
-       public void clearContent() {
+        public void clearContent()
+        {
             txtFName.Text = "";
-        txtLName.Text =  "";
-        txtSIN.Text =  "";
-        txtPhone.Text =  "";
-        txtStreet.Text = "";
-        txtCity.Text =  "";
-        txtPostal.Text = "";
-        txtPassword.Text =  "";
-        lblID.Content ="ID : ";
+            txtLName.Text = "";
+            txtSIN.Text = "";
+            txtPhone.Text = "";
+            txtStreet.Text = "";
+            txtCity.Text = "";
+            txtPostal.Text = "";
+            txtPassword.Text = "";
+            lblID.Content = "ID : ";
         }
 
         private void btMain_Click(object sender, RoutedEventArgs e)
@@ -147,9 +190,6 @@ namespace ManagerPOS
                 }
                 else
                 {
-                 
-                    MainMenu menuWin = new MainMenu();
-                    menuWin.Show();
                     this.Close();
                 }
             }
@@ -202,8 +242,9 @@ namespace ManagerPOS
         {
             isModified = true;
         }
-
-    
     }
-
 }
+
+
+
+

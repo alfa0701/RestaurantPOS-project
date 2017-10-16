@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using SharedLibrary;
 namespace ManagerPOS
 {
     /// <summary>
@@ -21,21 +22,35 @@ namespace ManagerPOS
     {
         public MainMenu()
         {
-            InitializeComponent();
-        }
+
+    
+                InitializeComponent();
+              
+
+            }
+        
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Report empWin = new Report();
-            empWin.Show();
-            this.Close();
+            EmpList empWin = new EmpList();
+            empWin.ShowDialog();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            OrderWindow orderWin = new OrderWindow();
-            orderWin.Show();
-            this.Close();
+            
+            Report reportWin = new Report();
+            reportWin.ShowDialog();
+            
+        }
+
+  
+
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow login = new MainWindow();
+            login.ShowDialog();
         }
     }
 }

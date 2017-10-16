@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="TimeClock" Height="300" Width="300">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>
+        </Grid.Background>
         
     </Grid>
 </Window>

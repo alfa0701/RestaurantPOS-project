@@ -6,15 +6,23 @@
         xmlns:local="clr-namespace:ManagerPOS"
         mc:Ignorable="d"
         Title="Main Menu" Height="600" Width="900"
-            WindowStartupLocation="CenterScreen">
+            WindowStartupLocation="CenterScreen" Loaded="Window_Loaded_1">
 
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="77*"/>
+        </Grid.ColumnDefinitions>
 
 
-        <Canvas Margin="224,76,257,115">
-            <Button Content="Employee" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="89" Click="Button_Click" Canvas.Left="83" Canvas.Top="33" />
-            <Button Content="Sales Report" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="89" Click="Button_Click_1" Canvas.Left="83" Canvas.Top="165"/>
+        <Canvas Margin="139.706,76,257,115" Grid.ColumnSpan="2" Grid.Column="1">
+            <Button Content="Employee" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="89" Click="Button_Click" Canvas.Left="83" Canvas.Top="33" FontWeight="Bold" FontFamily="Segoe UI Black" FontSize="20" />
+            <Button Content="Sales Report" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="89" Click="Button_Click_1" Canvas.Left="83" Canvas.Top="165" FontSize="20" FontFamily="Segoe UI Black" FontWeight="Bold"/>
         </Canvas>
 
     </Grid>

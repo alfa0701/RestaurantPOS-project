@@ -22,10 +22,8 @@ namespace ManagerPOS
     /// </summary>
     public partial class MainWindow : Window
     {
-        Database db;
-        public static string TEST = "test";
-
-        public static string password = "admin";
+        
+        static string password = "admin";
         public MainWindow()
         {
             InitializeComponent();
@@ -37,9 +35,8 @@ namespace ManagerPOS
            
             if (pswd.Password.ToString() == password)
             {
-                MainMenu menuWin = new MainMenu();
-                menuWin.Show();
                 this.Close();
+              
             }
             else {
                 MessageBox.Show("Incorrect pasword.");

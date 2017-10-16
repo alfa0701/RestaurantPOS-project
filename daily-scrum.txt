@@ -94,6 +94,11 @@ Azam 2017/10/16
 2.I'm going work on drag and drop .
 3.I will prepare tomarrow's presentation .
 
+Miho 10/16/2017
+1.fixed log in window, implemented printing in printbill window. update orderitem qty is done. 
+2. test application and prepare for presentation.
+3.------
+
 
 
 
