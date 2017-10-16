@@ -79,13 +79,10 @@ namespace ManagerPOS
 
             int newId = db.AddEmployee(emp);
             MessageBox.Show("Added successfully", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
-
-
+            clearContent();
 
             List<Employee> empList = new List<Employee>();
             ReloadEmployeeList();
-
-
 
         }
 
