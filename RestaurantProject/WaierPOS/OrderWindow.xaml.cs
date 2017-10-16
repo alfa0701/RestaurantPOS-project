@@ -27,8 +27,12 @@ namespace WaierPOS
         int orderId;
         bool isModified = false;
         Order o;
-        string empId = Application.Current.FindResource("EmpId").ToString();
-
+        OrderDetail od;
+        int menuId ;
+        int qty;
+        string menuName;
+        int empId = Convert.ToInt32(Application.Current.FindResource("EmpId"));
+        string empName = Application.Current.FindResource("EmpName").ToString();
 
         Database db;
         public OrderWindow()
@@ -37,7 +41,7 @@ namespace WaierPOS
             {
                 db = new Database();
                 InitializeComponent();
-                lblEmp.Content = string.Format("EmpID:{0}", empId);
+                lblEmp.Content = string.Format("EmpID:{0}", empName);          
 
 
             }
@@ -45,6 +49,8 @@ namespace WaierPOS
             {
                 MessageBox.Show("Database error: " + ex.Message);
             }
+            
+           
         }
         private void ReloadOrderList()
         {
@@ -94,11 +100,13 @@ namespace WaierPOS
                 guest = Convert.ToInt32(((ComboBoxItem)cmbGuest.SelectedItem).Content);
                 tbctrlMenu.Visibility = Visibility.Visible;
                 DateTime date = DateTime.Now;
-                o = new Order { TableNo = table, GuestCount = guest, OrderDate = date };
+                o = new Order { TableNo = table, EmpId = empId, GuestCount = guest, OrderDate = date };
                 orderId = db.AddOrder(o);
                 o._orderId = orderId;
+              
                 tbctrlMenu.Visibility = Visibility.Visible;
                 ReloadOrderList();
+               
                 isModified = true;
             }
         }
@@ -133,7 +141,15 @@ namespace WaierPOS
         {
             AddToList(6);
         }
+        private void btSoup_Click(object sender, RoutedEventArgs e)
+        {
+            AddToList(14);
+        }
 
+        private void btSalada_Click(object sender, RoutedEventArgs e)
+        {
+            AddToList(13);
+        }
         private void btSteak_Click(object sender, RoutedEventArgs e)
         {
             AddToList(15);
@@ -188,7 +204,7 @@ namespace WaierPOS
             IDocumentPaginatorSource idpSource = doc;
 
             // Call PrintDocument method to send document to printer
-            printDlg.PrintDocument(idpSource.DocumentPaginator, "Hello WPF Printing.");
+            printDlg.PrintDocument(idpSource.DocumentPaginator, "RestranPOS Printing.");
             lstOrderItem.Items.Clear();
             cmbGuest.SelectedIndex = -1;
             cmbTable.SelectedIndex = -1;
@@ -209,21 +225,25 @@ namespace WaierPOS
             Section sec = new Section();
 
             // Create first Paragraph
-            Paragraph p1 = new Paragraph();
-            Paragraph p2 = new Paragraph();
+          
             string id = Convert.ToString(o._orderId);
             string table = Convert.ToString(o.TableNo);
+            Paragraph p1 = new Paragraph();
+            Paragraph p2 = new Paragraph();
+            Paragraph p3 = new Paragraph();
             p1.Inlines.Add("OrderID:" + id + "\nTableNo:" + table);
             foreach (OrderDetail item in list)
             {
                 line = item.Qty + " " + item.MenuName + "\n";
                 p2.Inlines.Add(line);
             }
+            p3.Inlines.Add(empName);
 
 
             // Add Paragraph to Section
             sec.Blocks.Add(p1);
             sec.Blocks.Add(p2);
+            sec.Blocks.Add(p3);
 
 
             // Add Section to FlowDocument
@@ -276,14 +296,27 @@ namespace WaierPOS
             }
         }
 
-        private void btDelete_Click(object sender, RoutedEventArgs e)
-        {
+        private void lstOrderItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        { if (lstOrderItem.SelectedIndex >= 0)
+            {
+                od = (OrderDetail)lstOrderItem.SelectedItem;
+                menuName = od.MenuName;
+                menuId = od.MenuId;
+                qty = od.Qty;
+                Application.Current.Resources.Add("OrderId", orderId);
+                Application.Current.Resources.Add("MenuId", menuId);
+                Application.Current.Resources.Add("MenuName", menuName);
+                Application.Current.Resources.Add("Qty", qty);
+            }
+            else { return; }
+
 
         }
 
-        private void lstOrderItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+        private void lstOrderItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {          
+            UpdateQty updateWin = new UpdateQty();
+            updateWin.ShowDialog();
         }
     }
 }

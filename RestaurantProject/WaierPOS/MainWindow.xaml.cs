@@ -42,13 +42,15 @@ namespace WaierPOS
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
             int empId = Convert.ToInt32(txtId.Text);
-            string pswd = txtPass.Text;
+            string pswd = txtPass.Password.ToString();
+            string empName = db.GetFullNameOfEmployee(empId);
          
             if (db.CheckLogin(empId,pswd))
             {
               
                 this.Close();
                 Application.Current.Resources.Add("EmpId",empId);
+                Application.Current.Resources.Add("EmpName", empName);
 
             }
             else

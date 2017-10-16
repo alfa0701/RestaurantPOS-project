@@ -26,6 +26,8 @@ namespace ManagerPOS
     {
         Database db;
         string strDate;
+        int guest;
+        decimal total;
         public Report()
         {
             try
@@ -33,17 +35,15 @@ namespace ManagerPOS
                 db = new Database();
                 InitializeComponent();
                dpicker.SelectedDate= DateTime.Now;
-               
-                MessageBox.Show(strDate);
+                
                 ReloadAllLists(strDate);
-               
-     
-
+       
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Database error: " + ex.Message);
             }
+           
         }
     private void ReloadSalesList(ListView lv,string date,int category)
         {
@@ -61,6 +61,11 @@ namespace ManagerPOS
             ReloadSalesList(lstStarter, strDate, 20);
             ReloadSalesList(lstMain, strDate, 30);
             ReloadSalesList(lstDessert, strDate, 40);
+            guest = db.GetTotalGuestCount(strDate);
+            txtGuest.Text = guest.ToString();
+            total = db.GetTotalSalesByDate(strDate);
+            txtSales.Text = String.Format("{0:C0}", total);
+
 
         }
 
@@ -68,6 +73,7 @@ namespace ManagerPOS
         {
             strDate = dpicker.ToString();
             ReloadAllLists(strDate);
+            
         }
 
         private void btMain_Click(object sender, RoutedEventArgs e)

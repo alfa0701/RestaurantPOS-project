@@ -38,8 +38,9 @@
             </TabItem>
             <TabItem Header="Starter" Margin="-2,-2,2,0">
                 <Canvas>
-                    <Button Name="btSalada" Content="Salada" Height="50" Width="50" Canvas.Left="10" Canvas.Top="10"/>
-                    <Button Name="btSoup" Content="Soup"  Height="50" Width="50" Canvas.Left="10" Canvas.Top="80" />
+                    <Button Name="btSalada" Content="Salada" Height="50" Width="50" Canvas.Left="10" Canvas.Top="10" Click="btSalada_Click"/>
+                    <Button Name="btSoup" Content="Soup"  Height="50" Width="50" Canvas.Left="10" Canvas.Top="80" Click="btSoup_Click"
+                            />
 
                 </Canvas>
             </TabItem>
@@ -58,7 +59,7 @@
             </TabItem>
 
         </TabControl>
-        <ListView Name="lstOrderItem" HorizontalAlignment="Left" Height="261" Margin="10,12,0,0" VerticalAlignment="Top" Width="173" SelectionChanged="lstOrderItem_SelectionChanged">
+        <ListView Name="lstOrderItem" HorizontalAlignment="Left" Height="261" Margin="10,12,0,0" VerticalAlignment="Top" Width="173" SelectionChanged="lstOrderItem_SelectionChanged" MouseDoubleClick="lstOrderItem_MouseDoubleClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item " Width="100" DisplayMemberBinding="{Binding Path=MenuName}"/>
@@ -96,7 +97,6 @@
         <Button Name="btOrder" Content="Order" HorizontalAlignment="Left" Margin="24,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btOrder_Click" FontWeight="Bold"/>
         <Button Name="btCancel" Content="Cancel" HorizontalAlignment="Left" Margin="108,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btCancel_Click"/>
         <Button Name="btMain" Content="Exit" HorizontalAlignment="Left" Margin="146.938,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btMain_Click" Grid.Column="1"/>
-        <Button Name="btDelete" Visibility="Hidden" Content="Delete Item" HorizontalAlignment="Left" Margin="208,294,0,0" VerticalAlignment="Top" Width="75" Height="45" Click="btDelete_Click"/>
         <Label Name="lblEmp" Content="EmpId" Grid.Column="1" HorizontalAlignment="Left" Margin="95,0,0,0" VerticalAlignment="Top" Width="117"/>
 
     </Grid>
