@@ -14,7 +14,7 @@
         <Label Content="ID :" HorizontalAlignment="Left" Height="40" Margin="74,24,0,0" VerticalAlignment="Top" Width="48" Grid.Column="1" FontFamily="Segoe UI Black" FontSize="18"/>
         <Label Content="Pass :" HorizontalAlignment="Left" Height="40" Margin="65,78,0,0" VerticalAlignment="Top" Width="68" Grid.Column="1" FontSize="18" FontFamily="Segoe UI Black"/>
         <TextBox Name="txtId"   HorizontalAlignment="Left" Height="28" Margin="149,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Grid.Column="1"/>
-        <TextBox Name="txtPass"   HorizontalAlignment="Left" Height="28" Margin="148,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Grid.Column="1"/>
+        <PasswordBox Name="txtPass"   HorizontalAlignment="Left" Height="28" Margin="148,78,0,0"  VerticalAlignment="Top" Width="178" Grid.Column="1"/>
         <Button Name="btnLogIn" Content="Log In" HorizontalAlignment="Left" Height="39" Margin="207,154,0,0" VerticalAlignment="Top" Width="79" Click="btnLogIn_Click" Grid.Column="1" FontFamily="Segoe UI Black" FontSize="18" />
         <Grid.Background>
             <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>

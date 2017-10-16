@@ -53,20 +53,11 @@
         </Canvas>
 
 
-<<<<<<< HEAD
         <Button Name="btAdd" Content="Add New" HorizontalAlignment="Left" Margin="690,35,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click" Height="43"/>
         <Button Name="btUpdate" Content="Update" IsEnabled="False" HorizontalAlignment="Left" Margin="690,86,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1" Click="btUpdate_Click" Height="44"/>
         <Button Name="btDelete" Content="Delete" IsEnabled="False" HorizontalAlignment="Left" Margin="690,135,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" Click="btDelete_Click" Height="44" />
-    
-=======
-        <Button Name="btAdd" Content="ADD" HorizontalAlignment="Left" Margin="690,35,0,0" VerticalAlignment="Top" Width="75" Click="btAdd_Click" Height="43" FontFamily="Segoe UI Black" FontSize="16"/>
-        <Button Name="btUpdate" Content="Update" HorizontalAlignment="Left" Margin="690,86,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.947,0.1" Click="btUpdate_Click" Height="44" FontFamily="Segoe UI Black" FontSize="16"/>
-        <Button Name="btDelete" Content="Delete" HorizontalAlignment="Left" Margin="690,135,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.173,0.65" Click="btDelete_Click" Height="44" FontFamily="Segoe UI Black" FontSize="16" />
-        <Button Name="btDiscard" Content="Discard" HorizontalAlignment="Left" Margin="784,35,0,0" VerticalAlignment="Top" Width="74" Height="43" FontSize="16" FontFamily="Segoe UI Black"/>
-        <Button Name="btSave" Content="Save" HorizontalAlignment="Left" Margin="784,86,0,0" VerticalAlignment="Top" Width="75" Height="44" FontFamily="Segoe UI Black" FontSize="16"/>
-        <Button Name="btExit" Content="Exit" HorizontalAlignment="Left" Margin="784,135,0,0" VerticalAlignment="Top" Width="75" Height="44" FontSize="16" FontFamily="Segoe UI Black"/>
 
+      
 
->>>>>>> 09d2008ead7e19203db086d6ca26324b68792f4a
     </Grid>
 </Window>
