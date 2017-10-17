@@ -8,9 +8,7 @@
         Title="MainMenu" Height="400" Width="600" Loaded="Window_Loaded"
          WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>
-        </Grid.Background>
+      
         <Label Name="lblMessage" Content="Hello"  HorizontalAlignment="Left" Margin="170,32,0,0" VerticalAlignment="Top" Height="44" Width="262" Foreground="#FF040404" FontFamily="Segoe UI Black" FontSize="24" FontWeight="Bold"/>
         <StackPanel HorizontalAlignment="Left" Height="223" Margin="153,94,0,0" VerticalAlignment="Top" Width="130">
             <Button x:Name="btntable" Content="Table" HorizontalAlignment="Left" Height="62" Margin="5,5,5,5" VerticalAlignment="Top" Width="108" Foreground="Black" BorderBrush="#FF837A7A" Background="#FFDEDEDD" FontFamily="Segoe UI Black" FontSize="20" FontWeight="Bold" />

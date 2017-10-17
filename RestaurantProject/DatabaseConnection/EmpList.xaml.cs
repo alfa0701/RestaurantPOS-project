@@ -61,7 +61,7 @@ namespace ManagerPOS
             string pswd = txtPassword.Text;
             Employee emp = new Employee();
             try
-            {              
+            {
                 emp.FName = fName;
                 emp.LName = lName;
                 emp.Phone = phone;
@@ -92,7 +92,7 @@ namespace ManagerPOS
             if (lstEmployees.SelectedIndex < 0)
             {
                 clearContent();
-                btDelete.IsEnabled = false ;
+                btDelete.IsEnabled = false;
                 btUpdate.IsEnabled = false;
                 btAdd.IsEnabled = true;
                 return;
@@ -246,119 +246,10 @@ namespace ManagerPOS
         {
             isModified = true;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        /////////////getter and setter>>>>>>>>>>>>>>>>>>>
-        
 
-        private string fName;
-        private string lName;
-        private string phone;
-        private string street;
-        private string city;
-        private string postal;
-        private string SIN;
-
-        public int Id { get; set; }
-        public string FirstName
-        {
-            get { return fName; }
-            set
-            {
-                if (value.Length < 2 || value.Length > 50)
-                {
-                    throw new ArgumentOutOfRangeException("FirstName must be between 2 and 50 characters long");
-                }
-                fName = value;
-            }
-        }
-        public string LastName
-        {
-            get { return lName; }
-            set
-            {
-                if (value.Length < 2 || value.Length > 50)
-                {
-                    throw new ArgumentOutOfRangeException("LastName must be between 2 and 50 characters long");
-                }
-                lName = value;
-            }
-        }
-        public string PoneNumber
-        {
-            get { return phone; }
-            set
-            {
-                if ((Regex.Match(phone, @"^(\+[0-9])$").Success)|| phone.Length ==10)
-                {
-                    throw new ArgumentOutOfRangeException("Phone number must be 10 digit");
-                }
-
-                phone = value;
-            }
-        }
-        public string Phone
-        {
-            get { return postal; }
-            set
-            {
-                if (Regex.Match(postal, @"^\d{5}$|^\d{5}-\d{4}$").Success)
-                {
-                    throw new ArgumentOutOfRangeException("Postal Code must be 10 digit");
-                }
-
-                postal = value;
-            }
-        }
-        public string SinNumber
-        {
-            get { return SIN; }
-            set
-            {
-                if ((Regex.Match(SIN, @"^(\+[0-9])$").Success) || SIN.Length == 9)
-                {
-                    throw new ArgumentOutOfRangeException("Sin number must be 9 digit");
-                }
-
-                SIN= value;
-            }
-        }
-        public string City
-        {
-            get { return city; }
-            set
-            {
-                if (value.Length < 2 || value.Length > 50)
-                {
-                    throw new ArgumentOutOfRangeException("Street must be between 2 and 50 characters long");
-                }
-                city = value;
-            }
-        }
-        public string Street
-        {
-            get { return street; }
-            set
-            {
-                if (value.Length < 2 || value.Length > 50)
-                {
-                    throw new ArgumentOutOfRangeException("Street must be between 2 and 50 characters long");
-                }
-                street = value;
-            }
-        }
-
-
-=======
->>>>>>> ff6db3a714a313776e0e95cb04a134120caaa94a
-=======
-
-        private void txtFName_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
->>>>>>> add82a80bb0d4995cca6da8bd0d3417240a0358f
     }
+
+
 }
 
 

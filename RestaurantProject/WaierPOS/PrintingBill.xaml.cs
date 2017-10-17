@@ -206,6 +206,11 @@ namespace WaierPOS
             sec.Blocks.Add(p1);
              sec.Blocks.Add(p2);
             sec.Blocks.Add(p3);
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c911fd2bae2944e4b2dfc46b455a2ef5ed836046
             // Add Section to FlowDocument
             doc.Blocks.Add(sec);
 
