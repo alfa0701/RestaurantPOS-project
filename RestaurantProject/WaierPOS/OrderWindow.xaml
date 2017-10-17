@@ -9,9 +9,7 @@
   Title="Order" Height="400" Width="600"
          WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>
-        </Grid.Background>
+      
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="34*"/>
             <ColumnDefinition Width="9*"/>

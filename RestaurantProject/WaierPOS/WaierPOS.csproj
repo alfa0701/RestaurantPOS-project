@@ -60,9 +60,6 @@
     <Compile Include="PrintingBill.xaml.cs">
       <DependentUpon>PrintingBill.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TableChoose.xaml.cs">
-      <DependentUpon>TableChoose.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UpdateQty.xaml.cs">
       <DependentUpon>UpdateQty.xaml</DependentUpon>
     </Compile>
@@ -90,10 +87,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrintingBill.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TableChoose.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

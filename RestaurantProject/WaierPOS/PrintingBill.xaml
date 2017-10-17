@@ -8,10 +8,7 @@
         Title="PrintingBill" Height="400" Width="600"
          WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>
-        </Grid.Background>
-
+        
 
         <ListView MouseDoubleClick="lstOrder_MouseDoubleClick" Name="lstOrder"  HorizontalAlignment="Left" Height="270" Margin="38,46,0,0" VerticalAlignment="Top" Width="187">
 

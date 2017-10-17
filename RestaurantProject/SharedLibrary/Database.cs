@@ -391,15 +391,12 @@ namespace SharedLibrary
                 {
                     total = (Decimal)reader["Total"];
 
-<<<<<<< HEAD
-        }      
+
+            
     }
-}
-=======
-                }
+              }
                 return total;
 
->>>>>>> add82a80bb0d4995cca6da8bd0d3417240a0358f
 
 
             }
@@ -408,5 +405,4 @@ namespace SharedLibrary
         }
     }
 
-}
-    
+ 

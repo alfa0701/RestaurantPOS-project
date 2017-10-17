@@ -8,9 +8,7 @@
         mc:Ignorable="d"
         Title="EmpList" Height="600" Width="900">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="D:\Project\images\Res.jpg" Opacity="0.3"/>
-        </Grid.Background>
+      
         <ListView Name="lstEmployees" Margin="22,207,53,10" SelectionChanged="lstEmployees_SelectionChanged">
             <ListView.View>
                 <GridView>
