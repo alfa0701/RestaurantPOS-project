@@ -80,3 +80,4 @@ D:\Project\RestaurantProject\WaierPOS\obj\Debug\UpdateQty.g.cs
 D:\Project\RestaurantProject\WaierPOS\obj\Debug\UpdateQty.baml
 =======
 >>>>>>> 09d2008ead7e19203db086d6ca26324b68792f4a
+C:\Users\Azam\Documents\RestaurantPOS-project\RestaurantProject\WaierPOS\obj\Debug\UpdateQty.g.cs
