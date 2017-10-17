@@ -164,9 +164,7 @@ namespace WaierPOS
             this.Close();
 
         }
-<<<<<<< HEAD
-        
-=======
+
         private FlowDocument CreateFlowDocument(int paymentId, List<OrderDetail> list)
         {
             string line;
@@ -208,9 +206,6 @@ namespace WaierPOS
             sec.Blocks.Add(p1);
              sec.Blocks.Add(p2);
             sec.Blocks.Add(p3);
->>>>>>> add82a80bb0d4995cca6da8bd0d3417240a0358f
-
-
             // Add Section to FlowDocument
             doc.Blocks.Add(sec);
 
