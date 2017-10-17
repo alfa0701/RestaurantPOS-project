@@ -22,9 +22,9 @@ namespace SharedLibrary
 
 
         /**************Waiter Login*********************/
-        public  bool CheckLogin(int EmpId, string pswd)
+        public bool CheckLogin(int EmpId, string pswd)
         {
-                   
+
             SqlCommand selectCommand = new SqlCommand("SELECT*FROM Employee WHERE EmpId = @empId and Password=@pswd;SELECT SCOPE_IDENTITY() as INT", conn);
             selectCommand.Parameters.Add(new SqlParameter("empId", EmpId));
             selectCommand.Parameters.Add(new SqlParameter("pswd", pswd));
@@ -49,6 +49,24 @@ namespace SharedLibrary
             return pswd;
         }
 
+        public string GetFullNameOfEmployee(int empid)
+        {
+            string name = "";
+            SqlCommand selectCommand = new SqlCommand("SELECT (FirstName+' '+LastName) as FullName FROM Employee WHERE EmpId = @empId;", conn);
+            selectCommand.Parameters.Add(new SqlParameter("empId", empid));
+            using (SqlDataReader reader = selectCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    name = (string)reader["FullName"];
+                }
+            }
+            return name;
+        }
+
+
+        /***********************************EmployeeList Window********************************/
+
         public List<Employee> GetAllEmployees()
         {
             List<Employee> result = new List<Employee>();
@@ -67,7 +85,7 @@ namespace SharedLibrary
                     string xSIN = (string)reader["SIN"];
                     string xPassword = (string)reader["Password"];
 
-                    Employee emp = new Employee{ EmpId = xId, FName = xFName, LName = xLName, Phone = xPhone, SIN = xSIN, Street=xStreet,City = xCity,Postal=xPostal,Password=xPassword };
+                    Employee emp = new Employee { EmpId = xId, FName = xFName, LName = xLName, Phone = xPhone, SIN = xSIN, Street = xStreet, City = xCity, Postal = xPostal, Password = xPassword };
                     result.Add(emp);
                 }
             }
@@ -76,7 +94,7 @@ namespace SharedLibrary
 
         public int AddEmployee(Employee p)
         {
-          
+
             SqlCommand insertCommand = new SqlCommand("INSERT INTO Employee (FirstName ,LastName, Phone , SIN , Street,City ,Postal,Password ) VALUES ( @FName ,@LName, @Phone, @SIN,@Street,@City,@Postal,@Password); SELECT SCOPE_IDENTITY() as INT;", conn);
             insertCommand.Parameters.Add(new SqlParameter("FName", p.FName));
             insertCommand.Parameters.Add(new SqlParameter("LName", p.LName));
@@ -88,10 +106,8 @@ namespace SharedLibrary
 
             insertCommand.Parameters.Add(new SqlParameter("Password", p.Password));
 
+            return Convert.ToInt32(insertCommand.ExecuteScalar()); ///get Id
 
-
-            return  Convert.ToInt32(insertCommand.ExecuteScalar()); ///get Id
-           
 
 
         }
@@ -106,10 +122,10 @@ namespace SharedLibrary
         {
             SqlCommand updateCommand = new SqlCommand("Update Employee SET FirstName=@fname ,LastName = @lname, Phone=@phone , SIN=@sin" +
                 " , Street = @street,City=@city ,Postal = @postal,Password = @pswd Where EmpId = @empId", conn);
-            updateCommand.Parameters.Add(new SqlParameter("fname",e.FName));
+            updateCommand.Parameters.Add(new SqlParameter("fname", e.FName));
             updateCommand.Parameters.Add(new SqlParameter("lname", e.LName));
             updateCommand.Parameters.Add(new SqlParameter("phone", e.Phone));
-            updateCommand.Parameters.Add(new SqlParameter("sin",e.SIN));
+            updateCommand.Parameters.Add(new SqlParameter("sin", e.SIN));
             updateCommand.Parameters.Add(new SqlParameter("street", e.Street));
             updateCommand.Parameters.Add(new SqlParameter("city", e.City));
             updateCommand.Parameters.Add(new SqlParameter("postal", e.Postal));
@@ -123,7 +139,8 @@ namespace SharedLibrary
         public int AddOrder(Order o)
         {
             int newID;
-            SqlCommand insertCommand = new SqlCommand("INSERT INTO [Order] (TableNumber, GuestCount,OrderDate) VALUES (@table,@guest ,@date); SELECT SCOPE_IDENTITY() as INT;", conn);
+            SqlCommand insertCommand = new SqlCommand("INSERT INTO [Order] (EmpId,TableNumber, GuestCount,OrderDate) VALUES (@empId,@table,@guest ,@date); SELECT SCOPE_IDENTITY() as INT;", conn);
+            insertCommand.Parameters.Add(new SqlParameter("empId", o.EmpId));
             insertCommand.Parameters.Add(new SqlParameter("table", o.TableNo));
             insertCommand.Parameters.Add(new SqlParameter("date", o.OrderDate));
             insertCommand.Parameters.Add(new SqlParameter("guest", o.GuestCount));
@@ -143,19 +160,20 @@ namespace SharedLibrary
             List<OrderDetail> result = new List<OrderDetail>();
             SqlCommand selectCommand = new SqlCommand("SELECT m.MenuId,m.MenuName as Item,Sum(od.qty) as Qty" +
                 " FROM [Order] as o INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +
-                " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId Group by m.MenuName,m.MenuId", conn);
+                " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId " +
+                "Group by m.MenuName,m.MenuId", conn);
             selectCommand.Parameters.Add(new SqlParameter("orderId", orderId));
             using (SqlDataReader reader = selectCommand.ExecuteReader())
             {
                 while (reader.Read())
-                {                  
+                {
                     string MenuName = (string)reader["Item"];
                     int id = (int)reader["MenuId"];
                     int qty = (int)reader["Qty"];
 
 
 
-                    OrderDetail item = new OrderDetail {MenuId=id, MenuName = MenuName,Qty= qty };
+                    OrderDetail item = new OrderDetail { MenuId = id, MenuName = MenuName, Qty = qty };
                     result.Add(item);
                 }
             }
@@ -164,11 +182,12 @@ namespace SharedLibrary
 
 
 
-        public void AddNewOrderDetail(OrderDetail o){
+        public void AddNewOrderDetail(OrderDetail o)
+        {
             SqlCommand insertCommand = new SqlCommand("INSERT INTO [OrderDetail] (MenuId,Qty,OrderId) VALUES ( @MenuId, @Qty,@OrderId);", conn);
             insertCommand.Parameters.Add(new SqlParameter("OrderId", o.OrderId));
             insertCommand.Parameters.Add(new SqlParameter("MenuId", o.MenuId));
-            insertCommand.Parameters.Add(new SqlParameter("Qty",o.Qty));
+            insertCommand.Parameters.Add(new SqlParameter("Qty", o.Qty));
             insertCommand.ExecuteNonQuery();
         }
 
@@ -179,7 +198,8 @@ namespace SharedLibrary
             deleteCommand.ExecuteNonQuery();
         }
 
-        public void DeleteOrderDetailByOrderDetailId(int OrderDetailId) {
+        public void DeleteOrderDetailByOrderDetailId(int OrderDetailId)
+        {
 
             SqlCommand deleteCommand = new SqlCommand("DELETE  From [OrderDetail] Where OrderDetailId =@id", conn);
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
@@ -194,7 +214,8 @@ namespace SharedLibrary
             deleteCommand.ExecuteNonQuery();
         }
 
-        public void UpdateOrderDetailQtyBy1(int orderId, int menuId) {
+        public void UpdateOrderDetailQtyBy1(int orderId, int menuId)
+        {
             SqlCommand deleteCommand = new SqlCommand("Update  [OrderDetail] SET Qty = Qty+1 Where OrderId =@orderid and MenuId = @menuid", conn);
             deleteCommand.Parameters.Add(new SqlParameter("orderid", orderId));
             deleteCommand.Parameters.Add(new SqlParameter("menuid", menuId));
@@ -204,24 +225,34 @@ namespace SharedLibrary
         }
         public void UpdateOrderDetailQty(int orderId, int menuId, int count)
         {
-            SqlCommand deleteCommand = new SqlCommand("Update  [OrderDetail] SET Qty = Qty-@count Where OrderId =@orderid and MenuId = @menuid", conn);
-            deleteCommand.Parameters.Add(new SqlParameter("orderid", orderId));
-            deleteCommand.Parameters.Add(new SqlParameter("menuid", menuId));
-            deleteCommand.Parameters.Add(new SqlParameter("count", count));
-            deleteCommand.ExecuteNonQuery();
+            string cmd;
+            if (count == 0)
+            {
+                cmd = "delete  from [OrderDetail]  Where OrderId =@orderid and MenuId = @menuid";
+            }
+            else
+            {
+                cmd = "Update  [OrderDetail] SET Qty = @count Where OrderId =@orderid and MenuId = @menuid";
+            }
+            SqlCommand updateCommand = new SqlCommand(cmd, conn);
+            updateCommand.Parameters.Add(new SqlParameter("orderid", orderId));
+            updateCommand.Parameters.Add(new SqlParameter("menuid", menuId));
+            updateCommand.Parameters.Add(new SqlParameter("count", count));
+            updateCommand.ExecuteNonQuery();
 
         }
-            ////////////////////////////////for logIn///////////////////////////////////////////
-            public string PasswordByID(int Id)
+        ////////////////////////////////for logIn///////////////////////////////////////////
+        public string PasswordByID(int Id)
         {
             string pswd = "";
-            SqlCommand selectCommand = new SqlCommand ("SELECT  Password  FROM [Employee] where Empid =Id");
+            SqlCommand selectCommand = new SqlCommand("SELECT  Password  FROM [Employee] where Empid =Id");
             pswd = (string)selectCommand.ExecuteScalar();
             return pswd;
         }
 
 
-        public void DeleteOrderDetailById(int OrderDetailId) {
+        public void DeleteOrderDetailById(int OrderDetailId)
+        {
             SqlCommand deleteCommand = new SqlCommand("DELETE  OrderDetail Where OrderDetailId =@id", conn);
             deleteCommand.Parameters.Add(new SqlParameter("id", OrderDetailId));
             deleteCommand.ExecuteNonQuery();
@@ -234,7 +265,7 @@ namespace SharedLibrary
 
         {
             List<OrderDetail> result = new List<OrderDetail>();
-            SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId as Id, m.MenuName as Item, od.qty as Qty,m.Price as Price FROM [Order] as o" +
+            SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId as Id, m.MenuName as Item, od.qty as Qty,(m.Price*od.qty) as Price FROM [Order] as o" +
                 " INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +
                 " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId and PaymentId is null ", conn);
             selectCommand.Parameters.Add(new SqlParameter("orderId", orderId));
@@ -252,13 +283,13 @@ namespace SharedLibrary
             }
             return result;
         }
-        
+
 
         ////////////////////////////////for Printing Bill(list2)///////////////////////////////////////////
         public List<OrderDetail> GetAllOrderDetailByPaymentId(int orderId, int paymentId)
         {
             List<OrderDetail> result = new List<OrderDetail>();
-            SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId as Id, m.MenuName as Item, od.qty as Qty,m.Price as Price FROM [Order] as o" +
+            SqlCommand selectCommand = new SqlCommand("SELECT  od.OrderDetailId as Id, m.MenuName as Item, od.qty as Qty,(m.Price*od.qty) as Price FROM [Order] as o" +
                 " INNER Join [OrderDetail] as od on o.OrderId = od.OrderId" +
                 " INNER JOIN [Menu] as m on m.MenuId = od.MenuId Where od.OrderId = @orderId and PaymentId =paymentId ", conn);
             selectCommand.Parameters.Add(new SqlParameter("orderId", orderId));
@@ -276,6 +307,24 @@ namespace SharedLibrary
             }
             return result;
         }
+        public void UpdateOrderDetailsPaymentId(int orderdetalid, int PaymentId)
+        {
+            SqlCommand updateCommand = new SqlCommand("Update  OrderDetail SET PaymentId =@paymentId where OrderDetailId =@orderId;", conn);
+            updateCommand.Parameters.Add(new SqlParameter("orderId", orderdetalid));
+            updateCommand.Parameters.Add(new SqlParameter("@paymentId", PaymentId));
+            updateCommand.ExecuteNonQuery();
+        }
+
+
+        public int AddNewPayment(int orderId)
+        {
+            SqlCommand InserteCommand = new SqlCommand("INSERT INTO Payment(OrderId,IsPaid,PaymentDate) VALUES (@orderId,0, GETDATE()) ; SELECT SCOPE_IDENTITY() as INT;", conn);
+            InserteCommand.Parameters.Add(new SqlParameter("orderId", orderId));
+            int m = Convert.ToInt32(InserteCommand.ExecuteScalar());
+            return m;
+
+        }
+
 
 
 
@@ -290,7 +339,7 @@ namespace SharedLibrary
                 "INNER JOIN[Category] as c on c.CategoryId = m.CategoryId " +
                 "WHERE CAST([Order].OrderDate AS DATE) = @date and c.CategoryId = @category " +
                 "GROUP BY m.MenuName ORDER BY qty DESC ", conn);
-           selectCommand.Parameters.Add(new SqlParameter("category", category));
+            selectCommand.Parameters.Add(new SqlParameter("category", category));
             selectCommand.Parameters.Add(new SqlParameter("date", date));
 
             using (SqlDataReader reader = selectCommand.ExecuteReader())
@@ -310,27 +359,54 @@ namespace SharedLibrary
             return result;
         }
 
-   
-        ///////UpdateOrderDetailsByPaymentId//////////// 
-        public void UpdateOrderDetailsByPaymentId(int orderdetalid, int PaymentId)
+        public int GetTotalGuestCount(string date)
         {
-            SqlCommand updateCommand = new SqlCommand("Update  OrderDetail SET PaymentId =@paymentId where OrderDetailId =@orderId;", conn);
-            updateCommand.Parameters.Add(new SqlParameter("orderId", orderdetalid));
-            updateCommand.Parameters.Add(new SqlParameter("@paymentId", PaymentId));
-            updateCommand.ExecuteNonQuery();
+            SqlCommand selectCommand = new SqlCommand("select COALESCE(SUM(GuestCount),0) as TotalGeust from [Order] where  CAST([Order].OrderDate AS DATE) = @date ", conn);
+
+            selectCommand.Parameters.Add(new SqlParameter("date", date));
+            int totalGuset = 0;
+            using (SqlDataReader reader = selectCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    totalGuset = (int)reader["TotalGeust"];
+
+                }
+                return totalGuset;
+            }
         }
 
-        ///////Inset method//////////// 
-        public int AddNewPayment()
+        public decimal GetTotalSalesByDate(string date)
         {
-            SqlCommand InserteCommand = new SqlCommand("INSERT INTO Payment(IsPaid) VALUES (0) ; SELECT SCOPE_IDENTITY() as INT;", conn);
+            decimal total = 0; 
+            SqlCommand selectCommand = new SqlCommand("select COALESCE(SUM(m.Price * od.Qty), 0) as Total from OrderDetail as od" +
+                " inner join Menu as m on m.MenuId = od.MenuId inner join Payment as p on od.PaymentId = p.PaymentId" +
+                " where  CAST(p.PaymentDate AS DATE) = @date ", conn);
 
-            int m = Convert.ToInt32(InserteCommand.ExecuteScalar());
-            return m;
+            selectCommand.Parameters.Add(new SqlParameter("date", date));
+          
+            using (SqlDataReader reader = selectCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    total = (Decimal)reader["Total"];
 
+<<<<<<< HEAD
         }      
     }
 }
+=======
+                }
+                return total;
+
+>>>>>>> add82a80bb0d4995cca6da8bd0d3417240a0358f
 
 
+            }
+
+
+        }
+    }
+
+}
     

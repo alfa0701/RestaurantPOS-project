@@ -88,6 +88,16 @@ Azam 2017/10/13
 1.I created Print but no check.
 2.I will to work on printing bill.
 3.I will ask for spilit Bill.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam 2017/10/16
+1.I did validation for phoneNumber,SINNumber,Street,City,PostalCode, for Employee.
+2.I'm going work on drag and drop .
+3.I will prepare tomarrow's presentation .
+
+Miho 10/16/2017
+1.fixed log in window, implemented printing in printbill window. update orderitem qty is done. 
+2. test application and prepare for presentation.
+3.------
 
 
 

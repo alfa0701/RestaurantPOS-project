@@ -23,8 +23,10 @@ namespace WaierPOS
     public partial class MainWindow : Window
     {
         Database db;
-        public MainWindow()
+        MainMenu parentWindow;
+        public MainWindow(MainMenu parent)
         {
+            parentWindow = parent;
             try
             {
                 db = new Database();
@@ -42,13 +44,17 @@ namespace WaierPOS
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
             int empId = Convert.ToInt32(txtId.Text);
-            string pswd = txtPass.Text;
+            string pswd = txtPass.Password.ToString();
+            string empName = db.GetFullNameOfEmployee(empId);
          
             if (db.CheckLogin(empId,pswd))
             {
               
                 this.Close();
                 Application.Current.Resources.Add("EmpId",empId);
+                Application.Current.Resources.Add("EmpName", empName);
+                string Name = Application.Current.FindResource("EmpName").ToString();
+                parentWindow.DisplayEmpName(Name);
 
             }
             else

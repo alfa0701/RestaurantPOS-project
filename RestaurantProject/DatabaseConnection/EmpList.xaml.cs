@@ -79,13 +79,10 @@ namespace ManagerPOS
 
             int newId = db.AddEmployee(emp);
             MessageBox.Show("Added successfully", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
-
-
+            clearContent();
 
             List<Employee> empList = new List<Employee>();
             ReloadEmployeeList();
-
-
 
         }
 
@@ -95,10 +92,16 @@ namespace ManagerPOS
             if (lstEmployees.SelectedIndex < 0)
             {
                 clearContent();
+                btDelete.IsEnabled = false ;
+                btUpdate.IsEnabled = false;
+                btAdd.IsEnabled = true;
                 return;
             }
             else
             {
+                btDelete.IsEnabled = true;
+                btUpdate.IsEnabled = true;
+                btAdd.IsEnabled = false;
                 Employee selected = new Employee();
                 selected = (Employee)lstEmployees.SelectedItem;
                 txtFName.Text = (string)selected.FName;
@@ -114,7 +117,8 @@ namespace ManagerPOS
         }
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
-        {if (selectedIndex == -1)
+        {
+            if (lstEmployees.SelectedIndex < 0)
             {
                 MessageBox.Show("Select an employee to delete");
 
@@ -138,7 +142,7 @@ namespace ManagerPOS
         }
         private void btUpdate_Click(object sender, RoutedEventArgs e)
         {
-            if (selectedIndex < 0)
+            if (lstEmployees.SelectedIndex < 0)
             {
                 MessageBox.Show("Select an employee to update");
             }
@@ -243,6 +247,7 @@ namespace ManagerPOS
             isModified = true;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         /////////////getter and setter>>>>>>>>>>>>>>>>>>>
         
 
@@ -346,6 +351,13 @@ namespace ManagerPOS
 
 =======
 >>>>>>> ff6db3a714a313776e0e95cb04a134120caaa94a
+=======
+
+        private void txtFName_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+>>>>>>> add82a80bb0d4995cca6da8bd0d3417240a0358f
     }
 }
 

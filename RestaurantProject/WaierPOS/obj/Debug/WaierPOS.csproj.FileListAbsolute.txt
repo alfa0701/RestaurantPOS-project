@@ -75,3 +75,8 @@ C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\WaierPOS\obj\Debug
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\WaierPOS\obj\Debug\WaierPOS.csproj.CoreCompileInputs.cache
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\WaierPOS\obj\Debug\WaierPOS.exe
 C:\Users\Anonymous\Documents\dotNET_Project\RestaurantProject\WaierPOS\obj\Debug\WaierPOS.pdb
+D:\Project\RestaurantProject\WaierPOS\obj\Debug\UpdateQty.g.cs
+<<<<<<< HEAD
+D:\Project\RestaurantProject\WaierPOS\obj\Debug\UpdateQty.baml
+=======
+>>>>>>> 09d2008ead7e19203db086d6ca26324b68792f4a
